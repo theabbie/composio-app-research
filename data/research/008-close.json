@@ -1,0 +1,51 @@
+{
+ "app_id": 8,
+ "app": "Close",
+ "category": "CRM and Sales",
+ "one_liner": "Sales CRM with built-in calling, email, SMS, and pipeline management.",
+ "auth_methods": [
+  "api_key",
+  "oauth2",
+  "basic",
+  "bearer_token"
+ ],
+ "access": "unknown",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.85,
+ "evidence": [
+  {
+   "claim": "API keys are self-serve, created inside the Close account settings",
+   "url": "https://developer.close.com/api/overview/api-key-authentication",
+   "quote": "API keys can be created and managed in your Close account under **Settings** → **Developer** → **API Keys**."
+  },
+  {
+   "claim": "Two authentication methods are supported: API keys and OAuth 2.0",
+   "url": "https://developer.close.com/api/overview",
+   "quote": "All API requests require authentication. Two methods are supported:"
+  },
+  {
+   "claim": "API keys use HTTP Basic auth (key as username, empty password); OAuth tokens use Bearer",
+   "url": "https://developer.close.com/api/overview/oauth-authentication",
+   "quote": "Send your HTTP requests with an `Authorization` header that contains the word `Bearer` followed by a space and the Access Token."
+  },
+  {
+   "claim": "The API is REST with JSON request/response bodies",
+   "url": "https://developer.close.com/api/overview",
+   "quote": "Close uses industry-standard REST conventions with predictable URL structures, standard HTTP methods, and JSON request/response bodies."
+  },
+  {
+   "claim": "Close operates an official hosted MCP server",
+   "url": "https://help.close.com/docs/mcp-server",
+   "quote": "The MCP server URL is `https://mcp.close.com/mcp` and has \"HTTP Streamable\" and \"OAuth 2.0 Dynamic Client Registration (DCR)\" support."
+  }
+ ],
+ "notes": "Official MCP server supports OAuth 2.0 DCR or API-key headers with three scope tiers (mcp.read, mcp.write_safe, mcp.write_destructive). Per help center, OAuth apps and API keys both get full read/write CRM access; no granular scopes ('any third-party app using OAuth will obtain the same full access to your Close account as it would with an API key'). Core resources include Leads, Contacts, Opportunities, Activities (calls, emails, notes, SMS, meetings), Custom Fields, Webhooks, and an Event Log, each with CRUD-style endpoints, supporting a broad API surface. OpenAPI spec published at api.close.com/api/openapi.json but flagged as experimental with incomplete schema coverage. Base URL: https://api.close.com/api/v1. Material does not state whether API access requires a paid plan or is available on a trial, so access subclassification is unknown; no approval, partnership, or sales gate is indicated.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:42:44+00:00"
+}

@@ -1,0 +1,50 @@
+{
+ "app_id": 24,
+ "app": "Lark (Larksuite)",
+ "category": "Communications and Messaging",
+ "one_liner": "Team messaging and collaboration suite with a rich open API platform.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token",
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "Lark Open Platform APIs are RESTful",
+   "url": "https://open.larksuite.com/document/server-docs/getting-started/getting-started",
+   "quote": "The APIs provided by Lark Open Platform follow the RESTful style"
+  },
+  {
+   "claim": "APIs are authenticated via access tokens sent in the HTTP header; tenant_access_token lets an app call APIs without user authorization",
+   "url": "https://open.larksuite.com/document/server-docs/getting-started/api-access-token/app-access-token-development-guide",
+   "quote": "When calling the API, the access token needs to be filled in the HTTP request header."
+  },
+  {
+   "claim": "OAuth2-style user authorization flow with authorization code exists for user_access_token",
+   "url": "https://open.larksuite.com/document/common-capabilities/sso/api/obtain-oauth-code",
+   "quote": "This API is used to initiate user authorization. After the user consents to the authorization, the application will receive an authorization code"
+  },
+  {
+   "claim": "Developers self-serve by creating a custom app in the Developer Console to obtain App ID and App Secret credentials",
+   "url": "https://open.larksuite.com/document/home/quickly-develop-three-party-approvals/creating-applications-and-requesting-permissions",
+   "quote": "you can query the application credentials, that is, App ID and App Secret"
+  },
+  {
+   "claim": "An official MCP server from Lark (larksuite/lark-openapi-mcp) wraps the OpenAPI as MCP tools",
+   "url": "https://github.com/larksuite/lark-openapi-mcp",
+   "quote": "This is the Feishu/Lark official OpenAPI MCP (Model Context Protocol) tool designed to help users quickly connect to the Feishu/Lark platform"
+  }
+ ],
+ "notes": "Official MCP server runs via npx (@larksuiteoapi/lark-mcp) using app_id/app_secret, supports tenant_access_token and user_access_token, stdio/SSE/streamable modes, and a beta --oauth flag. Three token types exist (tenant_, user_, app_access_token); app_access_token is being phased into tenant_access_token. Frictions: API scopes must be applied for per-endpoint; sensitive data permissions (e.g., Contacts, HR) require review; store apps require ISV qualification; production release of custom apps needs admin approval, though the test-tenant beta version takes effect 'without administrator review'.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:46:30+00:00"
+}

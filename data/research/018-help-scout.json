@@ -1,0 +1,51 @@
+{
+ "app_id": 18,
+ "app": "Help Scout",
+ "category": "Support and Helpdesk",
+ "one_liner": "Customer support helpdesk with shared inbox, docs, and chat",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token",
+  "api_key",
+  "basic"
+ ],
+ "access": "paid_plan_required",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_with_work",
+ "blocker": "API access requires a paid plan; the Free plan does not include API access or integrations",
+ "confidence": 0.92,
+ "evidence": [
+  {
+   "claim": "Inbox API uses OAuth 2.0 with Authorization Code and Client Credentials flows, bearer token in Authorization header",
+   "url": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+   "quote": "This is an HTTPS-only API and it uses OAuth 2.0 authorization, implementing Authorization Code and Client Credential flows."
+  },
+  {
+   "claim": "OAuth2 app credentials are created self-serve from the user profile",
+   "url": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+   "quote": "You need to create an OAuth2 application before you can use the API. Create one by navigating to Your Profile > My apps and click Create My App."
+  },
+  {
+   "claim": "API access is tied to paid plans; free plan excluded",
+   "url": "http://docs.helpscout.net/article/1140-help-desk-api",
+   "quote": "The Free plan does not include access to the API or integrations."
+  },
+  {
+   "claim": "Docs API uses an API key passed via HTTP Basic Authentication",
+   "url": "https://developer.helpscout.com/docs-api/",
+   "quote": "The API key is passed via HTTP Basic Authentication and goes in the username field. A dummy password, such as X, goes in the password field."
+  },
+  {
+   "claim": "Official, generally available MCP server exists for AI assistants",
+   "url": "https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports",
+   "quote": "Help Scout MCP gives AI assistants secure, official access to Help Scout data."
+  }
+ ],
+ "notes": "Broad surface: Inbox API 2.0 (HAL+JSON REST at api.helpscout.net/v2) covers conversations, customers, mailboxes, reports; separate Docs API v1 and Chat API. Rate limits are plan-tiered: Standard 200/min (no reporting endpoints), Plus 400/min, Pro 800/min. Access tokens expire in 2 days with refresh-token flow. Official MCP server at mcp.helpscout.net/mcp is read-only, uses per-user OAuth, available on any plan with API access; report tools require Plus or Pro. Docs API key requires a specific permission granted by Account Owner/Admin.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:43:36+00:00"
+}

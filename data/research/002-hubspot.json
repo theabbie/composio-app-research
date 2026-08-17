@@ -1,0 +1,51 @@
+{
+ "app_id": 2,
+ "app": "HubSpot",
+ "category": "CRM and Sales",
+ "one_liner": "CRM, marketing, sales, and customer service platform",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token",
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest",
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "HubSpot apps authenticate via OAuth 2.0 (multi-account) or static access tokens (single account)",
+   "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+   "quote": "OAuth is required for multiple accounts, while static auth access tokens are used for installing in a single account at a time."
+  },
+  {
+   "claim": "Access tokens are sent as Bearer tokens in the HTTP authorization header",
+   "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+   "quote": "This access token is provided using the `Bearer` HTTP authorization header."
+  },
+  {
+   "claim": "Free HubSpot account provides API credentials and a developer test account without a paid subscription",
+   "url": "https://developers.hubspot.com/developer-platform-basics",
+   "quote": "No. You can create a free HubSpot account and build apps without a paid subscription. You'll get access to a developer test account with sample data for testing."
+  },
+  {
+   "claim": "HubSpot offers RESTful APIs plus webhooks for integrations",
+   "url": "https://developers.hubspot.com/developer-platform-basics",
+   "quote": "RESTful APIs, webhooks, and OAuth for any integration"
+  },
+  {
+   "claim": "HubSpot provides official MCP servers for connecting AI agents to CRM data and to the developer platform",
+   "url": "https://developers.hubspot.com/ai-tools/mcp",
+   "quote": "HubSpot offers two distinct MCP (Model Context Protocol) servers — one for connecting any MCP-compatible AI tool or agent to your CRM, and one for building on the HubSpot Developer Platform."
+  }
+ ],
+ "notes": "Official remote MCP server at mcp.hubspot.com requires OAuth with PKCE; a separate local Developer MCP server runs via the HubSpot CLI. GraphQL is also available for querying CRM/HubDB data (subscription-dependent). OAuth access tokens expire after 30 minutes and are refreshed via refresh tokens. Installing an app into an account requires Super Admin or Marketplace Access permissions, but developers can freely create their own account. Legacy private apps used API keys; new 'service keys' (public beta) allow direct scoped REST calls without OAuth. The 2026-03 release introduced date-versioned endpoints replacing numeric paths like /crm/v3/.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:40:13+00:00"
+}

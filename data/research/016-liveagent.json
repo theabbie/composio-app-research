@@ -1,0 +1,50 @@
+{
+ "app_id": 16,
+ "app": "LiveAgent",
+ "category": "Support and Helpdesk",
+ "one_liner": "Help desk software with ticketing, live chat, and knowledge base",
+ "auth_methods": [
+  "api_key",
+  "bearer_token",
+  "oauth2"
+ ],
+ "access": "self_serve_trial",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "API v3 authenticates via an API key sent in the request header",
+   "url": "https://support.liveagent.com/741982-API-key",
+   "quote": "Your API key has to be set in header of your requests:"
+  },
+  {
+   "claim": "API keys are self-serve: admin generates them under Configuration > System > API, with per-key permissions",
+   "url": "https://support.liveagent.com/741982-API-key",
+   "quote": "While logged in as an admin navigate to Configuration> System> API which loads the API v3 section where you find existing API keys or add a new one."
+  },
+  {
+   "claim": "A free 30-day trial is available and API access is included in all subscriptions, so credentials are obtainable without payment",
+   "url": "https://www.liveagent.com/pricing/",
+   "quote": "API and integrations are included in each subscription without any additional costs. A 30-day free trial is available for all subscriptions."
+  },
+  {
+   "claim": "REST API has two versions; v3 is actively developed and v1 is deprecated, covering many resources (tickets, conversations, customers, companies, reports, tags, knowledgebase)",
+   "url": "https://faq.liveagent.com/535002-LiveAgent-API-v1-vs-v3-Authentication-Differences-API-Key-Management-and-Resolving-403-Errors",
+   "quote": "API v3 – The current, actively developed version. New endpoints and enhancements are continuously added."
+  },
+  {
+   "claim": "LiveAgent provides an official built-in MCP server supporting Bearer token and OAuth 2.1 (Authorization Code + PKCE)",
+   "url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+   "quote": "LiveAgent exposes a built-in MCP server (Model Context Protocol) that lets you connect external AI tools"
+  }
+ ],
+ "notes": "API v1 and v3 require separate keys; using the wrong key yields 403 'ApiKey not found'. v3 docs (https://YOURDOMAIN.ladesk.com/docs/api/v3/#/) and Swagger/OpenAPI descriptor live inside the account, but a free trial unlocks them. Number of API keys scales by plan (1/5/10/100). Official MCP server at https://<domain>/api/mcp over Streamable HTTP with a documented tool set (read tickets, notes, fields; transfer, etc.). Regenerating a key instantly invalidates old clients.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:43:27+00:00"
+}

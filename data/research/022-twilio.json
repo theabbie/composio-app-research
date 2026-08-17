@@ -1,0 +1,51 @@
+{
+ "app_id": 22,
+ "app": "Twilio",
+ "category": "Communications and Messaging",
+ "one_liner": "Cloud communications APIs for SMS, voice, video, and email",
+ "auth_methods": [
+  "basic",
+  "api_key",
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_trial",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.92,
+ "evidence": [
+  {
+   "claim": "Twilio APIs authenticate via HTTP Basic auth using an API Key/Secret (recommended) or Account SID/Auth Token",
+   "url": "https://www.twilio.com/docs/usage/requests-to-twilio",
+   "quote": "To authenticate requests to the Twilio APIs, Twilio supports [HTTP Basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)."
+  },
+  {
+   "claim": "Developers can self-serve create API keys via the Console or REST API",
+   "url": "https://www.twilio.com/docs/usage/requests-to-twilio",
+   "quote": "You can create an API key either [in the Twilio Console](/docs/iam/api-keys/keys-in-console) or [using the API](/docs/iam/api-keys/key-resource-v1)."
+  },
+  {
+   "claim": "Twilio also supports OAuth 2.0 (Client Credentials and Authorization Code grants) with bearer access tokens",
+   "url": "https://www.twilio.com/docs/iam/oauth-apps/overview",
+   "quote": "Twilio supports two OAuth 2.0 grant types: **Client Credentials** and **Authorization Code**."
+  },
+  {
+   "claim": "OAuth apps are available to all accounts at no extra cost, indicating no paid gate for credentials",
+   "url": "https://www.twilio.com/docs/iam/oauth-apps/faqs",
+   "quote": "OAuth apps are available to all accounts at no additional cost."
+  },
+  {
+   "claim": "The API surface is very large and Twilio hosts an official MCP server",
+   "url": "https://www.twilio.com/docs/ai/mcp",
+   "quote": "direct, structured access to Twilio's full API surface—over 1,800 endpoints across 30+ products"
+  }
+ ],
+ "notes": "Official MCP server exists at mcp.twilio.com/docs but it is read-only docs/spec search (twilio__search, twilio__retrieve) and does not execute API calls; it requires no auth. GraphQL surface exists only via Twilio Flex per third-party spec; platform is REST-first. Credentials are region-specific (region + edge flags). Material doesn't explicitly state trial terms, but console self-serve credential creation and no-cost OAuth apps confirm no approval/sales gate; Twilio's standard signup is a trial account with credentials.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:46:29+00:00"
+}

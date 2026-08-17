@@ -1,0 +1,49 @@
+{
+ "app_id": 1,
+ "app": "Salesforce",
+ "category": "CRM and Sales",
+ "one_liner": "Cloud CRM platform for sales, service, and customer data management.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "mixed"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.97,
+ "evidence": [
+  {
+   "claim": "Salesforce offers a documented public REST API for programmatic data access",
+   "url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/sforce_rest_api.htm",
+   "quote": "REST API provides you with programmatic access to your data in Salesforce."
+  },
+  {
+   "claim": "API authentication uses OAuth 2.0 via connected/external client apps",
+   "url": "https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&language=en_US",
+   "quote": "For a connected app to request access, it must be integrated with the Salesforce API using the OAuth 2.0 protocol."
+  },
+  {
+   "claim": "Requests authenticate with an access token used as a bearer token",
+   "url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_oauth.htm",
+   "quote": "Use the access token (also known as a “bearer token”) that you get from Salesforce CLI to authenticate cURL requests."
+  },
+  {
+   "claim": "Free Developer Edition org gives self-serve credentials for development",
+   "url": "https://developer.salesforce.com/docs/platform/connect-rest-api/guide/quickstart.html",
+   "quote": "Developer Edition provides a free and easy solution so that you can use Salesforce for testing and development."
+  },
+  {
+   "claim": "Salesforce provides official hosted MCP servers plus a GraphQL API",
+   "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/overview",
+   "quote": "Give AI agents a secure, governed way to interact with Salesforce data and automation using the Model Context Protocol (MCP)."
+  }
+ ],
+ "notes": "Also offers GraphQL API (single endpoint, schema introspection), Connect REST API, and OAuth client-credentials flow for server-to-server via a dedicated Integration User. Official Hosted MCP Servers (SObject CRUD, Data 360, Tableau Next, custom Apex/Flow tools) exist but standard servers are disabled by default and must be enabled by an org administrator. Production API access requires a paid edition with API enabled (Enterprise/Unlimited/Performance); Developer Edition is free but capped. External client apps are replacing legacy connected apps.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:39:46+00:00"
+}

@@ -1,0 +1,50 @@
+{
+ "app_id": 20,
+ "app": "Gladly",
+ "category": "Support and Helpdesk",
+ "one_liner": "Enterprise customer service platform with REST APIs and webhooks.",
+ "auth_methods": [
+  "basic",
+  "oauth2"
+ ],
+ "access": "paid_plan_required",
+ "api_styles": [
+  "rest",
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": false,
+ "verdict": "buildable_with_work",
+ "blocker": "API tokens are created inside a Gladly instance, which requires a paid Gladly account; no free tier or self-serve developer signup is documented.",
+ "confidence": 0.8,
+ "evidence": [
+  {
+   "claim": "Gladly's REST API authenticates with token-based Basic Auth (agent email as username, API token as password).",
+   "url": "https://developer.gladly.com/rest/",
+   "quote": "Gladly API uses token-based Basic Authentication. API tokens are associated with designated Gladly users."
+  },
+  {
+   "claim": "API tokens are self-created in the Gladly UI by users holding the API User role, granted by a Gladly Administrator.",
+   "url": "https://help.gladly.com/generate-api-tokens-and-create-webhooks",
+   "quote": "API tokens are required to use Gladly APIs for security and authentication purposes. Tokens can be accessed and created by users who at least have an API user role."
+  },
+  {
+   "claim": "Access is gated on being a Gladly customer; even a sandbox environment must be purchased via CSM or Support.",
+   "url": "https://help.gladly.com/developer-tutorials/docs/setup-and-testing",
+   "quote": "If you do not have a sandbox environment and are interested in purchasing one, please contact your Gladly CSM or Gladly Support team."
+  },
+  {
+   "claim": "Gladly documents a REST API with a downloadable OpenAPI specification covering many resources (organization, answers, etc.).",
+   "url": "https://developer.gladly.com/rest/",
+   "quote": "Clients can access the REST API via HTTPS at your organization's Gladly domain"
+  },
+  {
+   "claim": "GraphQL is used within Gladly App Platform apps to describe data and action signatures.",
+   "url": "https://help.gladly.com/developer-tutorials/docs/graphql-in-gladly",
+   "quote": "Apps use GraphQL schemas to describe the type signatures of requests and responses."
+  }
+ ],
+ "notes": "OAuth appears in docs only for App Platform apps integrating external systems ('contact Gladly Support to register your Oauth domain'), not for the core REST API, which uses Basic auth. Tokens are tied to a single user account and environment (Sandbox tokens invalid in Production). Tokens shown once at creation; deactivating the linked user breaks integrations. No MCP server mentioned anywhere in the material.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:45:50+00:00"
+}

@@ -1,0 +1,52 @@
+{
+ "app_id": 11,
+ "app": "Zendesk",
+ "category": "Support and Helpdesk",
+ "one_liner": "Customer service and helpdesk platform with ticketing, chat, and CRM.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token",
+  "api_key",
+  "basic"
+ ],
+ "access": "paid_plan_required",
+ "api_styles": [
+  "rest",
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_with_work",
+ "blocker": "Credentials require a Zendesk account on a listed paid plan (Team/Professional/Enterprise; no free tier or trial documented in the material) plus admin access to register an OAuth client, and legacy API tokens/basic auth are deprecated in favor of OAuth.",
+ "confidence": 0.85,
+ "evidence": [
+  {
+   "claim": "Zendesk supports OAuth2 with both authorization code and client credentials flows, with bearer tokens in the Authorization header.",
+   "url": "https://developer.zendesk.com/documentation/api-basics/authentication/api-tokens-to-oauth/",
+   "quote": "Zendesk supports two OAuth flows. Identify which OAuth flow matches your integration:"
+  },
+  {
+   "claim": "Basic authentication and API tokens are deprecated; customers must migrate to OAuth access tokens.",
+   "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+   "quote": "If you're an existing Zendesk customer and are currently using basic authentication or API tokens, you will have to migrate to OAuth access tokens for improved security"
+  },
+  {
+   "claim": "Registering an OAuth client requires signing in as an admin of the Zendesk account.",
+   "url": "https://developer.zendesk.com/documentation/api-basics/authentication/creating-and-using-oauth-tokens-with-the-api/",
+   "quote": "You must be signed in as an admin. When creating a client for creating an OAuth token with the API, you don't need to specify any Redirect URLs."
+  },
+  {
+   "claim": "The API surface is broad, spanning ticketing, help center, chat, voice, CRM, and more.",
+   "url": "https://developer.zendesk.com/api-reference/",
+   "quote": "You'll find APIs for ticketing, help center, live chat, voice, sales CRM as well as some features that span capabilities, such as omnichannel routing and custom data."
+  },
+  {
+   "claim": "Zendesk officially documents acting as an MCP server exposing tools to third-party AI agents.",
+   "url": "https://support.zendesk.com/hc/en-us/articles/10497779528730-Connecting-to-MCP-servers-and-using-MCP-tools-in-action-flows-EAP",
+   "quote": "Zendesk can also act as an MCP server in other scenarios. In that role, Zendesk exposes tools or resources that third-party AI agents can use"
+  }
+ ],
+ "notes": "Official docs confirm both an MCP client (GA, available on Suite Growth+/Support Team+ plans, for connecting Zendesk to external MCP servers) and an MCP server role exposing Zendesk tools to third-party agents. Multi-customer apps must use a global OAuth client per Zendesk Developer Terms; internal integrations can use regular OAuth clients scoped to one instance. Rate limits are plan-based (Team 200 rpm, Professional 400, Enterprise 700, High Volume add-on 2500). GraphQL exists only for Sell CRM company search. A third-party open-source zendesk-mcp-server also exists on GitHub (fruggr), separate from the official offering.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:42:52+00:00"
+}

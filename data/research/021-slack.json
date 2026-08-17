@@ -1,0 +1,49 @@
+{
+ "app_id": 21,
+ "app": "Slack",
+ "category": "Communications and Messaging",
+ "one_liner": "Business messaging platform for team channels, chat, and collaboration.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.97,
+ "evidence": [
+  {
+   "claim": "Slack apps authenticate via OAuth 2.0 (v2 flow) to obtain access tokens",
+   "url": "https://docs.slack.dev/authentication/installing-with-oauth",
+   "quote": "Slack apps are installed with a v2 OAuth 2.0 flow."
+  },
+  {
+   "claim": "Web API requests are authenticated with bearer tokens in the Authorization header",
+   "url": "https://docs.slack.dev/apis/web-api/",
+   "quote": "We prefer tokens to be sent in the `Authorization` HTTP header of your outbound requests."
+  },
+  {
+   "claim": "Anyone with a Slack account can self-serve register an app and obtain credentials",
+   "url": "https://api.slack.com/apps/",
+   "quote": "You'll need to sign in to your Slack account to create an application."
+  },
+  {
+   "claim": "The Web API surface is broad, with over 200 methods",
+   "url": "http://docs.slack.dev/apis/web-api/using-web-api-with-postman",
+   "quote": "The Slack Web API is a set of methods (200+ of them) that provide a way for software programs to communicate directly with"
+  },
+  {
+   "claim": "Slack provides an official hosted MCP server using JSON-RPC 2.0 over Streamable HTTP",
+   "url": "https://docs.slack.dev/ai/slack-mcp-server/",
+   "quote": "Slack supports JSON-RPC 2.0 over Streamable HTTP. All requests should be sent to:"
+  }
+ ],
+ "notes": "Multiple token types: bot (xoxb-), user (xoxp-), workflow (xwfp-), app-level, configuration, and service tokens; token rotation supported. Official hosted MCP server at https://mcp.slack.com/mcp with its own OAuth user-token flow (oauth/v2_user/authorize). Free developer sandbox available via Slack Developer Program. Apps must be installed per-workspace; some workspaces require admin approval to install apps. GovSlack uses a separate OAuth domain.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:44:14+00:00"
+}

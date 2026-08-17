@@ -1,0 +1,51 @@
+{
+ "app_id": 17,
+ "app": "Plain",
+ "category": "Support and Helpdesk",
+ "one_liner": "API-first customer support platform for B2B SaaS companies.",
+ "auth_methods": [
+  "api_key",
+  "bearer_token",
+  "oauth2",
+  "other"
+ ],
+ "access": "self_serve_trial",
+ "api_styles": [
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "API authentication uses machine-user API keys sent as a Bearer header",
+   "url": "https://www.plain.com/docs/graphql/authentication",
+   "quote": "Authorization: Bearer plainApiKey_xxx"
+  },
+  {
+   "claim": "API keys are self-serve, generated inside the Plain workspace settings",
+   "url": "https://help.plain.com/article/api-quickstart",
+   "quote": "Your API key: This gives your system permission to talk to Plain. You can generate one from Settings → API Keys in your Plain workspace."
+  },
+  {
+   "claim": "A free trial is available, so a developer can obtain a workspace and credentials without sales",
+   "url": "https://www.plain.com/blog/mcp-customer-support-2026",
+   "quote": "[Start a free trial](../get/trial) or [book a demo](../get/demo)"
+  },
+  {
+   "claim": "Single GraphQL endpoint covering the full product surface",
+   "url": "https://help.plain.com/article/api-quickstart",
+   "quote": "Plain's API gives your team access to the same powerful tools our own product is built on."
+  },
+  {
+   "claim": "Official hosted MCP server with OAuth and 30 tools",
+   "url": "https://help.plain.com/article/mcp-server",
+   "quote": "The Plain MCP server at`https://mcp.plain.com/mcp` lets tools like Claude, ChatGPT, and Cursor work with your support data directly."
+  }
+ ],
+ "notes": "Official MCP server at https://mcp.plain.com/mcp uses OAuth (authenticates as an existing Plain user, inherits that user's permissions) and exposes 30 tools; direct API auth is per-machine-user API keys with fine-grained permissions. GraphQL endpoint is https://core-api.uk.plain.com/graphql/v1 with downloadable schema; typed TypeScript SDK @team-plain/graphql on npm. mTLS is supported for webhook delivery and customer-card requests. Breadth covers customers, companies, tenants, threads, messaging, help center, labels, tiers/SLAs, snippets, tasks, events, and webhook targets (broad). Note trial credentials require creating a workspace first.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:43:36+00:00"
+}

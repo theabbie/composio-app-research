@@ -1,0 +1,93 @@
+{
+ "total_apps": 9,
+ "auth_distribution": {
+  "oauth2": 9,
+  "bearer_token": 8,
+  "api_key": 5,
+  "basic": 1,
+  "other": 1
+ },
+ "access_distribution": {
+  "self_serve_free": 8,
+  "admin_approval": 1
+ },
+ "verdict_distribution": {
+  "buildable_now": 8,
+  "gated": 1
+ },
+ "api_breadth_distribution": {
+  "broad": 8,
+  "moderate": 1
+ },
+ "api_style_distribution": {
+  "rest": 7,
+  "graphql": 4,
+  "mixed": 2
+ },
+ "by_category": {
+  "CRM and Sales": {
+   "apps": 8,
+   "self_serve": 7,
+   "gated": 1,
+   "buildable_now": 7,
+   "self_serve_rate": 0.875,
+   "buildable_rate": 0.875
+  },
+  "Support and Helpdesk": {
+   "apps": 1,
+   "self_serve": 1,
+   "gated": 0,
+   "buildable_now": 1,
+   "self_serve_rate": 1.0,
+   "buildable_rate": 1.0
+  }
+ },
+ "self_serve_rate": 0.889,
+ "gated_rate": 0.111,
+ "buildable_now_rate": 0.889,
+ "official_mcp_apps": [
+  "Attio",
+  "DealCloud",
+  "HubSpot",
+  "Intercom",
+  "Pipedrive",
+  "Podio",
+  "Salesforce",
+  "Twenty",
+  "Zoho CRM"
+ ],
+ "easy_wins": [
+  "Attio",
+  "HubSpot",
+  "Intercom",
+  "Pipedrive",
+  "Podio",
+  "Salesforce",
+  "Twenty",
+  "Zoho CRM"
+ ],
+ "needs_outreach": [
+  {
+   "app": "DealCloud",
+   "category": "CRM and Sales",
+   "access": "admin_approval",
+   "blocker": "API credentials require an existing DealCloud customer site where an org admin enables the 'API' capability for the user's group; no self-serve developer signup or free tier is documented."
+  }
+ ],
+ "blocker_taxonomy": {
+  "admin / enterprise approval": 1
+ },
+ "top_blockers_raw": {
+  "api credentials require an existing dealcloud customer site where an org admin enables the 'api' capability for the user's group; no self-serve developer signup or free tier is documented.": 1
+ },
+ "verification": {},
+ "llm_usage": {
+  "calls": 11,
+  "prompt_tokens": 98734,
+  "completion_tokens": 21993,
+  "cost_usd": 0.7826,
+  "by_purpose": {
+   "research-p1": 11
+  }
+ }
+}

@@ -10,7 +10,7 @@ from agent.llm import load_usage
 from agent.schemas import GATED, SELF_SERVE, AppResearch
 from agent.verify import load_research
 
-SITE_DATA = ROOT / "site" / "public" / "data"
+SITE_DATA = ROOT / "site" / "src" / "data"
 
 
 def final_results(directory: Path = RESEARCH_DIR) -> list[AppResearch]:

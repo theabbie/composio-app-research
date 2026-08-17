@@ -1,0 +1,49 @@
+{
+ "app_id": 23,
+ "app": "Zoho Cliq",
+ "category": "Communications and Messaging",
+ "one_liner": "Team chat and collaboration messaging platform by Zoho",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "API authenticates via OAuth 2.0 with Bearer tokens",
+   "url": "https://www.zoho.com/cliq/help/restapi/v3/introduction/",
+   "quote": "Zoho Cliq API uses the OAuth 2.0 protocol for authentication. OAuth 2.0 is an industry-standard protocol specification that enables third-party applications"
+  },
+  {
+   "claim": "Self-serve app registration via Zoho API Console yields Client ID and Secret",
+   "url": "https://www.zoho.com/cliq/help/restapi/v3/registerclient/",
+   "quote": "Upon successful registration of your application, you will receive a Client ID and Client Secret. These credentials are used to obtain an access token"
+  },
+  {
+   "claim": "API support is included on all plans, including free tier",
+   "url": "https://www.zoho.com/cliq/plan-comparison.html",
+   "quote": "| API support | Yes | Yes | Yes | Yes |"
+  },
+  {
+   "claim": "Official vendor MCP server exists for AI agent access",
+   "url": "https://www.zoho.com/cliq/help/platform/zoho-cliq-mcp.html",
+   "quote": "Any AI model or agent can use our official MCP server to access your Cliq data and do:"
+  },
+  {
+   "claim": "Broad REST API surface spanning chats, messages, bots, commands, widgets, schedulers",
+   "url": "https://www.zoho.com/cliq/help/restapi/v3/introduction/",
+   "quote": "v3 introduces CRUD API endpoints for bots, slash commands, message actions, widgets, schedulers, and more, which were not available in v2."
+  }
+ ],
+ "notes": "OAuth endpoints are multi-datacenter (accounts.zoho.{dc}); use api_domain from token response. API v3 is recommended; v2 remains fully supported with same OAuth tokens. Downloadable OpenAPI 3.0 spec available. Official MCP server configured via Zoho MCP service with a generated MCP URL and API key regeneration. API support listed on all plans including the free tier.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:45:20+00:00"
+}

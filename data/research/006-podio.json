@@ -1,0 +1,49 @@
+{
+ "app_id": 6,
+ "app": "Podio",
+ "category": "CRM and Sales",
+ "one_liner": "Collaborative work management platform with customizable CRM apps and workspaces",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.92,
+ "evidence": [
+  {
+   "claim": "Podio API uses OAuth2 with four documented flows (server-side, client-side, username/password, app authentication)",
+   "url": "https://developers.podio.com/authentication",
+   "quote": "The Podio API uses the OAuth2 protocol for authentication."
+  },
+  {
+   "claim": "API keys are self-serve from the account settings page after signing up for a Podio account",
+   "url": "https://developers.podio.com/api-key",
+   "quote": "You just have to sign in or sign up with Podio, and go to the API key tab in your settings."
+  },
+  {
+   "claim": "The API is free for both free and premium accounts with identical rate limits",
+   "url": "https://developers.podio.com/index/faq",
+   "quote": "The Podio API is free to use for both premium and free Podio accounts. Both have full access to the API and have the same rate limits."
+  },
+  {
+   "claim": "REST API covers many object types including apps, items, workspaces, organizations, users, tasks, files, comments, webhooks",
+   "url": "https://apis.io/apis/podio/rest-api/",
+   "quote": "REST API providing complete programmatic access to Podio apps, items, workspaces, organizations, users, tasks, files, comments, and webhooks."
+  },
+  {
+   "claim": "Podio provides an official MCP server over Streamable HTTP with OAuth 2.0 endpoints and dynamic client registration",
+   "url": "https://support.sharefile.com/s/article/Podio-MCP-Server-Integration-Guide-ShareFile-1778762090571",
+   "quote": "MCP Server URL: https://mcp.podio.com/mcp"
+  }
+ ],
+ "notes": "Official MCP server at mcp.podio.com supports three credential modes incl. dynamic client registration (RFC 7591). Classic REST API uses non-standard 'Authorization: OAuth2 ACCESS_TOKEN' header rather than Bearer; tokens expire after 8 hours (refresh tokens 28 days). App-authentication flow (app_id + app_token) suits headless/agent scripts. Programmatic access to app tokens requires contacting support. Podio is now owned by Progress/ShareFile; docs still hosted at developers.podio.com.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:40:08+00:00"
+}

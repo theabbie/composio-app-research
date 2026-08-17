@@ -1,0 +1,52 @@
+{
+ "app_id": 5,
+ "app": "Twenty",
+ "category": "CRM and Sales",
+ "one_liner": "Open-source CRM with auto-generated REST/GraphQL APIs per workspace.",
+ "auth_methods": [
+  "api_key",
+  "bearer_token",
+  "oauth2",
+  "other"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest",
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.88,
+ "evidence": [
+  {
+   "claim": "API key creation is self-serve in workspace settings and used as a Bearer token",
+   "url": "https://docs.twenty.com/developers/extend/api",
+   "quote": "Create an API key in **Settings → API & Webhooks → + Create key**. Copy it immediately — it's shown once."
+  },
+  {
+   "claim": "Both REST and GraphQL APIs exist, generated from each workspace's schema (Core + Metadata APIs)",
+   "url": "https://docs.twenty.com/developers/extend/api",
+   "quote": "Both are available as REST and GraphQL. GraphQL adds batch upserts and the ability to traverse relations in a single query."
+  },
+  {
+   "claim": "OAuth 2.0 is supported with authorization code + PKCE and client credentials, with dynamic client registration via RFC 7591",
+   "url": "https://docs.twenty.com/developers/extend/oauth",
+   "quote": "Twenty implements OAuth 2.0 with authorization code + PKCE for user-facing apps and client credentials for server-to-server access. Clients are registered dynamically via [RFC 7591]"
+  },
+  {
+   "claim": "JWT session-based auth is also documented for web applications",
+   "url": "https://twentyhq-twenty.mintlify.app/developers/api/authentication",
+   "quote": "Secure your API requests with Twenty's authentication system supporting API keys, OAuth tokens, and JWT."
+  },
+  {
+   "claim": "An official MCP server is built in, configured from workspace settings with OAuth or API key auth",
+   "url": "https://github.com/twentyhq/twenty/blob/main/packages/twenty-server/src/engine/core-modules/open-api/utils/base-schema.utils.ts",
+   "quote": "access to your workspace is the **Twenty MCP server**, not this OpenAPI schema.\nThe MCP server exposes typed tools the agent can call directly with proper\nheader-based auth (OAuth or API key), no tokens in URLs."
+  }
+ ],
+ "notes": "Schema-per-tenant API: no static public API reference; per-workspace OpenAPI docs and playground are only available inside the workspace after creating an API key. Official MCP server at {serverUrl}/mcp (single POST endpoint with tool-discovery flow: get_tool_catalog, learn_tools, execute_tool), plus well-known discovery docs (/.well-known/mcp/server-card.json, api-catalog). Rate limits: 100 req/min, batch 60 records. OAuth access tokens expire after 30 minutes per docs. Open-source (AGPL-3.0) and self-hostable, so credentials are obtainable without paid plan; cloud pricing starts at $9/user/mo but doesn't gate API keys.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:39:42+00:00"
+}

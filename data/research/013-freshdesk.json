@@ -1,0 +1,49 @@
+{
+ "app_id": 13,
+ "app": "Freshdesk",
+ "category": "Support and Helpdesk",
+ "one_liner": "Freshworks cloud helpdesk for ticketing and customer support.",
+ "auth_methods": [
+  "api_key",
+  "basic"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.87,
+ "evidence": [
+  {
+   "claim": "REST API with JSON over HTTP and standard verbs; v2 docs list dozens of endpoints (tickets, ticket fields, forms, conversations, etc.)",
+   "url": "https://developers.freshdesk.com/api/",
+   "quote": "Freshdesk's APIs belong to the Representational State Transfer (REST) category."
+  },
+  {
+   "claim": "Authentication via personal API key used as basic-auth username with dummy password",
+   "url": "https://developers.freshdesk.com/api/",
+   "quote": "You can use your personal API key to authenticate the request. If you use the API key, there is no need for a password. You can use any set of characters as a dummy password."
+  },
+  {
+   "claim": "API key is self-serve from the agent's Profile Settings",
+   "url": "https://support.freshdesk.com/support/solutions/articles/225435-where-can-i-find-my-api-key-",
+   "quote": "On the right pane, you will find the API Key"
+  },
+  {
+   "claim": "Legacy free Sprout plan has no API access; current plans list includes Free, Growth, Pro, Enterprise with the article applying to them",
+   "url": "https://support.freshdesk.com/support/solutions/articles/225435-where-can-i-find-my-api-key-",
+   "quote": "Note: If your account is on the Sprout plan, the API key and the API functionality will NOT be available."
+  },
+  {
+   "claim": "Official Freshworks MCP server for Freshdesk exists (EAP), authenticating with API key only",
+   "url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+   "quote": "The Freshworks Model Context Protocol (MCP) server enables AI tools like Cursor and Claude to securely connect and interact with Freshdesk."
+  }
+ ],
+ "notes": "Basic auth requires Base64-encoding 'APIKEY:X'. No OAuth 2.0 for product APIs per Freshworks community staff ('Currently, no Product API from Freshworks offers OAuth 2.0-based API consumption.'). Official MCP server is in EAP and API-key-only, exposing ticket/conversation tools (createTicket, fetchTickets, replyTicket, etc.). Rate limits can be raised by purchasing additional API calls. Sprout (legacy free plan) lacks API access; whether the current Free plan includes API keys is not explicitly stated, though the support article's plan applicability suggests only Sprout is excluded. Some admin endpoints (e.g., /api/v2/admin/ticket_fields) require admin-role API keys. No native GraphQL endpoint.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:41:54+00:00"
+}

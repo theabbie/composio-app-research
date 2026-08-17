@@ -1,0 +1,55 @@
+{
+ "app_id": 15,
+ "app": "Pylon",
+ "category": "Support and Helpdesk",
+ "one_liner": "B2B customer support platform for managing issues, accounts, and contacts.",
+ "auth_methods": [
+  "api_key",
+  "bearer_token",
+  "oauth2"
+ ],
+ "access": "admin_approval",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_with_work",
+ "blocker": "API tokens can only be created by Admin users of an existing Pylon workspace; no free developer tier or self-serve signup is documented (site funnels to 'Book demo').",
+ "confidence": 0.8,
+ "evidence": [
+  {
+   "claim": "API authentication is an API token sent as a Bearer header",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+   "quote": "Authorization: Bearer <token>"
+  },
+  {
+   "claim": "Tokens are self-serve in the dashboard but restricted to Admin users",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/api",
+   "quote": "Only Admin users can create API tokens. To learn more about Admins, see [Roles & User Management]"
+  },
+  {
+   "claim": "Token generation happens in the Pylon dashboard settings",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+   "quote": "Generate an API token in the [Pylon dashboard](https://app.usepylon.com/settings/api-tokens)."
+  },
+  {
+   "claim": "Broad REST API spanning many resource groups",
+   "url": "https://www.scalekit.com/blog/pylon-mcp-vs-api",
+   "quote": "bearer-authenticated interface at https://api.usepylon.com, spanning 22 documented resource groups"
+  },
+  {
+   "claim": "Vendor ships an official MCP server",
+   "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+   "quote": "The Pylon MCP Server exposes Pylon data to AI tools that support the Model Context Protocol"
+  },
+  {
+   "claim": "MCP server is OAuth-only; no API key auth for MCP",
+   "url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server",
+   "quote": "The Pylon MCP server only supports OAuth authentication. API key authentication is not currently available"
+  }
+ ],
+ "notes": "Name collisions in search results: getpylon.com/app.getpylon.com and docs.pylonsync.com are different products and were excluded. Official MCP at https://mcp.usepylon.com uses OAuth 2.0 (AuthKit), streamable HTTP, and must be enabled by an admin (Settings → AI Controls → MCP Server); tools cover issues, accounts, contacts, users. REST surface is broader than MCP — e.g. replying to a customer requires REST-only POST /issues/{id}/reply (per Scalekit). REST tokens are org-scoped, can be restricted by IP range or web domain. Docs are GitBook with llms.txt and .md mirrors, agent-friendly.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:44:05+00:00"
+}

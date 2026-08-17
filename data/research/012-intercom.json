@@ -1,0 +1,54 @@
+{
+ "app_id": 12,
+ "app": "Intercom",
+ "category": "Support and Helpdesk",
+ "one_liner": "Customer messaging, support inbox, and Fin AI helpdesk platform",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "API supports both Access Tokens (private apps) and OAuth (public apps) for authentication",
+   "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+   "quote": "An Access Token is for if you're using the API to access data in your own Intercom workspace"
+  },
+  {
+   "claim": "Access Token provided immediately upon app creation for self-serve development",
+   "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+   "quote": "We provide you with an Access Token as soon as you create an app on your workspace"
+  },
+  {
+   "claim": "Tokens are used as Bearer tokens in Authorization header",
+   "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+   "quote": "provide it as an`Authorization:Bearer` header in your requests"
+  },
+  {
+   "claim": "Official hosted MCP server available with OAuth or Bearer token authentication",
+   "url": "https://developers.intercom.com/docs/guides/mcp",
+   "quote": "Intercom hosts a remote MCP server that follows the authenticated remote MCP specification"
+  },
+  {
+   "claim": "MCP server exposes 13 tools for interacting with Intercom API",
+   "url": "https://developers.intercom.com/docs/guides/mcp",
+   "quote": "The Intercom MCP Server provides **13 tools** for interacting with the Intercom API"
+  },
+  {
+   "claim": "Free development workspace available for building public apps",
+   "url": "https://developers.intercom.com/docs",
+   "quote": "To develop a public app you will need to use a development workspace: sign up here to create your free account"
+  }
+ ],
+ "notes": "OAuth required for public apps accessing other workspaces; Access Tokens sufficient for private workspace automation. Regional endpoints available (US/EU/AU) with separate MCP servers per region.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:40:53+00:00"
+}

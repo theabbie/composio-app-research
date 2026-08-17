@@ -1,0 +1,458 @@
+[
+ {
+  "app_id": 1,
+  "app": "Salesforce",
+  "category": "CRM and Sales",
+  "one_liner": "Cloud CRM platform for sales, service, and customer data management.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "access": "self_serve_free",
+  "api_styles": [
+   "mixed"
+  ],
+  "api_breadth": "broad",
+  "official_mcp": true,
+  "verdict": "buildable_now",
+  "blocker": null,
+  "confidence": 0.97,
+  "evidence": [
+   {
+    "claim": "Salesforce offers a documented public REST API for programmatic data access",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/sforce_rest_api.htm",
+    "quote": "REST API provides you with programmatic access to your data in Salesforce."
+   },
+   {
+    "claim": "API authentication uses OAuth 2.0 via connected/external client apps",
+    "url": "https://help.salesforce.com/s/articleView?id=connected_app_create_api_integration.htm&language=en_US",
+    "quote": "For a connected app to request access, it must be integrated with the Salesforce API using the OAuth 2.0 protocol."
+   },
+   {
+    "claim": "Requests authenticate with an access token used as a bearer token",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_oauth.htm",
+    "quote": "Use the access token (also known as a \u201cbearer token\u201d) that you get from Salesforce CLI to authenticate cURL requests."
+   },
+   {
+    "claim": "Free Developer Edition org gives self-serve credentials for development",
+    "url": "https://developer.salesforce.com/docs/platform/connect-rest-api/guide/quickstart.html",
+    "quote": "Developer Edition provides a free and easy solution so that you can use Salesforce for testing and development."
+   },
+   {
+    "claim": "Salesforce provides official hosted MCP servers plus a GraphQL API",
+    "url": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/overview",
+    "quote": "Give AI agents a secure, governed way to interact with Salesforce data and automation using the Model Context Protocol (MCP)."
+   }
+  ],
+  "notes": "Also offers GraphQL API (single endpoint, schema introspection), Connect REST API, and OAuth client-credentials flow for server-to-server via a dedicated Integration User. Official Hosted MCP Servers (SObject CRUD, Data 360, Tableau Next, custom Apex/Flow tools) exist but standard servers are disabled by default and must be enabled by an org administrator. Production API access requires a paid edition with API enabled (Enterprise/Unlimited/Performance); Developer Edition is free but capped. External client apps are replacing legacy connected apps.",
+  "pass_number": 1,
+  "researched_at": "2026-08-17T09:39:46+00:00"
+ },
+ {
+  "app_id": 2,
+  "app": "HubSpot",
+  "category": "CRM and Sales",
+  "one_liner": "CRM, marketing, sales, and customer service platform",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token",
+   "api_key"
+  ],
+  "access": "self_serve_free",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "official_mcp": true,
+  "verdict": "buildable_now",
+  "blocker": null,
+  "confidence": 0.95,
+  "evidence": [
+   {
+    "claim": "HubSpot apps authenticate via OAuth 2.0 (multi-account) or static access tokens (single account)",
+    "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+    "quote": "OAuth is required for multiple accounts, while static auth access tokens are used for installing in a single account at a time."
+   },
+   {
+    "claim": "Access tokens are sent as Bearer tokens in the HTTP authorization header",
+    "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+    "quote": "This access token is provided using the `Bearer` HTTP authorization header."
+   },
+   {
+    "claim": "Free HubSpot account provides API credentials and a developer test account without a paid subscription",
+    "url": "https://developers.hubspot.com/developer-platform-basics",
+    "quote": "No. You can create a free HubSpot account and build apps without a paid subscription. You'll get access to a developer test account with sample data for testing."
+   },
+   {
+    "claim": "HubSpot offers RESTful APIs plus webhooks for integrations",
+    "url": "https://developers.hubspot.com/developer-platform-basics",
+    "quote": "RESTful APIs, webhooks, and OAuth for any integration"
+   },
+   {
+    "claim": "HubSpot provides official MCP servers for connecting AI agents to CRM data and to the developer platform",
+    "url": "https://developers.hubspot.com/ai-tools/mcp",
+    "quote": "HubSpot offers two distinct MCP (Model Context Protocol) servers \u2014 one for connecting any MCP-compatible AI tool or agent to your CRM, and one for building on the HubSpot Developer Platform."
+   }
+  ],
+  "notes": "Official remote MCP server at mcp.hubspot.com requires OAuth with PKCE; a separate local Developer MCP server runs via the HubSpot CLI. GraphQL is also available for querying CRM/HubDB data (subscription-dependent). OAuth access tokens expire after 30 minutes and are refreshed via refresh tokens. Installing an app into an account requires Super Admin or Marketplace Access permissions, but developers can freely create their own account. Legacy private apps used API keys; new 'service keys' (public beta) allow direct scoped REST calls without OAuth. The 2026-03 release introduced date-versioned endpoints replacing numeric paths like /crm/v3/.",
+  "pass_number": 1,
+  "researched_at": "2026-08-17T09:40:13+00:00"
+ },
+ {
+  "app_id": 3,
+  "app": "Pipedrive",
+  "category": "CRM and Sales",
+  "one_liner": "Sales CRM for managing deals, pipelines, contacts and activities",
+  "auth_methods": [
+   "oauth2",
+   "api_key"
+  ],
+  "access": "self_serve_free",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "official_mcp": true,
+  "verdict": "buildable_now",
+  "blocker": null,
+  "confidence": 0.95,
+  "evidence": [
+   {
+    "claim": "OAuth 2.0 is documented and required for Marketplace apps, with authorize/token endpoints",
+    "url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+    "quote": "Using OAuth 2.0 is necessary for developing apps that are available in the Pipedrive Marketplace."
+   },
+   {
+    "claim": "API token auth via x-api-token header is supported for direct integrations",
+    "url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+    "quote": "The API token must be provided in the `x-api-token` header for all requests"
+   },
+   {
+    "claim": "Free self-serve developer sandbox account provides API credentials",
+    "url": "https://developers.pipedrive.com/",
+    "quote": "Sign up for a Sandbox Account today to begin experimenting and developing in a risk free environment"
+   },
+   {
+    "claim": "RESTful JSON API with OpenAPI 3 specs for v1 and v2, covering most product functionality",
+    "url": "https://developers.pipedrive.com/docs/api/v1",
+    "quote": "Pipedrive's API and extension points cover the majority of our core product's functionality."
+   },
+   {
+    "claim": "Pipedrive offers an official vendor-maintained MCP server for AI assistants",
+    "url": "https://www.pipedrive.com/en/features/mcp-server",
+    "quote": "With Pipedrive MCP, your AI assistant can securely access and act on your CRM data using natural language."
+   }
+  ],
+  "notes": "Official MCP server maintained by Pipedrive connects via OAuth login (no coding needed). Two API versions (v1, v2) with OpenAPI 3 specs; official Node.js and PHP client libraries. Caveat: API token is tied to one user/company and only one active token allowed at a time. OAuth apps register via Developer Hub on the free sandbox account.",
+  "pass_number": 1,
+  "researched_at": "2026-08-17T09:38:14+00:00"
+ },
+ {
+  "app_id": 4,
+  "app": "Attio",
+  "category": "CRM and Sales",
+  "one_liner": "CRM platform with public REST API, OAuth, and hosted MCP server.",
+  "auth_methods": [
+   "oauth2",
+   "api_key",
+   "bearer_token",
+   "basic"
+  ],
+  "access": "self_serve_free",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "official_mcp": true,
+  "verdict": "buildable_now",
+  "blocker": null,
+  "confidence": 0.9,
+  "evidence": [
+   {
+    "claim": "REST API offers two credential types: OAuth 2.0 apps and single-workspace API keys",
+    "url": "https://docs.attio.com/rest-api/guides/authentication",
+    "quote": "You should prefer the OAuth 2.0 flow if building an app for multiple workspaces."
+   },
+   {
+    "claim": "Tokens are passed as Bearer in the Authorization header; HTTP Basic also supported",
+    "url": "https://docs.attio.com/rest-api/guides/authentication",
+    "quote": "Authorization: Bearer <access_token>"
+   },
+   {
+    "claim": "API keys are self-serve and available on every plan, generated by a workspace admin",
+    "url": "https://attio.com/help/reference/apps/generating-an-api-key",
+    "quote": "Available on all plans."
+   },
+   {
+    "claim": "Documented public REST API with full read/write access to the CRM data model",
+    "url": "https://docs.attio.com/rest-api/overview",
+    "quote": "Attio provides a public REST API which exchanges JSON over HTTPS."
+   },
+   {
+    "claim": "Official vendor-hosted MCP server for AI agents",
+    "url": "https://docs.attio.com/mcp/overview",
+    "quote": "Attio MCP is Attio's hosted MCP server that gives AI tools secure access to your Attio workspace."
+   }
+  ],
+  "notes": "Official hosted MCP at https://mcp.attio.com/mcp using OAuth with user-scoped permissions. App SDK additionally exposes a GraphQL API, but it is read-only and client-side only; server-side reads/writes use the REST API. Workspace API keys do not expire and must be created by a workspace admin; OAuth apps and scopes are configured self-serve in the Developer console at build.attio.com.",
+  "pass_number": 1,
+  "researched_at": "2026-08-17T09:40:30+00:00"
+ },
+ {
+  "app_id": 5,
+  "app": "Twenty",
+  "category": "CRM and Sales",
+  "one_liner": "Open-source CRM with auto-generated REST/GraphQL APIs per workspace.",
+  "auth_methods": [
+   "api_key",
+   "bearer_token",
+   "oauth2",
+   "other"
+  ],
+  "access": "self_serve_free",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "official_mcp": true,
+  "verdict": "buildable_now",
+  "blocker": null,
+  "confidence": 0.88,
+  "evidence": [
+   {
+    "claim": "API key creation is self-serve in workspace settings and used as a Bearer token",
+    "url": "https://docs.twenty.com/developers/extend/api",
+    "quote": "Create an API key in **Settings \u2192 API & Webhooks \u2192 + Create key**. Copy it immediately \u2014 it's shown once."
+   },
+   {
+    "claim": "Both REST and GraphQL APIs exist, generated from each workspace's schema (Core + Metadata APIs)",
+    "url": "https://docs.twenty.com/developers/extend/api",
+    "quote": "Both are available as REST and GraphQL. GraphQL adds batch upserts and the ability to traverse relations in a single query."
+   },
+   {
+    "claim": "OAuth 2.0 is supported with authorization code + PKCE and client credentials, with dynamic client registration via RFC 7591",
+    "url": "https://docs.twenty.com/developers/extend/oauth",
+    "quote": "Twenty implements OAuth 2.0 with authorization code + PKCE for user-facing apps and client credentials for server-to-server access. Clients are registered dynamically via [RFC 7591]"
+   },
+   {
+    "claim": "JWT session-based auth is also documented for web applications",
+    "url": "https://twentyhq-twenty.mintlify.app/developers/api/authentication",
+    "quote": "Secure your API requests with Twenty's authentication system supporting API keys, OAuth tokens, and JWT."
+   },
+   {
+    "claim": "An official MCP server is built in, configured from workspace settings with OAuth or API key auth",
+    "url": "https://github.com/twentyhq/twenty/blob/main/packages/twenty-server/src/engine/core-modules/open-api/utils/base-schema.utils.ts",
+    "quote": "access to your workspace is the **Twenty MCP server**, not this OpenAPI schema.\nThe MCP server exposes typed tools the agent can call directly with proper\nheader-based auth (OAuth or API key), no tokens in URLs."
+   }
+  ],
+  "notes": "Schema-per-tenant API: no static public API reference; per-workspace OpenAPI docs and playground are only available inside the workspace after creating an API key. Official MCP server at {serverUrl}/mcp (single POST endpoint with tool-discovery flow: get_tool_catalog, learn_tools, execute_tool), plus well-known discovery docs (/.well-known/mcp/server-card.json, api-catalog). Rate limits: 100 req/min, batch 60 records. OAuth access tokens expire after 30 minutes per docs. Open-source (AGPL-3.0) and self-hostable, so credentials are obtainable without paid plan; cloud pricing starts at $9/user/mo but doesn't gate API keys.",
+  "pass_number": 1,
+  "researched_at": "2026-08-17T09:39:42+00:00"
+ },
+ {
+  "app_id": 6,
+  "app": "Podio",
+  "category": "CRM and Sales",
+  "one_liner": "Collaborative work management platform with customizable CRM apps and workspaces",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "access": "self_serve_free",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "official_mcp": true,
+  "verdict": "buildable_now",
+  "blocker": null,
+  "confidence": 0.92,
+  "evidence": [
+   {
+    "claim": "Podio API uses OAuth2 with four documented flows (server-side, client-side, username/password, app authentication)",
+    "url": "https://developers.podio.com/authentication",
+    "quote": "The Podio API uses the OAuth2 protocol for authentication."
+   },
+   {
+    "claim": "API keys are self-serve from the account settings page after signing up for a Podio account",
+    "url": "https://developers.podio.com/api-key",
+    "quote": "You just have to sign in or sign up with Podio, and go to the API key tab in your settings."
+   },
+   {
+    "claim": "The API is free for both free and premium accounts with identical rate limits",
+    "url": "https://developers.podio.com/index/faq",
+    "quote": "The Podio API is free to use for both premium and free Podio accounts. Both have full access to the API and have the same rate limits."
+   },
+   {
+    "claim": "REST API covers many object types including apps, items, workspaces, organizations, users, tasks, files, comments, webhooks",
+    "url": "https://apis.io/apis/podio/rest-api/",
+    "quote": "REST API providing complete programmatic access to Podio apps, items, workspaces, organizations, users, tasks, files, comments, and webhooks."
+   },
+   {
+    "claim": "Podio provides an official MCP server over Streamable HTTP with OAuth 2.0 endpoints and dynamic client registration",
+    "url": "https://support.sharefile.com/s/article/Podio-MCP-Server-Integration-Guide-ShareFile-1778762090571",
+    "quote": "MCP Server URL: https://mcp.podio.com/mcp"
+   }
+  ],
+  "notes": "Official MCP server at mcp.podio.com supports three credential modes incl. dynamic client registration (RFC 7591). Classic REST API uses non-standard 'Authorization: OAuth2 ACCESS_TOKEN' header rather than Bearer; tokens expire after 8 hours (refresh tokens 28 days). App-authentication flow (app_id + app_token) suits headless/agent scripts. Programmatic access to app tokens requires contacting support. Podio is now owned by Progress/ShareFile; docs still hosted at developers.podio.com.",
+  "pass_number": 1,
+  "researched_at": "2026-08-17T09:40:08+00:00"
+ },
+ {
+  "app_id": 7,
+  "app": "Zoho CRM",
+  "category": "CRM and Sales",
+  "one_liner": "Cloud CRM with REST/GraphQL APIs and official MCP servers",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "access": "self_serve_free",
+  "api_styles": [
+   "mixed"
+  ],
+  "api_breadth": "broad",
+  "official_mcp": true,
+  "verdict": "buildable_now",
+  "blocker": null,
+  "confidence": 0.95,
+  "evidence": [
+   {
+    "claim": "Zoho CRM API authenticates via OAuth 2.0 with access/refresh tokens and a client credentials flow",
+    "url": "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+    "quote": "The Zoho CRM API uses the OAuth 2.0 protocol for authentication."
+   },
+   {
+    "claim": "Access tokens are passed as Bearer tokens in the Authorization header",
+    "url": "https://www.zoho.com/accounts/protocol/oauth.html",
+    "quote": "Zoho's OAuth implementation uses Bearer authentication scheme, hence while making API calls, the access token has to be passed in the Authorization header with the prefix Bearer."
+   },
+   {
+    "claim": "Credentials are self-serve via the Zoho Developer Console",
+    "url": "https://www.zoho.com/crm/developer/docs/api/v8/register-client.html",
+    "quote": "Go to Zoho Developer Console and click on GET STARTED. ... You will receive the client credentials such as Client ID and Client Secret in the Client Secret tab."
+   },
+   {
+    "claim": "A free edition and a free Developer Edition exist, with API access included",
+    "url": "https://www.zoho.com/en-us/crm/zohocrm-pricing.html",
+    "quote": "APIs Connect Zoho CRM to any app and perform actions with 5000 API calls/day."
+   },
+   {
+    "claim": "Zoho CRM offers both REST and GraphQL APIs plus official pre-built MCP servers",
+    "url": "https://www.zoho.com/crm/developer/docs/mcp/overview.html",
+    "quote": "Zoho CRM provides these as pre-built MCP servers, so you don't need to build, host, or maintain any infrastructure."
+   }
+  ],
+  "notes": "Official MCP: four pre-built servers (Cursor, Claude Desktop, VS Code, Windsurf), OAuth-authenticated; MCP calls consume API credits. GraphQL is gated: 'Available in: Enterprise, Zoho One Enterprise, CRM Plus and Ultimate edition' and not in trial versions. Tokens are organization-specific per environment (Production/Sandbox/Developer) and accounts URLs are datacenter-specific. REST V8 covers many modules (Leads, Contacts, Deals, settings, users, templates), so breadth is broad.",
+  "pass_number": 1,
+  "researched_at": "2026-08-17T09:40:25+00:00"
+ },
+ {
+  "app_id": 10,
+  "app": "DealCloud",
+  "category": "CRM and Sales",
+  "one_liner": "CRM for deal, pipeline, and relationship intelligence management.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token",
+   "api_key"
+  ],
+  "access": "admin_approval",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "moderate",
+  "official_mcp": true,
+  "verdict": "gated",
+  "blocker": "API credentials require an existing DealCloud customer site where an org admin enables the 'API' capability for the user's group; no self-serve developer signup or free tier is documented.",
+  "confidence": 0.8,
+  "evidence": [
+   {
+    "claim": "Authentication uses OAuth2 client credentials to obtain a bearer token",
+    "url": "https://api.docs.dealcloud.com/docs/token",
+    "quote": "DealCloud uses the OAuth2 Client Credentials flow to generate a bearer token, which is then used in the HTTP Authentication header for API requests."
+   },
+   {
+    "claim": "API access must be enabled by a workspace admin via user-group permissions",
+    "url": "https://api.docs.dealcloud.com/docs/apikeys",
+    "quote": "To enable API access, ensure the intended user is assigned to a user group with the appropriate permissions. Navigate to Admin > User Management"
+   },
+   {
+    "claim": "Once permitted, users self-serve an API key from their profile",
+    "url": "https://api.docs.dealcloud.com/docs/apikeys",
+    "quote": "Scroll down to the API Key section and click Enable. Then click Copy API Key to Clipboard to copy your API key for use in integrations or API requests."
+   },
+   {
+    "claim": "The public API surface is REST with multiple functional areas and endpoints",
+    "url": "https://api.docs.dealcloud.com/docs",
+    "quote": "Our APIs are organized into functional areas. Each area includes multiple endpoints designed to help you perform specific tasks related to that category."
+   },
+   {
+    "claim": "An official vendor MCP server exists with read-only tools",
+    "url": "https://api.docs.dealcloud.com/mcp/tools",
+    "quote": "All DealCloud MCP tools are currently read-only and do not create, update, or delete data."
+   }
+  ],
+  "notes": "Official DealCloud MCP Server documented, in client preview starting July 2026; MCP auth is a per-user OAuth sign-in flow and tools include GraphQL execute_query/introspect/search_schema. Python SDK (dealcloud_sdk) supports env, JSON, and YAML credential loading. Bearer tokens expire after 900 seconds and must be re-requested. Scopes gate API areas (data, user_management, publish, ri_import, backup). Schema APIs limited to 5 calls/second. Docs assume an existing enterprise DealCloud site; no public signup or free developer tier is mentioned.",
+  "pass_number": 1,
+  "researched_at": "2026-08-17T09:38:49+00:00"
+ },
+ {
+  "app_id": 12,
+  "app": "Intercom",
+  "category": "Support and Helpdesk",
+  "one_liner": "Customer messaging, support inbox, and Fin AI helpdesk platform",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "access": "self_serve_free",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "official_mcp": true,
+  "verdict": "buildable_now",
+  "blocker": null,
+  "confidence": 0.95,
+  "evidence": [
+   {
+    "claim": "API supports both Access Tokens (private apps) and OAuth (public apps) for authentication",
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+    "quote": "An Access Token is for if you're using the API to access data in your own Intercom workspace"
+   },
+   {
+    "claim": "Access Token provided immediately upon app creation for self-serve development",
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+    "quote": "We provide you with an Access Token as soon as you create an app on your workspace"
+   },
+   {
+    "claim": "Tokens are used as Bearer tokens in Authorization header",
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+    "quote": "provide it as an`Authorization:Bearer` header in your requests"
+   },
+   {
+    "claim": "Official hosted MCP server available with OAuth or Bearer token authentication",
+    "url": "https://developers.intercom.com/docs/guides/mcp",
+    "quote": "Intercom hosts a remote MCP server that follows the authenticated remote MCP specification"
+   },
+   {
+    "claim": "MCP server exposes 13 tools for interacting with Intercom API",
+    "url": "https://developers.intercom.com/docs/guides/mcp",
+    "quote": "The Intercom MCP Server provides **13 tools** for interacting with the Intercom API"
+   },
+   {
+    "claim": "Free development workspace available for building public apps",
+    "url": "https://developers.intercom.com/docs",
+    "quote": "To develop a public app you will need to use a development workspace: sign up here to create your free account"
+   }
+  ],
+  "notes": "OAuth required for public apps accessing other workspaces; Access Tokens sufficient for private workspace automation. Regional endpoints available (US/EU/AU) with separate MCP servers per region.",
+  "pass_number": 1,
+  "researched_at": "2026-08-17T09:40:53+00:00"
+ }
+]

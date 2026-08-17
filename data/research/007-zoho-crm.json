@@ -1,0 +1,49 @@
+{
+ "app_id": 7,
+ "app": "Zoho CRM",
+ "category": "CRM and Sales",
+ "one_liner": "Cloud CRM with REST/GraphQL APIs and official MCP servers",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "mixed"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Zoho CRM API authenticates via OAuth 2.0 with access/refresh tokens and a client credentials flow",
+   "url": "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+   "quote": "The Zoho CRM API uses the OAuth 2.0 protocol for authentication."
+  },
+  {
+   "claim": "Access tokens are passed as Bearer tokens in the Authorization header",
+   "url": "https://www.zoho.com/accounts/protocol/oauth.html",
+   "quote": "Zoho's OAuth implementation uses Bearer authentication scheme, hence while making API calls, the access token has to be passed in the Authorization header with the prefix Bearer."
+  },
+  {
+   "claim": "Credentials are self-serve via the Zoho Developer Console",
+   "url": "https://www.zoho.com/crm/developer/docs/api/v8/register-client.html",
+   "quote": "Go to Zoho Developer Console and click on GET STARTED. ... You will receive the client credentials such as Client ID and Client Secret in the Client Secret tab."
+  },
+  {
+   "claim": "A free edition and a free Developer Edition exist, with API access included",
+   "url": "https://www.zoho.com/en-us/crm/zohocrm-pricing.html",
+   "quote": "APIs Connect Zoho CRM to any app and perform actions with 5000 API calls/day."
+  },
+  {
+   "claim": "Zoho CRM offers both REST and GraphQL APIs plus official pre-built MCP servers",
+   "url": "https://www.zoho.com/crm/developer/docs/mcp/overview.html",
+   "quote": "Zoho CRM provides these as pre-built MCP servers, so you don't need to build, host, or maintain any infrastructure."
+  }
+ ],
+ "notes": "Official MCP: four pre-built servers (Cursor, Claude Desktop, VS Code, Windsurf), OAuth-authenticated; MCP calls consume API credits. GraphQL is gated: 'Available in: Enterprise, Zoho One Enterprise, CRM Plus and Ultimate edition' and not in trial versions. Tokens are organization-specific per environment (Production/Sandbox/Developer) and accounts URLs are datacenter-specific. REST V8 covers many modules (Leads, Contacts, Deals, settings, users, templates), so breadth is broad.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:40:25+00:00"
+}

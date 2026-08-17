@@ -1,0 +1,50 @@
+{
+ "app_id": 14,
+ "app": "Front",
+ "category": "Support and Helpdesk",
+ "one_liner": "Shared inbox and customer communication platform for support teams.",
+ "auth_methods": [
+  "oauth2",
+  "api_key",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.92,
+ "evidence": [
+  {
+   "claim": "Core API authenticates via Bearer tokens sent in the Authorization header",
+   "url": "https://dev.frontapp.com/docs/authentication",
+   "quote": "The Core API uses Bearer tokens to authenticate its user."
+  },
+  {
+   "claim": "Two credential paths exist: self-serve API tokens or an OAuth 2.0 implementation",
+   "url": "https://dev.frontapp.com/docs/authentication",
+   "quote": "There are two ways to get a Bearer token — through API tokens in your settings or through an OAuth implementation"
+  },
+  {
+   "claim": "Developers can self-serve via a free developer account to start building integrations",
+   "url": "https://help.front.com/en/articles/2309",
+   "quote": "Follow the instructions on the Developer Portal to create a free developer account to begin building integrations on the Front Platform."
+  },
+  {
+   "claim": "The Core API offers broad CRUD coverage across many Front resource types",
+   "url": "https://dev.frontapp.com/docs/welcome",
+   "quote": "allows you to read, create, update, and delete a wide range of data across Front’s various entities, from Contacts to Comments to Tags"
+  },
+  {
+   "claim": "Front offers an official hosted MCP server for AI assistants, currently in open beta",
+   "url": "https://help.front.com/en/articles/4883136",
+   "quote": "Front's MCP server lets you and your teammates connect Front to AI assistants like Claude, ChatGPT, Gemini, and Microsoft Copilot."
+  }
+ ],
+ "notes": "Managing API tokens requires being a Front company admin, and end users authorizing OAuth apps must be admins — but a free developer account makes you admin of your own instance, so this does not block development. OAuth is mandatory for public App Store integrations unless Front grants an exception. Official MCP server (open beta) is hosted at mcp.frontapp.com/mcp using OAuth 2.1 + PKCE with user-scoped tokens; an older MCP beta used Core API tokens with company-wide access. Platform also includes Plugin SDK, Channels API, Connectors, webhooks, and Chat Widget beyond the REST Core API (base host api2.frontapp.com).",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:42:39+00:00"
+}

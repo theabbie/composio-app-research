@@ -1,0 +1,49 @@
+{
+ "app_id": 95,
+ "app": "Reducto",
+ "category": "AI, Research and Media-native",
+ "one_liner": "AI document parsing API turning PDFs into LLM-ready structured data",
+ "auth_methods": [
+  "api_key",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "API key created in free Studio account authenticates requests",
+   "url": "https://docs.reducto.ai/agent-guide",
+   "quote": "Create a free account at [studio.reducto.ai](https://studio.reducto.ai/)"
+  },
+  {
+   "claim": "API key is sent as a Bearer token in the Authorization header",
+   "url": "https://docs.reducto.ai/agent-guide",
+   "quote": "Authorization: Bearer $REDUCTO_API_KEY"
+  },
+  {
+   "claim": "REST API with multiple document-processing endpoints (parse, extract, split, edit, classify, upload, async jobs)",
+   "url": "https://docs.reducto.ai/agent-guide",
+   "quote": "Process asynchronously with webhooks | `/parse_async`, `/extract_async`, `/split_async`, `/edit_async`"
+  },
+  {
+   "claim": "Reducto's own docs ship an official MCP server for tool-style agent calls",
+   "url": "https://docs.reducto.ai/agent-guide",
+   "quote": "Agent should call Reducto as tools | [MCP server](https://docs.reducto.ai/mcp-server)"
+  },
+  {
+   "claim": "Official Python, Node.js, and Go SDKs plus CLI exist; SDKs auto-read REDUCTO_API_KEY",
+   "url": "https://docs.reducto.ai/agent-guide",
+   "quote": "**SDKs:** Python (`pip install reductoai`), Node.js (`npm install reductoai`), Go (`go get github.com/reductoai/reducto-go-sdk`)"
+  }
+ ],
+ "notes": "Vendor documents a Reducto MCP Server page in its own docs (docs.reducto.ai/mcp-server) and an 'Agent Guide' purpose-built for coding agents. Free account gives API keys; billing is usage/credit-based via Stripe with paid monthly/yearly plans, so heavy use costs money. Supports async endpoints with webhooks, usage export API, on-prem/hybrid deployment, and 100MB direct upload (5GB via presigned URL).",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:35:46+00:00"
+}

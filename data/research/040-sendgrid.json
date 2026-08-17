@@ -1,0 +1,49 @@
+{
+ "app_id": 40,
+ "app": "SendGrid",
+ "category": "Marketing, Ads, Email and Social",
+ "one_liner": "Cloud email delivery platform for transactional and marketing email at scale",
+ "auth_methods": [
+  "api_key",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": false,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "Authentication is via API keys created in the SendGrid console",
+   "url": "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/authentication",
+   "quote": "Authenticate to the Twilio SendGrid API by creating an API Key in the Settings section of the Twilio SendGrid console"
+  },
+  {
+   "claim": "The API key is sent as a Bearer token on every request; no OAuth flow exists",
+   "url": "https://developers.frontegg.com/agen-for-work/connectors/marketplace/sendgrid",
+   "quote": "SendGrid authenticates API requests with a static API key, sent on every request as the `Authorization: Bearer <key>` header."
+  },
+  {
+   "claim": "The API is RESTful, with SMTP relay also available",
+   "url": "https://www.twilio.com/en-us/products/email-api",
+   "quote": "The SendGrid Email API enables businesses to create, send, and manage emails at scale through RESTful APIs or SMTP relay."
+  },
+  {
+   "claim": "Self-serve account signup is publicly available",
+   "url": "https://login.sendgrid.com/",
+   "quote": "Don't have a Twilio SendGrid account? Sign up now!"
+  },
+  {
+   "claim": "No official SendGrid MCP server exists; only community servers",
+   "url": "https://www.usecarly.com/blog/sendgrid-mcp/",
+   "quote": "There's no official SendGrid MCP server, and Twilio's alpha MCP covers none of SendGrid's APIs."
+  }
+ ],
+ "notes": "API keys support Full Access or Custom Access scoping and are shown only once at creation. SMTP relay uses username 'apikey' with the API key as password (basic-style auth). Sending requires a verified Sender Identity or the API returns 403. Official docs cover a large v3 surface (mail send, marketing contacts, subusers, inbound parse, templates, stats). Twilio's own blog only shows how to build a community MCP server; multiple third-party MCP servers (Garoth/sendgrid-mcp, Pipedream) exist but are not vendor-official.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:14:18+00:00"
+}

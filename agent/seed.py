@@ -36,7 +36,9 @@ def parse_assignment(markdown: str) -> list[AppSeed]:
         if re.fullmatch(r"\d{1,3}", text) and 1 <= int(text) <= EXPECTED_COUNT:
             if cursor + 2 >= len(cells):
                 break
-            app_name = cells[cursor + 1][0]
+            app_cell = cells[cursor + 1][0]
+            app_link = LINK_CELL.match(app_cell)
+            app_name = app_link.group(1) if app_link else app_cell
             website_cell = cells[cursor + 2][0]
             link = LINK_CELL.match(website_cell)
             if link:

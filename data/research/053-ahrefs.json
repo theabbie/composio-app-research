@@ -1,0 +1,49 @@
+{
+ "app_id": 53,
+ "app": "Ahrefs",
+ "category": "Data, SEO and Scraping",
+ "one_liner": "SEO platform exposing backlink, keyword, and ranking data via API",
+ "auth_methods": [
+  "api_key",
+  "oauth2"
+ ],
+ "access": "paid_plan_required",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_with_work",
+ "blocker": "Full API access requires an eligible paid Ahrefs plan; non-eligible plans get only limited free test queries",
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "API key authentication; keys created/managed by workspace owners and admins",
+   "url": "https://docs.ahrefs.com/en/api/docs/introduction",
+   "quote": "To send requests to Ahrefs API, you'll need an API key. Only workspace owners and admins can create and manage API keys."
+  },
+  {
+   "claim": "OAuth 2.0 supported for third-party integrations via Ahrefs Connect",
+   "url": "https://docs.ahrefs.com/en/ahrefs-connect/docs/oauth-guide",
+   "quote": "All API calls require authorization and are made on behalf of an authorized Ahrefs user. To do this, your app must obtain an API access token for that user."
+  },
+  {
+   "claim": "Full API access is gated to eligible paid plans; other plans get only free test queries",
+   "url": "https://docs.ahrefs.com/en/api/docs/introduction",
+   "quote": "Ahrefs API is available on [eligible paid plans](https://ahrefs.com/pricing). On all other plans, you'll still have access to a [limited set of free test queries]"
+  },
+  {
+   "claim": "Broad REST API v3 surface across many product areas, with OpenAPI spec",
+   "url": "https://docs.ahrefs.com/en/api/docs/introduction",
+   "quote": "Currently, API v3 allows you to pull data from the Site Explorer, Keywords Explorer, SERP Overview, Rank Tracker, Site Audit, Brand Radar and Social Media Management endpoints"
+  },
+  {
+   "claim": "Vendor ships an official hosted MCP server",
+   "url": "https://docs.ahrefs.com/en/mcp/docs/introduction",
+   "quote": "Ahrefs provides a hosted MCP server that allows users with a Lite plan or higher to connect their Ahrefs account to supported AI tools."
+  }
+ ],
+ "notes": "Official hosted MCP server documented on vendor docs (Lite plan+). Usage-based pricing: most endpoints consume API units (min 50 units/request); consumed units are non-refundable. Ahrefs Connect OAuth apps start Inactive and need approval/activation for production. Third-party blogs conflict on which plans include API access (one claims Enterprise at $1,499/mo, another says bundled from Lite $129/mo); official docs only state 'eligible paid plans'. Free test queries allow development without consuming units.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:19:10+00:00"
+}

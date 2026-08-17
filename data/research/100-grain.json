@@ -1,0 +1,50 @@
+{
+ "app_id": 100,
+ "app": "Grain",
+ "category": "AI, Research and Media-native",
+ "one_liner": "AI notetaker that records, transcribes, and summarizes team meetings.",
+ "auth_methods": [
+  "oauth2",
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest",
+  "graphql"
+ ],
+ "api_breadth": "moderate",
+ "official_mcp": false,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.68,
+ "evidence": [
+  {
+   "claim": "Personal Access Tokens for the API are self-serve, generated in Grain app settings",
+   "url": "https://developers.grain.com/",
+   "quote": "PATs can be generated here: [https://grain.com/app/settings/integrations?tab=api](https://grain.com/app/settings/integrations?tab=api)"
+  },
+  {
+   "claim": "The public API also supports OAuth2 Authorization Code flow with PKCE for third-party integrations",
+   "url": "https://developers.grain.com/",
+   "quote": "The API supports a standard OAuth2 Authorization Code flow, including the PKCE extension for client-side only authentication."
+  },
+  {
+   "claim": "Documented REST endpoints cover recordings, transcripts, upload/download, tags, sharing, hooks, users, teams, and meeting types",
+   "url": "https://developers.grain.com/",
+   "quote": "*   [Get Recording Transcript (json)](https://developers.grain.com/#get-recording-transcript-json)"
+  },
+  {
+   "claim": "Grain has a free-forever plan, so credential generation is not tied to payment",
+   "url": "https://grain.com/",
+   "quote": "Free forever"
+  },
+  {
+   "claim": "Grain's official site references a GraphQL API and TypeScript SDK for developers",
+   "url": "https://grain.com/contact",
+   "quote": "Learn how to use the GraphQL API and TypeScript SDK"
+  }
+ ],
+ "notes": "v1 API is being sunset ('we don't recommend usage of v1 anymore'); build on v2. Workspace Access Tokens grant ALL DATA in the workspace and are generated only 'by users with access', implying an admin/role gate for workspace scope. Nango (third-party) claims OAuth developer access is 'limited to select partners', so OAuth app registration may be gated even though PATs are self-serve. Homepage touts Claude/ChatGPT export and 'Claude accessing Grain connectors', but no official MCP server is documented in the supplied material.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:46:04+00:00"
+}

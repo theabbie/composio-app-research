@@ -1,0 +1,50 @@
+{
+ "app_id": 74,
+ "app": "Jira",
+ "category": "Productivity and Project Management",
+ "one_liner": "Cloud issue tracking and agile project management platform",
+ "auth_methods": [
+  "oauth2",
+  "api_key",
+  "basic"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Jira Cloud REST API supports basic authentication with an Atlassian account email and API token; password auth is deprecated",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/",
+   "quote": "authenticate themselves using **basic authentication** with an [Atlassian account] email address and [API token]. Authentication using passwords has been deprecated."
+  },
+  {
+   "claim": "Users self-serve API tokens by generating them for their Atlassian account",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/",
+   "quote": "You generate an API token for your Atlassian account and use it to authenticate anywhere where you would have used a password."
+  },
+  {
+   "claim": "OAuth 2.0 (3LO) authorization code grant apps are self-serve via the Atlassian developer console",
+   "url": "https://developer.atlassian.com/cloud/confluence/oauth-2-3lo-apps/",
+   "quote": "OAuth 2.0 (3LO) apps are created and managed in the [developer console](https://developer.atlassian.com/console/myapps/)."
+  },
+  {
+   "claim": "Atlassian officially ships an MCP server covering Jira",
+   "url": "https://github.com/atlassian/atlassian-mcp-server",
+   "quote": "The official Model Context Protocol (MCP) server for Atlassian: a cloud-hosted bridge that gives your AI tools secure, real-time access to Jira, Confluence,"
+  },
+  {
+   "claim": "The Jira Cloud platform REST API is documented in v2 and v3 with broad resources, plus a separate Jira Software Cloud REST API",
+   "url": "https://developer.atlassian.com/cloud/jira/software/rest/",
+   "quote": "This page documents the REST resources available in Jira Software Cloud, along with expected HTTP response codes and sample requests."
+  }
+ ],
+ "notes": "Atlassian policy gotcha: 'Apps that collect API tokens or instruct customers to create individual 3LO apps don't comply with our Security requirements' — integrations should ship a single distributable 3LO OAuth app. Also Forge (OAuth 2.0) and Connect (JWT) app frameworks exist, Jira Data Center uses OAuth 1.0a, and CAPTCHA after failed logins can block basic auth. Official remote MCP server announced via Atlassian blog ('Remote MCP Server') and github.com/atlassian/atlassian-mcp-server.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:26:45+00:00"
+}

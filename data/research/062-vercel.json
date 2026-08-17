@@ -1,0 +1,50 @@
+{
+ "app_id": 62,
+ "app": "Vercel",
+ "category": "Developer, Infra and Data platforms",
+ "one_liner": "AI cloud platform for deploying and managing web applications.",
+ "auth_methods": [
+  "bearer_token",
+  "oauth2",
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Vercel API authenticates via bearer access tokens created in account settings.",
+   "url": "https://vercel.com/docs/rest-api",
+   "quote": "Vercel Access Tokens are required to authenticate and use the Vercel API. Include the token in the `Authorization`header:"
+  },
+  {
+   "claim": "The API is a REST HTTP service under api.vercel.com.",
+   "url": "https://vercel.com/docs/rest-api",
+   "quote": "The API is exposed as an HTTP/1 and HTTP/2 service over SSL. All endpoints live under the URL`https://api.vercel.com` and follow the REST architecture."
+  },
+  {
+   "claim": "The REST API spans many resource groups, indicating broad surface.",
+   "url": "https://vercel.com/docs/rest-api",
+   "quote": "Deployments \n*   DNS \n*   Domains \n*   Domains Registrar \n*   Drains \n*   Edge Cache"
+  },
+  {
+   "claim": "Vercel ships an official hosted MCP server with OAuth.",
+   "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
+   "quote": "Vercel MCP is Vercel's official MCP server. It's a remote MCP with OAuth that gives AI tools secure access to your Vercel projects available at:"
+  },
+  {
+   "claim": "Free Hobby plan exists, so credentials are self-serve on a free tier.",
+   "url": "https://vercel.com/pricing",
+   "quote": "Popular $20/mo. Starting at $0.128 per hour"
+  }
+ ],
+ "notes": "Official MCP server at mcp.vercel.com documented in Vercel docs and blog. AI Gateway uses separate API keys or OIDC tokens. Free Hobby plan available; Pro starts at $20/mo; access tokens created self-serve in account settings on any plan.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:22:50+00:00"
+}

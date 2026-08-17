@@ -1,0 +1,50 @@
+{
+ "app_id": 77,
+ "app": "ClickUp",
+ "category": "Productivity and Project Management",
+ "one_liner": "Work management platform for tasks, docs, goals, and chat.",
+ "auth_methods": [
+  "api_key",
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "API requires auth via personal API token or OAuth 2.0 (authorization code, Bearer header)",
+   "url": "https://developer.clickup.com/docs/authentication",
+   "quote": "To allow others to use your app, implement the OAuth2 flow so each user has their own token for accessing their ClickUp resources."
+  },
+  {
+   "claim": "Personal API tokens can be self-generated from user settings on any plan",
+   "url": "https://help.clickup.com/hc/en-us/articles/6303422883095-Create-your-own-app-with-the-ClickUp-API",
+   "quote": "The ClickUp API is available on all ClickUp plans. Members and limited members with full edit permissions can use personal API tokens."
+  },
+  {
+   "claim": "REST API v2 (with some v3 endpoints) covers many resource groups including Goals, Guests, Folders, Comments",
+   "url": "https://developer.clickup.com/reference/getaccesstoken",
+   "quote": "Get Goals get](https://developer.clickup.com/reference/getgoals)"
+  },
+  {
+   "claim": "ClickUp officially documents and hosts an MCP server on its developer site",
+   "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+   "quote": "Our MCP server URL is https://mcp.clickup.com/mcp . What you can do. With ClickUp's MCP server, you can: Orchestrate task workflows: Manage tasks with assignees"
+  },
+  {
+   "claim": "Creating OAuth apps is restricted to Workspace owners or admins",
+   "url": "https://developer.clickup.com/docs/authentication",
+   "quote": "Only Workspace owners or admins can create OAuth apps."
+  }
+ ],
+ "notes": "Personal tokens (pk_ prefix) never expire and are sent raw in the Authorization header, while OAuth access tokens use Bearer. API v3 is rolling out alongside v2. Rate limits and some endpoints vary by Workspace plan. Developer site offers an llms.txt index of docs and OpenAPI endpoints for AI agents. Creating OAuth apps requires Workspace owner/admin rights, though personal tokens do not.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:28:22+00:00"
+}

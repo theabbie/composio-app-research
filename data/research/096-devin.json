@@ -1,0 +1,49 @@
+{
+ "app_id": 96,
+ "app": "Devin",
+ "category": "AI, Research and Media-native",
+ "one_liner": "Autonomous AI software engineer that writes, runs, and tests code.",
+ "auth_methods": [
+  "api_key",
+  "bearer_token"
+ ],
+ "access": "paid_plan_required",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "official_mcp": true,
+ "verdict": "buildable_with_work",
+ "blocker": "API credentials require a Devin account on an Individual or Teams plan; no free tier or trial is documented in the supplied material.",
+ "confidence": 0.75,
+ "evidence": [
+  {
+   "claim": "Devin offers a documented public API for integrations and automation",
+   "url": "https://docs.devin.ai/api-reference/overview",
+   "quote": "The Devin API enables you to integrate Devin into your applications, automate workflows, and build powerful tools."
+  },
+  {
+   "claim": "REST API split into organization and enterprise scopes covering sessions, knowledge, playbooks, secrets, and more",
+   "url": "https://docs.devin.ai/api-reference/overview",
+   "quote": "**Base URL:**`https://api.devin.ai/v3/organizations/*`For managing resources within a single organization — sessions, knowledge, playbooks, secrets, and more."
+  },
+  {
+   "claim": "Authentication uses API keys (service user keys or personal access tokens) sent as Bearer tokens in the Authorization header",
+   "url": "https://docs.devin.ai/api-reference/authentication",
+   "quote": "All API credentials use the `cog_` prefix format. Include your token in the `Authorization` header of every request:"
+  },
+  {
+   "claim": "Access is self-serve signup but tied to paid Individual or Teams plans; no free tier documented",
+   "url": "https://docs.devin.ai/get-started/devin-intro",
+   "quote": "To access Devin, sign up at [app.devin.ai](https://app.devin.ai/). Individual and Teams plans are available."
+  },
+  {
+   "claim": "Vendor's own docs document a Devin MCP server requiring cog_-prefixed service user keys",
+   "url": "https://docs.devin.ai/api-reference/authentication",
+   "quote": "with the [Devin MCP](https://docs.devin.ai/work-with-devin/devin-mcp) — only `cog_`-prefixed keys are supported"
+  }
+ ],
+ "notes": "Vendor-documented Devin MCP exists at docs.devin.ai/work-with-devin/devin-mcp and only supports cog_-prefixed service user keys (legacy apk_ keys rejected). v1 and v2 legacy APIs are deprecated but functional; v3 adds RBAC, session attribution via create_as_user_id, and cursor pagination. Enterprise API scope (/v3/enterprise/*) is restricted to enterprise customers. PATs are governed by an enterprise policy disabled by default. Material does not state pricing or whether any free trial exists, so paid_plan_required is inferred from the paid Individual/Teams plan structure.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:37:01+00:00"
+}

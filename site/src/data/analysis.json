@@ -1,93 +1,434 @@
 {
- "total_apps": 9,
+ "total_apps": 100,
  "auth_distribution": {
-  "oauth2": 9,
-  "bearer_token": 8,
-  "api_key": 5,
-  "basic": 1,
-  "other": 1
+  "oauth2": 72,
+  "bearer_token": 64,
+  "api_key": 64,
+  "basic": 18,
+  "other": 10,
+  "session_cookie": 3,
+  "none_public": 2,
+  "unknown": 2
  },
  "access_distribution": {
-  "self_serve_free": 8,
-  "admin_approval": 1
+  "self_serve_free": 68,
+  "paid_plan_required": 13,
+  "unknown": 7,
+  "self_serve_trial": 5,
+  "contact_sales": 4,
+  "admin_approval": 2,
+  "partner_gated": 1
  },
  "verdict_distribution": {
-  "buildable_now": 8,
-  "gated": 1
+  "buildable_now": 73,
+  "buildable_with_work": 19,
+  "gated": 7,
+  "unknown": 1
  },
  "api_breadth_distribution": {
-  "broad": 8,
-  "moderate": 1
+  "broad": 75,
+  "moderate": 14,
+  "narrow": 6,
+  "unknown": 4,
+  "none": 1
  },
  "api_style_distribution": {
-  "rest": 7,
-  "graphql": 4,
-  "mixed": 2
+  "rest": 88,
+  "graphql": 14,
+  "mixed": 6,
+  "unknown": 2,
+  "none": 2,
+  "soap": 1
  },
  "by_category": {
+  "AI, Research and Media-native": {
+   "apps": 10,
+   "self_serve": 5,
+   "gated": 5,
+   "buildable_now": 5,
+   "self_serve_rate": 0.5,
+   "buildable_rate": 0.5
+  },
   "CRM and Sales": {
-   "apps": 8,
+   "apps": 10,
    "self_serve": 7,
    "gated": 1,
-   "buildable_now": 7,
-   "self_serve_rate": 0.875,
-   "buildable_rate": 0.875
+   "buildable_now": 9,
+   "self_serve_rate": 0.7,
+   "buildable_rate": 0.9
+  },
+  "Communications and Messaging": {
+   "apps": 10,
+   "self_serve": 9,
+   "gated": 1,
+   "buildable_now": 9,
+   "self_serve_rate": 0.9,
+   "buildable_rate": 0.9
+  },
+  "Data, SEO and Scraping": {
+   "apps": 10,
+   "self_serve": 6,
+   "gated": 3,
+   "buildable_now": 6,
+   "self_serve_rate": 0.6,
+   "buildable_rate": 0.6
+  },
+  "Developer, Infra and Data platforms": {
+   "apps": 10,
+   "self_serve": 8,
+   "gated": 0,
+   "buildable_now": 10,
+   "self_serve_rate": 0.8,
+   "buildable_rate": 1.0
+  },
+  "Ecommerce": {
+   "apps": 10,
+   "self_serve": 7,
+   "gated": 2,
+   "buildable_now": 6,
+   "self_serve_rate": 0.7,
+   "buildable_rate": 0.6
+  },
+  "Finance and Fintech": {
+   "apps": 10,
+   "self_serve": 8,
+   "gated": 1,
+   "buildable_now": 8,
+   "self_serve_rate": 0.8,
+   "buildable_rate": 0.8
+  },
+  "Marketing, Ads, Email and Social": {
+   "apps": 10,
+   "self_serve": 8,
+   "gated": 2,
+   "buildable_now": 5,
+   "self_serve_rate": 0.8,
+   "buildable_rate": 0.5
+  },
+  "Productivity and Project Management": {
+   "apps": 10,
+   "self_serve": 9,
+   "gated": 1,
+   "buildable_now": 9,
+   "self_serve_rate": 0.9,
+   "buildable_rate": 0.9
   },
   "Support and Helpdesk": {
-   "apps": 1,
-   "self_serve": 1,
-   "gated": 0,
-   "buildable_now": 1,
-   "self_serve_rate": 1.0,
-   "buildable_rate": 1.0
+   "apps": 10,
+   "self_serve": 6,
+   "gated": 4,
+   "buildable_now": 6,
+   "self_serve_rate": 0.6,
+   "buildable_rate": 0.6
   }
  },
- "self_serve_rate": 0.889,
- "gated_rate": 0.111,
- "buildable_now_rate": 0.889,
+ "self_serve_rate": 0.73,
+ "gated_rate": 0.2,
+ "buildable_now_rate": 0.73,
  "official_mcp_apps": [
+  "Ahrefs",
+  "Aircall",
+  "Airtable",
+  "Amazon Selling Partner",
+  "Apify",
+  "Asana",
   "Attio",
+  "BigCommerce",
+  "Brex",
+  "Bright Data",
+  "Clay",
+  "ClickUp",
+  "Close",
+  "Cloudflare",
+  "Coda",
+  "Consensus",
+  "DataForSEO",
+  "Datadog",
   "DealCloud",
+  "Devin",
+  "Firecrawl",
+  "Freshdesk",
+  "Front",
+  "GitHub",
+  "GoHighLevel",
+  "Google Ads",
+  "Gorgias",
+  "Help Scout",
   "HubSpot",
   "Intercom",
+  "Jira",
+  "Klaviyo",
+  "Lark (Larksuite)",
+  "Linear",
+  "LiveAgent",
+  "Mailchimp",
+  "Mermaid CLI",
+  "Meta Ads",
+  "Monday.com",
+  "MongoDB Atlas",
+  "MrScraper",
+  "Neo4j",
+  "Netlify",
+  "Notion",
+  "Otter AI",
   "Pipedrive",
+  "Plaid",
+  "Plain",
   "Podio",
+  "Pumble",
+  "Pylon",
+  "QuickBooks",
+  "Ramp",
+  "Reducto",
+  "SE Ranking",
   "Salesforce",
+  "Salesforce Commerce Cloud",
+  "Sentry",
+  "Shopify",
+  "Slack",
+  "Smartsheet",
+  "Snowflake",
+  "Stripe",
+  "Supabase",
   "Twenty",
-  "Zoho CRM"
+  "Twilio",
+  "Vercel",
+  "Vonage",
+  "WooCommerce",
+  "Xero",
+  "YouTube Transcript",
+  "Zendesk",
+  "Zoho CRM",
+  "Zoho Cliq",
+  "higgsfield",
+  "systeme.io"
  ],
  "easy_wins": [
+  "Airtable",
+  "Apify",
+  "Asana",
   "Attio",
+  "BigCommerce",
+  "Binance",
+  "Brex",
+  "Bright Data",
+  "ClickUp",
+  "Cloudflare",
+  "Coda",
+  "DataForSEO",
+  "Discord",
+  "Ecwid",
+  "Fathom",
+  "Firecrawl",
+  "Freshdesk",
+  "Front",
+  "GitHub",
+  "Gorgias",
+  "Grain",
+  "Gumroad",
+  "Harvest",
   "HubSpot",
   "Intercom",
+  "Jira",
+  "Klaviyo",
+  "Lark (Larksuite)",
+  "Linear",
+  "LiveAgent",
+  "Magento (Adobe Commerce)",
+  "Mailchimp",
+  "Mermaid CLI",
+  "Monday.com",
+  "MongoDB Atlas",
+  "Neo4j",
+  "Netlify",
+  "Notion",
+  "Paygent Connect",
   "Pipedrive",
+  "Plaid",
+  "Plain",
   "Podio",
+  "Pumble",
+  "QuickBooks",
+  "Ramp",
+  "Reducto",
+  "SE Ranking",
   "Salesforce",
+  "SendGrid",
+  "Sentry",
+  "Shopify",
+  "Slack",
+  "Stripe",
+  "Supabase",
+  "Telegram",
+  "Threads (Meta)",
   "Twenty",
-  "Zoho CRM"
+  "Twilio",
+  "Vercel",
+  "Vonage",
+  "WhatsApp Business",
+  "WooCommerce",
+  "Xero",
+  "YouTube Transcript",
+  "Zoho CRM",
+  "Zoho Cliq",
+  "systeme.io"
  ],
  "needs_outreach": [
+  {
+   "app": "Ahrefs",
+   "category": "Data, SEO and Scraping",
+   "access": "paid_plan_required",
+   "blocker": "Full API access requires an eligible paid Ahrefs plan; non-eligible plans get only limited free test queries"
+  },
+  {
+   "app": "Aircall",
+   "category": "Communications and Messaging",
+   "access": "paid_plan_required",
+   "blocker": "API keys are generated inside an Aircall customer account and no free developer tier is documented; OAuth for multi-customer apps additionally requires an approved tech-partner application."
+  },
+  {
+   "app": "Clay",
+   "category": "Data, SEO and Scraping",
+   "access": "paid_plan_required",
+   "blocker": "API/HTTP API access reportedly requires a paid plan (~$495/mo after Explorer tier removal); official docs cover only narrow table-lookup API key usage"
+  },
+  {
+   "app": "Consensus",
+   "category": "AI, Research and Media-native",
+   "access": "contact_sales",
+   "blocker": "API access is application-only with custom sales pricing ($0.10/call plus platform fee); no self-serve credentials"
+  },
   {
    "app": "DealCloud",
    "category": "CRM and Sales",
    "access": "admin_approval",
    "blocker": "API credentials require an existing DealCloud customer site where an org admin enables the 'API' capability for the user's group; no self-serve developer signup or free tier is documented."
+  },
+  {
+   "app": "Devin",
+   "category": "AI, Research and Media-native",
+   "access": "paid_plan_required",
+   "blocker": "API credentials require a Devin account on an Individual or Teams plan; no free tier or trial is documented in the supplied material."
+  },
+  {
+   "app": "Gladly",
+   "category": "Support and Helpdesk",
+   "access": "paid_plan_required",
+   "blocker": "API tokens are created inside a Gladly instance, which requires a paid Gladly account; no free tier or self-serve developer signup is documented."
+  },
+  {
+   "app": "GoHighLevel",
+   "category": "Marketing, Ads, Email and Social",
+   "access": "paid_plan_required",
+   "blocker": "API credentials require a paid plan (Starter $97/mo+); new API key generation is being removed in favor of OAuth; no free developer tier documented"
+  },
+  {
+   "app": "Help Scout",
+   "category": "Support and Helpdesk",
+   "access": "paid_plan_required",
+   "blocker": "API access requires a paid plan; the Free plan does not include API access or integrations"
+  },
+  {
+   "app": "LinkedIn Ads",
+   "category": "Marketing, Ads, Email and Social",
+   "access": "partner_gated",
+   "blocker": "Advertising API is a vetted product: developers must apply via the Developer Portal and be approved by LinkedIn before scopes like r_ads/rw_ads are usable."
+  },
+  {
+   "app": "NotebookLM",
+   "category": "AI, Research and Media-native",
+   "access": "paid_plan_required",
+   "blocker": "API requires paid Gemini Notebook Enterprise licenses plus org admin setup (IdP, IAM roles); no free/self-serve consumer API"
+  },
+  {
+   "app": "Otter AI",
+   "category": "AI, Research and Media-native",
+   "access": "contact_sales",
+   "blocker": "Public API is restricted to Enterprise workspaces and must be enabled by an Otter account manager"
+  },
+  {
+   "app": "PitchBook",
+   "category": "Finance and Fintech",
+   "access": "contact_sales",
+   "blocker": "API access requires a PitchBook contract with quote-only pricing; API docs are visible only to contracted clients"
+  },
+  {
+   "app": "Pylon",
+   "category": "Support and Helpdesk",
+   "access": "admin_approval",
+   "blocker": "API tokens can only be created by Admin users of an existing Pylon workspace; no free developer tier or self-serve signup is documented (site funnels to 'Book demo')."
+  },
+  {
+   "app": "Salesforce Commerce Cloud",
+   "category": "Ecommerce",
+   "access": "paid_plan_required",
+   "blocker": "No free self-serve developer account evident: API credentials require a paid Commerce Cloud instance, and the older OCAPI path is deprecated"
+  },
+  {
+   "app": "Smartsheet",
+   "category": "Productivity and Project Management",
+   "access": "paid_plan_required",
+   "blocker": "API access requires a paid plan (Business, Enterprise, or Advanced Work Management); no free-tier API access is documented."
+  },
+  {
+   "app": "Squarespace",
+   "category": "Ecommerce",
+   "access": "paid_plan_required",
+   "blocker": "API keys require a Commerce Advanced paid plan; OAuth client registration requires Squarespace review before credentials are issued."
+  },
+  {
+   "app": "Waterfall.io",
+   "category": "Data, SEO and Scraping",
+   "access": "contact_sales",
+   "blocker": "No self-serve signup or free tier documented; API key appears obtainable only after booking a demo/sales call, on a prepaid top-up payment model."
+  },
+  {
+   "app": "Zendesk",
+   "category": "Support and Helpdesk",
+   "access": "paid_plan_required",
+   "blocker": "Credentials require a Zendesk account on a listed paid plan (Team/Professional/Enterprise; no free tier or trial documented in the material) plus admin access to register an OAuth client, and legacy API tokens/basic auth are deprecated in favor of OAuth."
+  },
+  {
+   "app": "higgsfield",
+   "category": "AI, Research and Media-native",
+   "access": "paid_plan_required",
+   "blocker": "CLI/MCP/API usage consumes paid plan credits (free generations and Unlimited models explicitly excluded), and no public REST endpoint reference is evident in the material"
   }
  ],
  "blocker_taxonomy": {
-  "admin / enterprise approval": 1
+  "paid plan required": 12,
+  "other": 5,
+  "sales-contact gate": 4,
+  "admin / enterprise approval": 2,
+  "partnership / approval program": 2,
+  "auth friction": 1,
+  "docs gaps": 1
  },
  "top_blockers_raw": {
-  "api credentials require an existing dealcloud customer site where an org admin enables the 'api' capability for the user's group; no self-serve developer signup or free tier is documented.": 1
+  "api credentials require an existing dealcloud customer site where an org admin enables the 'api' capability for the user's group; no self-serve developer signup or free tier is documented.": 1,
+  "credentials require a zendesk account on a listed paid plan (team/professional/enterprise; no free tier or trial documented in the material) plus admin access to register an oauth client, and legacy api tokens/basic auth are deprecated in favor of oauth.": 1,
+  "api tokens can only be created by admin users of an existing pylon workspace; no free developer tier or self-serve signup is documented (site funnels to 'book demo').": 1,
+  "api access requires a paid plan; the free plan does not include api access or integrations": 1,
+  "api tokens are created inside a gladly instance, which requires a paid gladly account; no free tier or self-serve developer signup is documented.": 1,
+  "api keys are generated inside an aircall customer account and no free developer tier is documented; oauth for multi-customer apps additionally requires an approved tech-partner application.": 1,
+  "developer token requires application and review for production access levels; oauth apps may need google verification": 1,
+  "app review approval required for advanced access (managing other people's ad accounts) and full tier; default limited tier is dev-only and heavily rate-limited": 1,
+  "advertising api is a vetted product: developers must apply via the developer portal and be approved by linkedin before scopes like r_ads/rw_ads are usable.": 1,
+  "api credentials require a paid plan (starter $97/mo+); new api key generation is being removed in favor of oauth; no free developer tier documented": 1,
+  "app approval is required even for free trial access, and upgrading to standard access requires a reviewed video demo of the oauth flow; trial-created pins/boards are sandbox-only.": 1,
+  "no free self-serve developer account evident: api credentials require a paid commerce cloud instance, and the older ocapi path is deprecated": 1,
+  "api keys require a commerce advanced paid plan; oauth client registration requires squarespace review before credentials are issued.": 1,
+  "multi-step onboarding: developer account registration, sp-api role qualification requests, application registration, and oauth/self-authorization setup before production credentials work.": 1,
+  "official api docs are password-protected at dev-docs.fanbasis.com; no public documentation or developer signup flow visible in supplied material": 1
  },
  "verification": {},
  "llm_usage": {
-  "calls": 11,
-  "prompt_tokens": 98734,
-  "completion_tokens": 21993,
-  "cost_usd": 0.7826,
+  "calls": 136,
+  "prompt_tokens": 1017653,
+  "completion_tokens": 335355,
+  "cost_usd": 10.0523,
   "by_purpose": {
-   "research-p1": 11
+   "research-p1": 136
   }
  }
 }

@@ -1,0 +1,50 @@
+{
+ "app_id": 75,
+ "app": "Asana",
+ "category": "Productivity and Project Management",
+ "one_liner": "Project management platform for tracking team tasks and work",
+ "auth_methods": [
+  "oauth2",
+  "api_key",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Personal access tokens act like API keys for the Asana REST API",
+   "url": "https://developers.asana.com/docs/personal-access-token",
+   "quote": "Much like an API key, generating a PAT allows you to access (i.e., make requests to) the Asana REST API upon successful authentication."
+  },
+  {
+   "claim": "Asana supports OAuth 2.0 for multi-user app authorization",
+   "url": "https://developers.asana.com/docs/oauth",
+   "quote": "Asana uses OAuth 2.0 for secure user authorization."
+  },
+  {
+   "claim": "Credentials are self-serve via the developer console",
+   "url": "https://developers.asana.com/docs/personal-access-token",
+   "quote": "You can generate a personal access token from the Asana"
+  },
+  {
+   "claim": "The API is a comprehensive RESTful interface",
+   "url": "https://developers.asana.com/docs/quick-start",
+   "quote": "The Asana API is a RESTful interface with predictable resource-oriented URLs, accepts JSON or form-encoded requests, returns JSON, and uses standard HTTP features"
+  },
+  {
+   "claim": "Asana ships an official MCP server, documented on its own developer site",
+   "url": "https://developers.asana.com/docs/using-asanas-mcp-server",
+   "quote": "Asana offers a Model Context Protocol (MCP) server that allows AI assistants and other applications to access the Asana Work Graph."
+  }
+ ],
+ "notes": "Official V2 MCP server (~42 tools per Asana forum) with OAuth-based integration guide and MCP tools reference on developers.asana.com. PATs are sent as 'Authorization: Bearer' tokens; tokens are opaque. Service Accounts (org-wide access, audit log, SCIM) are Enterprise-tier and super-admin only. Base URL: https://app.asana.com/api/1.0. View-only license users have limited API access.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:27:43+00:00"
+}

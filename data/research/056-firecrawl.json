@@ -1,0 +1,49 @@
+{
+ "app_id": 56,
+ "app": "Firecrawl",
+ "category": "Data, SEO and Scraping",
+ "one_liner": "API to search, scrape, and interact with the web at scale",
+ "auth_methods": [
+  "api_key",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "API uses an API key sent as a Bearer token in the Authorization header",
+   "url": "https://docs.firecrawl.dev/api-reference/introduction",
+   "quote": "For authentication, it’s required to include an Authorization header. The header should contain `Bearer fc-123456789`, where `fc-123456789` represents your API Key."
+  },
+  {
+   "claim": "Free tier with monthly credits gives self-serve API access",
+   "url": "https://www.firecrawl.dev/pricing",
+   "quote": "Firecrawl is free for 1,000 pages every month (1,000 free credits per month)."
+  },
+  {
+   "claim": "Developers can sign up and obtain an API key self-serve",
+   "url": "https://github.com/firecrawl/firecrawl",
+   "quote": "Sign up at firecrawl.dev to get your API key."
+  },
+  {
+   "claim": "REST API with programmatic access and many documented endpoints (search, scrape, crawl, map, parse, interact, monitor, account)",
+   "url": "https://docs.firecrawl.dev/api-reference/v2-introduction",
+   "quote": "The Firecrawl API gives you programmatic access to web data. All endpoints share a common base URL, authentication scheme, and response format described on this"
+  },
+  {
+   "claim": "Vendor ships an official MCP server under its own GitHub org",
+   "url": "https://github.com/firecrawl/firecrawl-mcp-server",
+   "quote": "Adds powerful web scraping and search to Cursor, Claude and any other LLM clients."
+  }
+ ],
+ "notes": "Keyless/rate-limited access exists for first scrape and MCP ('No account or API key is required for this request'; MCP 'work without an API key (rate-limited)'). Official MCP documented at docs.firecrawl.dev/mcp-server. Open-source self-host option. v2 API with ~40+ visible endpoints across scrape/crawl/search/interact/monitor/account; SDKs for Python, Node, CLI, plus more. Rate/concurrency limits vary per plan (429 responses).",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:19:51+00:00"
+}

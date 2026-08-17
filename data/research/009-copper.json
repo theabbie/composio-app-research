@@ -1,0 +1,50 @@
+{
+ "app_id": 9,
+ "app": "Copper",
+ "category": "CRM and Sales",
+ "one_liner": "CRM platform for managing contacts, pipelines, and sales relationships.",
+ "auth_methods": [
+  "oauth2",
+  "api_key",
+  "bearer_token"
+ ],
+ "access": "unknown",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": false,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.68,
+ "evidence": [
+  {
+   "claim": "Copper's Developer API supports two auth methods: API keys and OAuth2.0",
+   "url": "https://developer.copper.com/introduction/authentication.html",
+   "quote": "There are two ways to access the Copper Developer API: API keys and OAuth2.0. API Keys are suitable for individual users, while OAuth2.0 is the preferred approach for partner integrations."
+  },
+  {
+   "claim": "API keys are self-serve, generated inside the Copper web app settings",
+   "url": "https://developer.copper.com/introduction/authentication.html",
+   "quote": "To generate an API token, in the Copper web app go to System settings > API Keys and click the 'GENERATE API KEY' button."
+  },
+  {
+   "claim": "OAuth2.0 requires manually registering the application by contacting Copper",
+   "url": "https://developer.copper.com/introduction/oauth/index.html",
+   "quote": "To register your application, contact us. You will need to provide the name and purpose of your application as well as a URL to an HTTPS endpoint that will handle the secure callback."
+  },
+  {
+   "claim": "The API is RESTful with JSON responses covering most Copper resources",
+   "url": "https://developer.copper.com/",
+   "quote": "The Copper Developer API (\"Dev API\") provides a RESTful interface with JSON-formatted responses to access most Copper resources."
+  },
+  {
+   "claim": "Only workspace admin users can generate API keys",
+   "url": "https://support.copper.com/en/articles/8823347-generating-an-api-key",
+   "quote": "API Keys can be used to create, read, update, and delete data in Copper. Only Admin users are able to generate API Keys."
+  }
+ ],
+ "notes": "developer.copper.co results are a different company (crypto custody platform), not the CRM; ignore them. OAuth tokens are Bearer tokens; only one scope ('developer/v1/all') is supported, granting full read/modify access. OAuth client registration is manual via contacting Copper, which adds friction for partner-style integrations, but per-user API keys are self-serve in-app. Key generation restricted to admin users per help center. Whether a free tier/trial includes API access is not covered in the supplied material, hence access=unknown; base URL previously at api.prosperworks.com (legacy rebrand).",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:10:04+00:00"
+}

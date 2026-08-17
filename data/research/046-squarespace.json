@@ -1,0 +1,49 @@
+{
+ "app_id": 46,
+ "app": "Squarespace",
+ "category": "Ecommerce",
+ "one_liner": "Website builder platform with REST APIs for merchant commerce data.",
+ "auth_methods": [
+  "api_key",
+  "oauth2"
+ ],
+ "access": "paid_plan_required",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "official_mcp": false,
+ "verdict": "buildable_with_work",
+ "blocker": "API keys require a Commerce Advanced paid plan; OAuth client registration requires Squarespace review before credentials are issued.",
+ "confidence": 0.8,
+ "evidence": [
+  {
+   "claim": "Commerce API requests authenticate via a generated API key or OAuth 2.0 client registration.",
+   "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+   "quote": "Depending on your development needs, you can use a generated API key or start the OAuth process with Squarespace to become a registered OAuth client."
+  },
+  {
+   "claim": "Generating an API key for a custom application requires the Commerce Advanced plan (paid).",
+   "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+   "quote": "With [Squarespace's Commerce Advanced](https://www.squarespace.com/pricing) plan, you can develop a custom application for a Squarespace merchant site."
+  },
+  {
+   "claim": "OAuth client credentials are issued only after Squarespace reviews the registration.",
+   "url": "https://developers.squarespace.com/commerce-apis/oauth",
+   "quote": "We will review your registration and respond with `your_client_id` and `your_client_secret` as soon as possible."
+  },
+  {
+   "claim": "Commerce APIs are REST-style over HTTPS with standard verbs and status codes.",
+   "url": "https://developers.squarespace.com/commerce-apis/overview",
+   "quote": "All Commerce APIs are built on HTTPS and designed with REST principles in mind."
+  },
+  {
+   "claim": "API surface spans roughly nine resource families including orders, products, inventory, contacts, discounts, transactions, analytics, and webhooks.",
+   "url": "https://developers.squarespace.com/commerce-apis/overview",
+   "quote": "**Webhook Subscriptions API:** Subscribe to notifications from a site, like when an order was created, by configuring a webhook endpoint."
+  }
+ ],
+ "notes": "Profiles API is in maintenance mode ('new integrations should use the Contacts API'). Webhook Subscriptions API is OAuth-only. API keys never expire while the site is active. No official Squarespace MCP server; a third-party community MCP exists (github.com/BusyBee3333/squarespace-mcp-2026-complete), and the 'Square MCP server' result is from Square (squareup), a different company.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:16:22+00:00"
+}

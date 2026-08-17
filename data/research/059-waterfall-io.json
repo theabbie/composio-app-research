@@ -1,0 +1,48 @@
+{
+ "app_id": 59,
+ "app": "Waterfall.io",
+ "category": "Data, SEO and Scraping",
+ "one_liner": "B2B contact and company enrichment API aggregating 30+ data vendors.",
+ "auth_methods": [
+  "api_key"
+ ],
+ "access": "contact_sales",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "official_mcp": false,
+ "verdict": "gated",
+ "blocker": "No self-serve signup or free tier documented; API key appears obtainable only after booking a demo/sales call, on a prepaid top-up payment model.",
+ "confidence": 0.55,
+ "evidence": [
+  {
+   "claim": "API key authentication via header",
+   "url": "https://docs.waterfall.io/v1/introduction",
+   "quote": "The Waterfall API is available at `https://api.waterfall.io`. All requests require an API key in the `x-api-key` header."
+  },
+  {
+   "claim": "Pricing/access is prepaid and discussed via demo booking, indicating sales-led credentialing",
+   "url": "https://www.waterfall.io/book-a-call",
+   "quote": "We offer a prepaid model, where you can top up your Waterfall account, we can also plug in your existing API key into your custom"
+  },
+  {
+   "claim": "Docs route API support to a demo-booking page rather than self-serve signup",
+   "url": "https://docs.waterfall.io/v1/errors",
+   "quote": "Get API & Sales Support"
+  },
+  {
+   "claim": "Documented enrichment API surface (prospecting, enrichment, verification)",
+   "url": "https://docs.waterfall.io/v1/introduction",
+   "quote": "Complete API reference for Waterfall — find and enrich contacts, prospect by title and company, verify emails, and more."
+  },
+  {
+   "claim": "Master key with programmatic sub-key management",
+   "url": "https://docs.waterfall.io/v1/introduction",
+   "quote": "Create and manage sub-keys under a master key."
+  }
+ ],
+ "notes": "Header inconsistency: docs say 'x-api-key' while the marketing site's curl examples use 'x-waterfall-api-key'. ~13 endpoint groups (launcher/finder async pairs + sync endpoints) ≈ 25 endpoints; OpenAPI spec hosted on S3 and an llms.txt index are referenced. Async jobs return via signed webhooks (Ed25519 JWKS). Company Reveal and Company Titles are Beta. No official MCP server found in vendor material. Access classification is inference: demo-booking CTA plus prepaid top-up suggest sales-led onboarding, but a self-serve flow is not explicitly ruled out by the material.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:44:17+00:00"
+}

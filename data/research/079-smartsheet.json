@@ -1,0 +1,50 @@
+{
+ "app_id": 79,
+ "app": "Smartsheet",
+ "category": "Productivity and Project Management",
+ "one_liner": "Cloud work management platform for sheets, projects, and workflows",
+ "auth_methods": [
+  "oauth2",
+  "api_key",
+  "bearer_token"
+ ],
+ "access": "paid_plan_required",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_with_work",
+ "blocker": "API access requires a paid plan (Business, Enterprise, or Advanced Work Management); no free-tier API access is documented.",
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "The API uses OAuth 2.0 with an access token sent in the Authorization header; docs also refer to access tokens as API keys.",
+   "url": "https://developers.smartsheet.com/api/smartsheet/openapi",
+   "quote": "The Smartsheet API utilizes OAuth 2.0 for authentication and authorization. An Authorization HTTP header containing an access token is required to authenticate"
+  },
+  {
+   "claim": "API access is restricted to paid plans.",
+   "url": "https://developers.smartsheet.com/api/smartsheet/introduction",
+   "quote": "Business, Enterprise, or Advanced Work Management"
+  },
+  {
+   "claim": "The REST API covers many resource types (Sheets, Cells, Folders, Users, Reports, Dashboards), indicating broad surface area.",
+   "url": "https://developers.smartsheet.com/api/smartsheet/introduction",
+   "quote": "The Smartsheet API enables you to programmatically access and manage your organization's Smartsheet resources."
+  },
+  {
+   "claim": "Smartsheet officially ships an MCP server documented on its own developer site.",
+   "url": "https://developers.smartsheet.com/api/smartsheet/introduction",
+   "quote": "Connect Smartsheet to AI clients like Claude, Cursor, and Codex, and use 30+ tools to manage your sheets, rows, columns, and more"
+  },
+  {
+   "claim": "Users on a qualifying plan can self-serve generate a personal API access token from account settings.",
+   "url": "https://help.smartsheet.com/articles/2482389-generate-API-key",
+   "quote": "Navigate to the API Access tab and select Generate"
+  }
+ ],
+ "notes": "Official MCP server is generally available (vendor blog: 'Smartsheet MCP Server now generally available') and routes through the REST API with 30+ tools. Regional base URLs exist: api.smartsheet.com/2.0, api.smartsheetgov.com/2.0 (Gov), api.smartsheet.eu/2.0, api.smartsheet.au/2.0. Official SDKs for JavaScript/Node, Python, Java, and C#. Use of the API is governed by a Developer Agreement. Personal access tokens double as bearer tokens in the Authorization header, so simple integrations can skip the OAuth flow.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:29:21+00:00"
+}

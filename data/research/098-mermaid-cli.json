@@ -1,0 +1,48 @@
+{
+ "app_id": 98,
+ "app": "Mermaid CLI",
+ "category": "AI, Research and Media-native",
+ "one_liner": "CLI that renders Mermaid diagram definitions into SVG, PNG, or PDF files.",
+ "auth_methods": [
+  "none_public"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "none"
+ ],
+ "api_breadth": "narrow",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "Mermaid CLI is a local command-line tool that converts Mermaid diagram files to SVG/PNG/PDF; no account or credentials needed",
+   "url": "https://github.com/mermaid-js/mermaid-cli",
+   "quote": "It takes a mermaid definition file as input and generates an SVG/PNG/PDF file as output."
+  },
+  {
+   "claim": "Free self-serve install via npm with no signup or auth",
+   "url": "https://github.com/mermaid-js/mermaid-cli",
+   "quote": "npm install -g @mermaid-js/mermaid-cli"
+  },
+  {
+   "claim": "Programmatic use is possible via a Node.js API, though it is not semver-stable",
+   "url": "https://github.com/mermaid-js/mermaid-cli",
+   "quote": "It's possible to call mermaid-cli via a Node.JS API. Please be aware that the NodeJS API is not covered by semver"
+  },
+  {
+   "claim": "Open source under the MIT license",
+   "url": "https://formulae.brew.sh/formula/mermaid-cli",
+   "quote": "License: MIT"
+  },
+  {
+   "claim": "The vendor's own docs site documents an official Mermaid MCP Server",
+   "url": "https://mermaid.ai/docs/ai/mcp-server",
+   "quote": "The Mermaid MCP Server enables AI assistants to create, validate, and render Mermaid diagrams seamlessly"
+  }
+ ],
+ "notes": "Not a hosted web API: it is a local CLI/Node library (mmdc), so there is no auth, token, or developer account at all. The official MCP server lives on mermaid.ai and mentions 'full integration with your Mermaid Chart account', i.e. it is tied to the commercial Mermaid Chart product rather than the mermaid-cli repo itself. NodeJS API explicitly not covered by semver.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:37:28+00:00"
+}

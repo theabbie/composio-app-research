@@ -1,0 +1,153 @@
+[
+ {
+  "app_id": 2,
+  "app": "HubSpot",
+  "evidence_urls_checked": 5,
+  "evidence_urls_ok": 5,
+  "quotes_checked": 5,
+  "quotes_found": 5,
+  "flags": []
+ },
+ {
+  "app_id": 3,
+  "app": "Pipedrive",
+  "evidence_urls_checked": 5,
+  "evidence_urls_ok": 5,
+  "quotes_checked": 5,
+  "quotes_found": 4,
+  "flags": [
+   {
+    "app_id": 3,
+    "field": "evidence",
+    "severity": "error",
+    "detail": "quote not found on https://pipedrive.readme.io/docs/core-api-concepts-authentication: 'The API token must be provided in the `x-api-token` header for all requests'"
+   }
+  ]
+ },
+ {
+  "app_id": 4,
+  "app": "Attio",
+  "evidence_urls_checked": 5,
+  "evidence_urls_ok": 5,
+  "quotes_checked": 5,
+  "quotes_found": 4,
+  "flags": [
+   {
+    "app_id": 4,
+    "field": "evidence",
+    "severity": "error",
+    "detail": "quote not found on https://docs.attio.com/mcp/overview: \"Attio MCP is Attio's hosted MCP server that gives AI tools secure access to your Attio workspace.\""
+   }
+  ]
+ },
+ {
+  "app_id": 5,
+  "app": "Twenty",
+  "evidence_urls_checked": 5,
+  "evidence_urls_ok": 5,
+  "quotes_checked": 5,
+  "quotes_found": 4,
+  "flags": [
+   {
+    "app_id": 5,
+    "field": "evidence",
+    "severity": "error",
+    "detail": "quote not found on https://twentyhq-twenty.mintlify.app/developers/api/authentication: \"Secure your API requests with Twenty's authentication system supporting API keys, OAuth tokens, and \""
+   }
+  ]
+ },
+ {
+  "app_id": 6,
+  "app": "Podio",
+  "evidence_urls_checked": 5,
+  "evidence_urls_ok": 5,
+  "quotes_checked": 5,
+  "quotes_found": 3,
+  "flags": [
+   {
+    "app_id": 6,
+    "field": "evidence",
+    "severity": "error",
+    "detail": "quote not found on https://developers.podio.com/api-key: 'You just have to sign in or sign up with Podio, and go to the API key tab in your settings.'"
+   },
+   {
+    "app_id": 6,
+    "field": "evidence",
+    "severity": "error",
+    "detail": "quote not found on https://support.sharefile.com/s/article/Podio-MCP-Server-Integration-Guide-ShareFile-1778762090571: 'MCP Server URL: https://mcp.podio.com/mcp'"
+   }
+  ]
+ },
+ {
+  "app_id": 7,
+  "app": "Zoho CRM",
+  "evidence_urls_checked": 5,
+  "evidence_urls_ok": 5,
+  "quotes_checked": 5,
+  "quotes_found": 4,
+  "flags": [
+   {
+    "app_id": 7,
+    "field": "evidence",
+    "severity": "error",
+    "detail": "quote not found on https://www.zoho.com/accounts/protocol/oauth.html: \"Zoho's OAuth implementation uses Bearer authentication scheme, hence while making API calls, the acc\""
+   }
+  ]
+ },
+ {
+  "app_id": 8,
+  "app": "Close",
+  "evidence_urls_checked": 5,
+  "evidence_urls_ok": 5,
+  "quotes_checked": 5,
+  "quotes_found": 4,
+  "flags": [
+   {
+    "app_id": 8,
+    "field": "confidence",
+    "severity": "warning",
+    "detail": "high confidence with unknown fields"
+   },
+   {
+    "app_id": 8,
+    "field": "evidence",
+    "severity": "error",
+    "detail": "quote not found on https://help.close.com/docs/mcp-server: 'The MCP server URL is `https://mcp.close.com/mcp` and has \"HTTP Streamable\" and \"OAuth 2.0 Dynamic C'"
+   }
+  ]
+ },
+ {
+  "app_id": 9,
+  "app": "Copper",
+  "evidence_urls_checked": 5,
+  "evidence_urls_ok": 5,
+  "quotes_checked": 5,
+  "quotes_found": 5,
+  "flags": []
+ },
+ {
+  "app_id": 10,
+  "app": "DealCloud",
+  "evidence_urls_checked": 5,
+  "evidence_urls_ok": 5,
+  "quotes_checked": 5,
+  "quotes_found": 5,
+  "flags": []
+ },
+ {
+  "app_id": 11,
+  "app": "Zendesk",
+  "evidence_urls_checked": 5,
+  "evidence_urls_ok": 5,
+  "quotes_checked": 5,
+  "quotes_found": 4,
+  "flags": [
+   {
+    "app_id": 11,
+    "field": "evidence",
+    "severity": "error",
+    "detail": "quote not found on https://developer.zendesk.com/api-reference/introduction/security-and-auth/: \"If you're an existing Zendesk customer and are currently using basic authentication or API tokens, y\""
+   }
+  ]
+ }
+]

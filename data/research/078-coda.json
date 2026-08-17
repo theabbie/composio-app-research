@@ -1,0 +1,48 @@
+{
+ "app_id": 78,
+ "app": "Coda",
+ "category": "Productivity and Project Management",
+ "one_liner": "Collaborative all-in-one doc platform with tables, automations, and API",
+ "auth_methods": [
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.82,
+ "evidence": [
+  {
+   "claim": "Coda (now Superhuman Docs) offers a documented public REST API covering docs, pages, tables, rows, formulas, and controls",
+   "url": "https://coda.io/developers",
+   "quote": "The Superhuman Docs API is a RESTful API that lets you programmatically interact with data in Superhuman Docs (formerly Coda)"
+  },
+  {
+   "claim": "API supports full CRUD on rows and doc management, indicating a substantial endpoint surface",
+   "url": "https://coda.io/developers",
+   "quote": "List and search documents\n*   Create new docs and copy existing ones\n*   Share and publish docs\n*   Discover pages, tables, formulas, and controls\n*   Read, insert, upsert, update, and delete rows"
+  },
+  {
+   "claim": "API base path is stable and versioned",
+   "url": "https://coda.io/developers",
+   "quote": "This API uses a base path of `https://coda.io/apis/v1`."
+  },
+  {
+   "claim": "Authentication is via a user-generated API key/token",
+   "url": "https://codaio.readthedocs.io/en/latest/",
+   "quote": "Initializes a Coda instance using API key store in environment variables under CODA_API_KEY"
+  },
+  {
+   "claim": "Vendor itself ships/documents an official MCP server for LLM integrations",
+   "url": "https://coda.io/developers",
+   "quote": "you may also want to consider using the [Superhuman Docs MCP server](https://docs.superhuman.com/resources/guides/getting_started_with_coda_mcp). It's optimized for LLM usage patterns"
+  }
+ ],
+ "notes": "Coda has rebranded to 'Superhuman Docs'; developer docs now live at docs.superhuman.com, though the API base remains coda.io/apis/v1. Older references (Python wrapper) use the deprecated v1beta1 path. Writes are asynchronous: endpoints return HTTP 202 with a requestId and edits are queued. Rate limits are tight for writes (10 POST/PUT/PATCH per 6 seconds; 5 per 10s for doc content). Several third-party MCP servers exist (e.g. orellazri/coda-mcp) in addition to the official one. OAuth2 content on Coda's site concerns building Packs that call third-party APIs, not authenticating to Coda itself. API tokens are user-generated (Reddit: 'a user can provide their Coda api token to connect'); free-tier availability of tokens is not explicitly confirmed in the material but no paywall or approval gate is documented.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:28:59+00:00"
+}

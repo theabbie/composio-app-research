@@ -1,0 +1,48 @@
+{
+ "app_id": 82,
+ "app": "Plaid",
+ "category": "Finance and Fintech",
+ "one_liner": "APIs for connecting apps to users' bank accounts and financial data.",
+ "auth_methods": [
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "API authentication uses a client_id and secret pair (API-key style), sent in body or headers.",
+   "url": "https://plaid.com/docs/api/",
+   "quote": "Almost all Plaid API endpoints require a `client_id` and `secret`. These may be sent either in the request body or in the headers `PLAID-CLIENT-ID` and `PLAID-SECRET`."
+  },
+  {
+   "claim": "Credentials are self-serve: signing up on the Plaid Dashboard yields a live client_id and secret.",
+   "url": "https://plaid.com/docs/api/",
+   "quote": "To gain access to the Plaid API, create an account on the [Plaid Dashboard](https://dashboard.plaid.com/). Once you've completed the signup process and acknowledged our terms, we'll provide a live `client_id` and `secret` via the Dashboard."
+  },
+  {
+   "claim": "A free tier exists with free initial API calls.",
+   "url": "https://plaid.com/pricing/",
+   "quote": "Build with our free tier; pay as you go; or scale with tailored API solutions and volume pricing. Your first 200 API calls are free."
+  },
+  {
+   "claim": "The API is REST-style JSON over HTTP with an OpenAPI spec.",
+   "url": "https://plaid.com/docs/api/",
+   "quote": "The Plaid API is JSON over HTTP. Requests are POST requests, and responses are JSON, with errors indicated in response bodies as `error_code` and `error_type`"
+  },
+  {
+   "claim": "Plaid's official docs document an MCP server (Dashboard MCP, Streamable HTTP).",
+   "url": "https://plaid.com/docs/resources/mcp/",
+   "quote": "The Dashboard MCP server is available at https://api.dashboard.plaid.com/mcp/ and uses the Streamable HTTP protocol."
+  }
+ ],
+ "notes": "Sandbox credentials are fully self-serve, but Production API access must be requested via the Dashboard (approval step), and per-item product calls require a user-consented access_token obtained via the Link flow. The official MCP server is scoped to the Plaid Dashboard (account/team management), not the core financial-data API. Broad product surface: Auth, Balance, Identity, Transactions, Investments, Liabilities, Transfer, Identity Verification, and more. OpenAPI spec and Postman collection are published on Plaid's GitHub org.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:30:01+00:00"
+}

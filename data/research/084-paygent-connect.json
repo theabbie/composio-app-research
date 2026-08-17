@@ -1,0 +1,49 @@
+{
+ "app_id": 84,
+ "app": "Paygent Connect",
+ "category": "Finance and Fintech",
+ "one_liner": "Spend limits, metering, and subscription billing API for AI agents",
+ "auth_methods": [
+  "bearer_token",
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "narrow",
+ "official_mcp": false,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.6,
+ "evidence": [
+  {
+   "claim": "Paygent exposes a small public REST backend for managing plans, users, and subscriptions",
+   "url": "https://docs.paygent.to/reference/api-reference/",
+   "quote": "The Paygent backend exposes a small REST API. The SDK uses it. You also call it directly to manage plans, users, and subscriptions."
+  },
+  {
+   "claim": "Authentication is an API key sent as a Bearer token in the Authorization header",
+   "url": "https://docs.paygent.to/reference/api-reference/",
+   "quote": "Bearer token in `Authorization: Bearer pg_live_...` header."
+  },
+  {
+   "claim": "Credentials are self-serve: POST /products mints the first API key with no authentication required",
+   "url": "https://docs.paygent.to/reference/api-reference/",
+   "quote": "Create a new product (tenant). Returns the API key — exactly once. **No authentication required.**"
+  },
+  {
+   "claim": "The API is versioned REST over HTTPS with JSON bodies",
+   "url": "https://docs.paygent.to/reference/api-reference/",
+   "quote": "**Base URL:**`https://api.paygent.to/api/v1`"
+  },
+  {
+   "claim": "Plan configuration targets AI-agent cost control (per-model token limits and cost rates)",
+   "url": "https://docs.paygent.to/reference/api-reference/",
+   "quote": "\"gpt-4o\": {\"max_tokens_per_period\": 50000}"
+  }
+ ],
+ "notes": "Despite the 'NMI-powered payments' hint, the supplied Paygent docs describe an AI-agent usage-billing/metering API (spend gates, model token limits, tool costs) and never mention NMI; the Cybersource/Authorize.net results are unrelated payment-gateway noise. API key is shown only once at product creation. No MCP server is documented. Pricing/free-tier terms are not stated in the material, so 'self_serve_free' is inferred from the unauthenticated key-minting endpoint.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:31:50+00:00"
+}

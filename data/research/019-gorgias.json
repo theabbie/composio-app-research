@@ -1,0 +1,51 @@
+{
+ "app_id": 19,
+ "app": "Gorgias",
+ "category": "Support and Helpdesk",
+ "one_liner": "E-commerce helpdesk with REST API for tickets and customers",
+ "auth_methods": [
+  "oauth2",
+  "api_key",
+  "basic",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "API key auth via HTTP Basic (email + API key) for private apps; OAuth2 mandatory for public apps",
+   "url": "https://developers.gorgias.com/reference/authentication",
+   "quote": "The Gorgias API supports two authentication methods:\n\n1. 🔐 Private app → API key\n2. 👥 Public app → OAuth2\n\nUsing OAuth2 is mandatory for public apps."
+  },
+  {
+   "claim": "API credentials available on all Helpdesk plans, self-serve in settings",
+   "url": "https://docs.gorgias.com/en-US/rest-api-208286",
+   "quote": "- Available on all Helpdesk plans\n- The account owner and admins can access the API credentials and create API keys"
+  },
+  {
+   "claim": "HTTP Basic Authentication with base API URL, email, and API key",
+   "url": "https://docs.gorgias.com/en-US/rest-api-208286",
+   "quote": "To authenticate API requests, Gorgias uses HTTP Basic Authentication with three pieces of information: your base API URL, your email address, and an API key."
+  },
+  {
+   "claim": "REST API with JSON-encoded request/response bodies",
+   "url": "https://developers.gorgias.com/reference/introduction",
+   "quote": "The Gorgias API is structured with [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) in mind."
+  },
+  {
+   "claim": "Gorgias ships an official first-party MCP server at mcp.gorgias.com, documented on its own docs site and GitHub org",
+   "url": "https://github.com/gorgias/mcp-cookbook",
+   "quote": "The [Gorgias MCP](https://mcp.gorgias.com) is a first-party connector that plugs your Gorgias account into any AI client that speaks [MCP](https://modelcontextprotocol.io) — Claude, ChatGPT, Cursor, and more."
+  }
+ ],
+ "notes": "Official MCP server (https://mcp.gorgias.com/mcp) with OAuth, documented at docs.gorgias.com and github.com/gorgias/mcp-cookbook. Public apps require Gorgias team approval for App Store listing, but private apps need no approval and API keys work on all Helpdesk plans. Gorgias is a paid product; 'self_serve_free' reflects that API access incurs no extra fee and no approval is needed, though a Gorgias account (trial available) is required.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:11:07+00:00"
+}

@@ -1,0 +1,50 @@
+{
+ "app_id": 97,
+ "app": "higgsfield",
+ "category": "AI, Research and Media-native",
+ "one_liner": "AI media generation (image, video, 3D, audio) via CLI, MCP, and cloud API",
+ "auth_methods": [
+  "api_key",
+  "bearer_token",
+  "session_cookie"
+ ],
+ "access": "paid_plan_required",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "official_mcp": true,
+ "verdict": "buildable_with_work",
+ "blocker": "CLI/MCP/API usage consumes paid plan credits (free generations and Unlimited models explicitly excluded), and no public REST endpoint reference is evident in the material",
+ "confidence": 0.62,
+ "evidence": [
+  {
+   "claim": "CLI authenticates via browser sign-in to the user's Higgsfield account, no API key",
+   "url": "https://higgsfield.ai/cli",
+   "quote": "Authenticate: run `higgsfield auth login` and complete the sign-in in the browser it opens."
+  },
+  {
+   "claim": "CLI and MCP share the account's plan credits; free generations and Unlimited models do not apply, implying paid usage",
+   "url": "https://higgsfield.ai/creator-hub/help-center/integrations/how-do-i-access-higgsfield-via-cli",
+   "quote": "Both use the same Higgsfield account and plan credits with no API key, and Unlimited models and free generations don't apply to either."
+  },
+  {
+   "claim": "Official Python SDK uses API key/secret credentials for the Higgsfield API",
+   "url": "https://github.com/higgsfield-ai/higgsfield-client",
+   "quote": "Before using the client, set your API credentials as environment variables. You can use either a single key or separate API key and secret"
+  },
+  {
+   "claim": "Vendor documents its own MCP server on its official site",
+   "url": "https://higgsfield.ai/cli",
+   "quote": "Add the Higgsfield MCP server URL in your agent's settings and authenticate through your Higgsfield account. No API keys to manage or configure."
+  },
+  {
+   "claim": "Surface spans images, videos, 3D, audio, and video analysis across 40+ models",
+   "url": "https://github.com/higgsfield-ai/cli",
+   "quote": "Generate images, videos, 3D assets, audio, and finished-video analysis from the terminal using 40+ Higgsfield AI models"
+  }
+ ],
+ "notes": "Official MCP & CLI landing at higgsfield.ai/mcp and higgsfield.ai/cli; agent skills installed via `npx skills add higgsfield-ai/skills` (generate, soul, product-photoshoot). Cloud API portal (cloud.higgsfield.ai) is behind Clerk sign-in with CAPTCHA/shadow DOM; CLI access falls under Developer Terms in the Terms of Use. Bearer-token phrasing comes from a third-party blog (apidog); pricing ($15-99/mo tiers plus per-generation credits) only from third-party guides, not official sources. No public REST endpoint reference was found in the supplied material.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:37:25+00:00"
+}

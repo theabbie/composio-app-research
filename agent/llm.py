@@ -39,7 +39,7 @@ class ChatClient:
         self,
         system: str,
         user: str,
-        max_tokens: int = 4096,
+        max_tokens: int = 8192,
         purpose: str = "extract",
     ) -> ChatResponse:
         payload = {
@@ -82,7 +82,12 @@ class ChatClient:
         message = data["choices"][0]["message"]
         content = message.get("content") or ""
         if not content.strip():
-            content = message.get("reasoning_content") or ""
+            reasoning = message.get("reasoning_content") or ""
+            try:
+                parsed = extract_json_object(reasoning)
+                content = json.dumps(parsed)
+            except LLMError:
+                content = ""
         usage = data.get("usage", {})
         result = ChatResponse(
             content=content,

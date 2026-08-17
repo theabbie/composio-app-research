@@ -1,0 +1,50 @@
+{
+ "app_id": 76,
+ "app": "Monday.com",
+ "category": "Productivity and Project Management",
+ "one_liner": "Cloud work OS for project management, workflows, and team collaboration.",
+ "auth_methods": [
+  "oauth2",
+  "api_key",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "API authenticates with personal V2 API tokens sent in the Authorization header",
+   "url": "https://developer.monday.com/api-reference/docs/authentication",
+   "quote": "The monday.com platform API utilizes **personal V2 API tokens** to authenticate requests and identify the user making the call."
+  },
+  {
+   "claim": "OAuth 2.0 is also supported as an authentication method for apps",
+   "url": "https://developer.monday.com/apps/docs/choosing-auth",
+   "quote": "Your app can also use OAuth to get authentication tokens. Simply put, OAuth allows your app to ask for user authorization before accessing their account"
+  },
+  {
+   "claim": "Free developer account with no expiration gives self-serve API access",
+   "url": "https://developer.monday.com/api-reference/",
+   "quote": "start playing around with our developer tools such as the API and apps framework on a free, no expiration date developer account!"
+  },
+  {
+   "claim": "GraphQL API offers broad coverage across monday.com products and objects",
+   "url": "https://developer.monday.com/api-reference/",
+   "quote": "Broad platform coverage to read and modify boards, leads, docs, updates, and much more."
+  },
+  {
+   "claim": "Vendor officially ships and documents MCP servers for AI agent access",
+   "url": "https://developer.monday.com/api-reference/docs/build-on-monday-with-ai",
+   "quote": "monday.com provides full headless access to its platform through MCP servers, a GraphQL API, and typed SDKs. Any MCP-compatible AI tool connects natively."
+  }
+ ],
+ "notes": "Official MCP server also published in the vendor's own GitHub org (mondaycom/mcp, package @mondaydotcomorg/monday-api-mcp). Gotchas: seamless auth only works inside an iframe; using a user's global API token means the app 'will not be approved for our marketplace'; personal tokens mirror UI permissions and regenerating a token immediately invalidates the old one.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:45:41+00:00"
+}

@@ -1,0 +1,49 @@
+{
+ "app_id": 68,
+ "app": "MongoDB Atlas",
+ "category": "Developer, Infra and Data platforms",
+ "one_liner": "Managed multi-cloud MongoDB database platform with programmatic administration API",
+ "auth_methods": [
+  "oauth2",
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Atlas Administration API authenticates via OAuth 2.0 service accounts or API keys using HTTP Digest",
+   "url": "https://www.mongodb.com/docs/atlas/api/api-authentication/",
+   "quote": "Learn how to authenticate Atlas Administration API requests using Service Accounts with OAuth 2.0 or API Keys with HTTP Digest Authentication to manage"
+  },
+  {
+   "claim": "Service account client ID and secret are exchanged for an access token via OAuth 2.0 Client Credentials flow",
+   "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+   "quote": "To authenticate with a Service Account, first exchange its client ID and secret for an access token using the OAuth 2.0 Client Credentials flow."
+  },
+  {
+   "claim": "The Atlas Administration API is a REST API",
+   "url": "https://www.mongodb.com/docs/atlas/api/atlas-admin-api-ref/",
+   "quote": "The Atlas Administration API follows the principles of the REST architectural style to expose a number of internal resources"
+  },
+  {
+   "claim": "API covers many administrative object types (projects, users, clusters) with a full endpoint specification",
+   "url": "https://www.mongodb.com/docs/atlas/api/",
+   "quote": "Atlas Administration API resources add, edit, or delete administrative objects within Atlas, including projects, users, and clusters."
+  },
+  {
+   "claim": "MongoDB ships an official MCP server for MongoDB and Atlas via its mongodb-js GitHub org and official docs",
+   "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+   "quote": "A Model Context Protocol server to connect to MongoDB databases and MongoDB Atlas Clusters. Atlas API credentials are required to use the Atlas tools."
+  }
+ ],
+ "notes": "Free Atlas signup ('Get started for free in minutes') allows creating service accounts/API keys, so credentials are self-serve. Gotchas: legacy API keys use HTTP Digest auth (unusual for HTTP clients; OAuth service accounts now preferred). Admin API does not read/write cluster data — data plane needs separate database user credentials. Atlas may enforce an API IP access list by default for new organizations. Official MCP server documented at mongodb.com/docs/mcp-server/get-started/.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:24:38+00:00"
+}

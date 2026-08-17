@@ -1,0 +1,49 @@
+{
+ "app_id": 87,
+ "app": "Xero",
+ "category": "Finance and Fintech",
+ "one_liner": "Cloud accounting platform with extensive public APIs for financial data",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Xero uses OAuth 2.0 (authorization code and PKCE flows) as its documented authentication model; no plain API key auth",
+   "url": "https://developer.xero.com/documentation/guides/oauth2/overview/",
+   "quote": "OAuth 2.0 is a protocol that lets your app access a user’s account without accessing their password. Your app requests specific permission scopes and is granted an access token upon a user’s approval."
+  },
+  {
+   "claim": "API calls are made with a Bearer access token plus a tenant id",
+   "url": "https://developer.xero.com/documentation/guides/oauth2/auth-flow/",
+   "quote": "you can make API calls by providing both a valid access token and authorized tenant id with each request"
+  },
+  {
+   "claim": "Developers can self-serve: sign up for a free Xero account, use the demo company, and register an OAuth 2.0 app to get a Client ID/Secret",
+   "url": "https://developer.xero.com/documentation/getting-started-guide/",
+   "quote": "Signup for a free Xero account; Enable the Xero demo company · Add your OAuth 2.0 application"
+  },
+  {
+   "claim": "Broad REST API surface: Accounting API alone documents dozens of endpoints, plus Assets, Bank Feeds, Files, Finance, Payroll (AU/NZ/UK), Projects and more",
+   "url": "https://developer.xero.com/documentation/api/accounting/overview",
+   "quote": "creating transactions like invoices and credit notes, right through to extracting accounting data via our reports endpoint"
+  },
+  {
+   "claim": "Xero officially ships an MCP server (XeroAPI GitHub org, linked from its docs AI toolkit section)",
+   "url": "https://devblog.xero.com/xero-introduces-new-model-context-protocol-server-for-smarter-accounting-4d195ccaeda5",
+   "quote": "We've developed an MCP server that seamlessly integrates with Xero's public API, allowing LLMs to interact with business data"
+  }
+ ],
+ "notes": "Uncertified apps are limited to 25 tenant connections; exceeding that requires app certification/partner program. 'Custom Connections' (client_credentials, single org) carry a monthly fee (~$10 AUD) but standard OAuth flows are free. Some endpoints deprecated (Expense Claims, Receipts, Practice Manager 3.0). Access tokens expire in 30 minutes; refresh tokens last 60 days. Official MCP server at github.com/XeroAPI/xero-mcp-server.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:32:42+00:00"
+}

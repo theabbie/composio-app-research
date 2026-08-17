@@ -1,0 +1,49 @@
+{
+ "app_id": 83,
+ "app": "Binance",
+ "category": "Finance and Fintech",
+ "one_liner": "Cryptocurrency exchange offering trading, market data, and wallet APIs.",
+ "auth_methods": [
+  "api_key",
+  "oauth2"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": false,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "API keys are self-serve, created from the account's API Management page",
+   "url": "https://developers.binance.com/en/docs/products/spot/rest-api",
+   "quote": "Secure endpoints require a valid API key to be specified and authenticated. API keys can be created on the API Management page of your Binance account."
+  },
+  {
+   "claim": "Signed endpoints support HMAC, RSA, and Ed25519 API key types",
+   "url": "https://developers.binance.com/en/docs/products/spot/rest-api",
+   "quote": "We support HMAC, RSA, and Ed25519 keys."
+  },
+  {
+   "claim": "Binance offers OAuth for third-party applications",
+   "url": "https://developers.binance.com/en",
+   "quote": "The Binance OAuth allows users to share specific data with an 3rd application while keeping their accounts' API keys or login credentials"
+  },
+  {
+   "claim": "The API surface spans many products (Spot, Futures, Options, Margin, Wallet, etc.), i.e. broad",
+   "url": "https://developers.binance.com/en/docs/introduction",
+   "quote": "It covers the main programmatic interfaces available across Binance products, from market data access and account operations to advanced trading, streaming, and lower-latency integrations."
+  },
+  {
+   "claim": "Account verification (KYC) is a prerequisite for creating API keys (Binance.US docs)",
+   "url": "https://docs.binance.us/",
+   "quote": "You will not be able to create an API if KYC is not completed."
+  }
+ ],
+ "notes": "REST is primary, but WebSocket APIs/streams are also documented (market data, user data streams). Multiple base endpoints (api.binance.com, api-gcp, api1-api4) plus a market-data-only host data-api.binance.vision. Several third-party/community MCP servers exist (mcpservers.org/TermiX-official, nirholas/Binance-MCP, lobehub) but none are official; official docs do feature an 'Agent Native' section with llms.txt/llms-full.txt and an 'Agentic Wallet'/'Wallet Skills' area, suggesting official agent tooling, though no verbatim MCP mention in the supplied material. Binance.US is a separate regional API (docs.binance.us) with Exchange, Custodial, and Credit Line key types; custodial/credit-line keys require institutional agreements. Docs moved from binance-docs.github.io / binance-exchange GitHub org to developers.binance.com and github.com/binance/binance-spot-api-docs. Old GitHub repo states: 'The Binance API documentation on Github has been moved to our official company repository'. A free Binance account suffices for keys, but KYC and 2FA are required; signed endpoints use HMAC/RSA/Ed25519 signatures with timestamp/recvWindow.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:30:20+00:00"
+}

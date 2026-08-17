@@ -1,0 +1,49 @@
+{
+ "app_id": 63,
+ "app": "Netlify",
+ "category": "Developer, Infra and Data platforms",
+ "one_liner": "Deploy and manage sites, builds, DNS, and serverless functions programmatically.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Netlify exposes a REST-style JSON API documented via an OpenAPI reference.",
+   "url": "https://open-api.netlify.com/",
+   "quote": "This is a REST-style API that uses JSON for serialization and OAuth 2 for authentication."
+  },
+  {
+   "claim": "Primary auth is OAuth2; users can register OAuth apps self-serve in user settings.",
+   "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+   "quote": "Netlify uses OAuth2 for authentication. All requests must use HTTPS."
+  },
+  {
+   "claim": "Personal access tokens can be generated in the UI and used as Bearer tokens for scripts.",
+   "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+   "quote": "Authorization: Bearer <YOUR_PERSONAL_ACCESS_TOKEN>"
+  },
+  {
+   "claim": "A free plan exists that includes deploy-from-API capability, so credentials are self-serve without payment.",
+   "url": "https://www.netlify.com/pricing/",
+   "quote": "Deploy from AI, Git, or API Private by default. Start for free"
+  },
+  {
+   "claim": "Netlify ships an official MCP server from its own GitHub org and documents it in its docs.",
+   "url": "https://github.com/netlify/netlify-mcp",
+   "quote": "Netlify MCP Server follows the Model Context Protocol (MCP) to enable code agents to use the Netlify API and CLI"
+  }
+ ],
+ "notes": "Official remote MCP server documented at docs.netlify.com agent setup pages ('Netlify offers an MCP server'); API base is https://api.netlify.com/api/v1/, HTTPS only. Rate limits: 500 req/min generally, deploys 3/min and 100/day; PATs support optional expiration dates; OAuth2 required (not PATs) for public integrations; official Go and JS API clients plus CLI and SDK available.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:22:14+00:00"
+}

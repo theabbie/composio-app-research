@@ -1,0 +1,49 @@
+{
+ "app_id": 34,
+ "app": "GoHighLevel",
+ "category": "Marketing, Ads, Email and Social",
+ "one_liner": "All-in-one CRM and marketing automation platform for agencies.",
+ "auth_methods": [
+  "oauth2",
+  "api_key"
+ ],
+ "access": "paid_plan_required",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_with_work",
+ "blocker": "API credentials require a paid plan (Starter $97/mo+); new API key generation is being removed in favor of OAuth; no free developer tier documented",
+ "confidence": 0.85,
+ "evidence": [
+  {
+   "claim": "HighLevel offers a REST API covering contacts, messaging, workflows, calendars, payments, and webhooks",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+   "quote": "Our API includes REST endpoints for contacts, messaging, workflows, calendars, payments, webhooks, and more."
+  },
+  {
+   "claim": "API v2 uses OAuth 2.0 for authentication",
+   "url": "https://developers.gohighlevel.com/",
+   "quote": "We now have an OAuth based API and all integration documentation can be found here."
+  },
+  {
+   "claim": "OAuth access/refresh tokens authorize API requests via the Authorization header",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/155000000136-how-to-get-started-with-the-developer-s-marketplace",
+   "quote": "developers obtain an Access Token through the OAuth process, which allows their app to make authenticated API requests to GoHighLevel"
+  },
+  {
+   "claim": "API access is gated behind paid subscription plans",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+   "quote": "Basic API access is included with our Starter and Unlimited plans, while Advanced API access is available on our Agency Pro plan."
+  },
+  {
+   "claim": "HighLevel officially documents a LeadConnector MCP server for AI assistants on its own docs site",
+   "url": "https://marketplace.gohighlevel.com/docs/other/mcp/",
+   "quote": "MCP is an open protocol that standardizes how applications provide context to large language models. The LeadConnector MCP server gives AI assistants"
+  }
+ ],
+ "notes": "V1 APIs reached end-of-support 31-December-2025; legacy Stoplight docs are being deprecated in favor of marketplace.gohighlevel.com/docs; the ability to generate new API keys is being removed from Agency and Sub-account settings, pushing developers toward OAuth/private integrations; v3 API is in progress; an official MCP server setup guide also exists in the HighLevel help center.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:10:43+00:00"
+}

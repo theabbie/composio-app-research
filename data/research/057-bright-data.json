@@ -1,0 +1,50 @@
+{
+ "app_id": 57,
+ "app": "Bright Data",
+ "category": "Data, SEO and Scraping",
+ "one_liner": "Web data platform: proxies, scraping APIs, datasets, and MCP server.",
+ "auth_methods": [
+  "api_key",
+  "bearer_token",
+  "basic"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Bright Data offers two auth methods: API key/token and native proxy username/password",
+   "url": "https://docs.brightdata.com/api-reference/authentication",
+   "quote": "**API Access** - Authenticate and interact with the Bright Data platform using an API key/token."
+  },
+  {
+   "claim": "Scraper Studio API calls authenticate via Bearer token header",
+   "url": "https://docs.brightdata.com/datasets/scraper-studio/quickstart",
+   "quote": "Every Bright Data Scraper Studio API call uses bearer-token authentication."
+  },
+  {
+   "claim": "A default API key is created automatically at account signup, enabling self-serve credentials",
+   "url": "https://docs.brightdata.com/api-reference/authentication",
+   "quote": "We create a default key for you upon account creation automatically."
+  },
+  {
+   "claim": "Free tier available without a credit card",
+   "url": "https://docs.brightdata.com/introduction",
+   "quote": "with **5,000 free credits per month**. No credit card required."
+  },
+  {
+   "claim": "Vendor officially documents and ships its own MCP server",
+   "url": "https://docs.brightdata.com/ai/mcp-server/overview",
+   "quote": "The Bright Data MCP server gives AI agents and assistants real-time access to public web data through the Model Context Protocol (MCP)."
+  }
+ ],
+ "notes": "Broad surface: proxy networks, Web Unlocker, SERP API, Scraping Browser, Scraper Studio (POST /dca/trigger, GET /dca/dataset), datasets marketplace, plus Python/JS SDKs and a CLI. API keys support 5 permission levels and optional expiration. Native proxy auth uses brd-customer-{id}-zone-{name} username/password format. Scraper Studio quickstart lists 'a payment method on file' as a prerequisite, but a no-credit-card free tier exists. Official MCP server documented on vendor docs and brightdata GitHub org (brightdata/skills).",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:20:18+00:00"
+}

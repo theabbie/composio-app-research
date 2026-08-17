@@ -1,0 +1,50 @@
+{
+ "app_id": 60,
+ "app": "Clay",
+ "category": "Data, SEO and Scraping",
+ "one_liner": "Data enrichment and GTM workflow automation platform for sales teams",
+ "auth_methods": [
+  "api_key",
+  "bearer_token",
+  "oauth2"
+ ],
+ "access": "paid_plan_required",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "unknown",
+ "official_mcp": true,
+ "verdict": "buildable_with_work",
+ "blocker": "API/HTTP API access reportedly requires a paid plan (~$495/mo after Explorer tier removal); official docs cover only narrow table-lookup API key usage",
+ "confidence": 0.55,
+ "evidence": [
+  {
+   "claim": "Clay issues a self-serve API key from account settings used for integrations",
+   "url": "https://university.clay.com/docs/guide-find-clay-api-key",
+   "quote": "Under `Account`, locate `API key`. You'll find your API key here for integrations."
+  },
+  {
+   "claim": "The documented Clay API key enables narrow native operations (row lookups across tables)",
+   "url": "https://university.clay.com/docs/guide-find-clay-api-key",
+   "quote": "A Clay API key is required for all Clay-native integrations."
+  },
+  {
+   "claim": "Clay's HTTP API feature moves data in/out of Clay tables via any REST endpoint and methods",
+   "url": "https://university.clay.com/docs/http-api-integration-overview",
+   "quote": "you can pull external data into your Clay table or push data out from Clay using any endpoint and method (GET, POST, PUT, DELETE)."
+  },
+  {
+   "claim": "HTTP API access was moved to a $495/mo plan after the free Explorer tier was removed",
+   "url": "https://www.reddit.com/r/gtmengineering/comments/1rs14vv/clays_new_pricing_changes_what_i_build_with_heres/",
+   "quote": "Clay killed the Explorer tier, moved HTTP API access to $495/mo, if you want HTTP API access, you're at $495 minimum."
+  },
+  {
+   "claim": "Clay ships a first-party MCP server alongside its public API, with OAuth 2.0 and short-lived bearer tokens",
+   "url": "https://www.scalekit.com/blog/clay-mcp-vs-api",
+   "quote": "Clay MCP and the Clay Public API have overlapping but not identical coverage. MCP owns Audiences querying, natural-language account Q&A, and"
+  }
+ ],
+ "notes": "Most official docs describe Clay's HTTP API as an outbound connector (Clay calling other APIs), not Clay's own inbound public API surface; OAuth 2.0 and 24-hour bearer tokens are reported only by a third-party review (pipeline.zoominfo.com). The first-party 'Clay MCP' server is evidenced only via a third-party blog (scalekit.com), not vendor docs in the supplied material. Pricing reportedly changed in 2025-2026 (Explorer tier killed), so free-tier API access is likely unavailable.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:45:01+00:00"
+}

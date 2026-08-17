@@ -1,0 +1,38 @@
+{
+ "app_id": 85,
+ "app": "iPayX",
+ "category": "Finance and Fintech",
+ "one_liner": "unknown",
+ "auth_methods": [
+  "unknown"
+ ],
+ "access": "unknown",
+ "api_styles": [
+  "unknown"
+ ],
+ "api_breadth": "unknown",
+ "official_mcp": false,
+ "verdict": "unknown",
+ "blocker": "No supplied material references iPayX or ipayx.ai; API existence, auth, and access model cannot be verified from the provided corpus.",
+ "confidence": 0.1,
+ "evidence": [
+  {
+   "claim": "The only fintech API docs supplied are for ConnectPay, a different product, not iPayX.",
+   "url": "https://docs.connectpay.com/docs/",
+   "quote": "CONNECTPAY API (1.0.0)"
+  },
+  {
+   "claim": "Supplied authentication material covers Visa's developer platform, unrelated to iPayX.",
+   "url": "https://developer.visa.com/capabilities/visa-in-app-provisioning/docs-authentication",
+   "quote": "Some Visa Developer APIs require an API Key-Shared Secret Authentication, which Visa refers to as x-pay-token."
+  },
+  {
+   "claim": "Supplied credential documentation is for the X (Twitter) API, not iPayX.",
+   "url": "https://docs.x.com/fundamentals/authentication/oauth-1-0a/api-key-and-secret",
+   "quote": "The API Key and Secret (also known as Consumer Key and Secret) are the most fundamental credentials required to access the X API."
+  }
+ ],
+ "notes": "The search corpus contained no iPayX-specific pages (nothing from ipayx.ai/docs). All supplied excerpts concern ConnectPay, Visa Developer, X API, or generic API/MCP topics, so no factual determination about iPayX's API, auth, access model, or MCP support is possible from this material. Re-research with iPayX-targeted sources is required.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:31:21+00:00"
+}

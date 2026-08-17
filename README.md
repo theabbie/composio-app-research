@@ -7,7 +7,7 @@ whether an official MCP server exists, and whether the app could become an
 agent-callable toolkit today — every claim backed by a cited docs URL.
 
 The full write-up (findings, patterns, the agent itself, and the verification
-story) is the deployed case-study page: **<live URL goes here after deploy>**.
+story) is the deployed case-study page: **https://composio-app-research-three.vercel.app/**.
 
 ## Repository layout
 

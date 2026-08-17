@@ -1,0 +1,49 @@
+{
+ "app_id": 29,
+ "app": "Aircall",
+ "category": "Communications and Messaging",
+ "one_liner": "Cloud phone platform for business calls, SMS, and AI voice agents",
+ "auth_methods": [
+  "oauth2",
+  "basic"
+ ],
+ "access": "paid_plan_required",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_with_work",
+ "blocker": "API keys are generated inside an Aircall customer account and no free developer tier is documented; OAuth for multi-customer apps additionally requires an approved tech-partner application.",
+ "confidence": 0.75,
+ "evidence": [
+  {
+   "claim": "The public REST API supports two auth methods: Basic Authentication (API ID + token, Base64) and OAuth 2.0",
+   "url": "https://developer.aircall.io/docs/authentication",
+   "quote": "Aircall supports two ways to authenticate with the REST API: Basic Authentication and OAuth."
+  },
+  {
+   "claim": "Basic-auth API keys require an Aircall customer account and are generated self-serve from the dashboard (Integrations > API keys)",
+   "url": "https://developer.aircall.io/docs/basic-authentication",
+   "quote": "You must have an Aircall account. Sign up as a customer here"
+  },
+  {
+   "claim": "OAuth credentials for public/multi-customer apps are gated behind an approved tech-partner application",
+   "url": "https://developer.aircall.io/docs/plan-your-integration",
+   "quote": "If approved, you'll receive your developer account and OAuth credentials to start building"
+  },
+  {
+   "claim": "API surface is broad: reference lists 9+ object groups (Users V1/V2, Teams, Calls, Dialer, Numbers, Conversation Intelligence, Messages, Contacts, Tags, Webhooks); Calls alone has 10+ operations",
+   "url": "https://developers.aircall.io/api-references",
+   "quote": "- - Call overview\n- List all Calls\n- Retrieve a Call\n- Search Calls\n- Transfer a Call\n- Comment a Call\n- Tag a Call\n- Archive a Call"
+  },
+  {
+   "claim": "Aircall's official developer platform documents MCP as a first-class capability for connecting tools to its AI Virtual Agents",
+   "url": "https://developer.aircall.io/",
+   "quote": "Connect your tools and data to Aircall's AI Virtual Agents through MCP."
+  }
+ ],
+ "notes": "MCP caveat: Aircall's docs position MCP as a way to plug YOUR tools/MCP servers into Aircall's AI Virtual Agents (Aircall acts as MCP client), not a vendor-hosted MCP server exposing the Aircall API; unofficial third-party MCP servers exist (@allo/aircall-mcp-server with 73 tools, CassiaResearch with 83 tools) but are not vendor-official. OAuth is account-level: one access_token per account, admin selects which phone numbers the app can access, users matched by email. Whether a free trial yields API keys is not stated in the supplied material, so access is classed as paid_plan_required. Docs offer an llms.txt index, webhooks, WhatsApp messaging endpoints, and an official Postman collection.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:45:00+00:00"
+}

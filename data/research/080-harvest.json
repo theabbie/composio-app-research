@@ -1,0 +1,50 @@
+{
+ "app_id": 80,
+ "app": "Harvest",
+ "category": "Productivity and Project Management",
+ "one_liner": "Time tracking and invoicing software for teams and projects",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token",
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": false,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.93,
+ "evidence": [
+  {
+   "claim": "Harvest API V2 supports Personal Access Tokens created self-serve from the Developers section of Harvest ID",
+   "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+   "quote": "The API can be accessed by creating a Personal Access Token from the **Developers** section of Harvest ID. After creating it you'll be provided with a random token and a list of your account IDs."
+  },
+  {
+   "claim": "Harvest API V2 also supports full OAuth2 Authorization Code flow with access and refresh tokens",
+   "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+   "quote": "Implementing a full OAuth2 Authentication flow which allows other people to use your Harvest integrations."
+  },
+  {
+   "claim": "API requests authenticate via Bearer token in Authorization header plus Harvest-Account-Id header against api.harvestapp.com REST endpoints",
+   "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+   "quote": "curl -H \"Authorization: Bearer $ACCESS_TOKEN\" \\\n     -H \"Harvest-Account-Id: $ACCOUNT_ID\""
+  },
+  {
+   "claim": "The v2 API surface spans many resource groups including Clients, Invoices, Estimates, Expenses, Tasks, Timesheets, Projects, Roles, Users, and Reports, indicating broad coverage",
+   "url": "https://help.getharvest.com/api-v2/",
+   "quote": "### [Invoices API](https://help.getharvest.com/api-v2/invoices-api)"
+  },
+  {
+   "claim": "Harvest maintains current v2 REST API documentation with a Postman collection and code samples, legacy v1 deprecated",
+   "url": "https://help.getharvest.com/api-v2/",
+   "quote": "This is the current API V2 documentation. You can still view the legacy API V1 documentation."
+  }
+ ],
+ "notes": "Greenhouse has a separate unrelated 'Harvest' API (support.greenhouse.io result) — not this app. No evidence of an official MCP server in vendor docs. Harvest offers a free plan and trial, and PAT creation is self-serve via id.getharvest.com/developers, so credentials are obtainable without sales contact.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:28:46+00:00"
+}

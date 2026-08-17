@@ -1,0 +1,51 @@
+{
+ "app_id": 66,
+ "app": "Neo4j",
+ "category": "Developer, Infra and Data platforms",
+ "one_liner": "Graph database with drivers, HTTP/Query APIs, and Aura cloud management API",
+ "auth_methods": [
+  "oauth2",
+  "basic",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest",
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.85,
+ "evidence": [
+  {
+   "claim": "Aura cloud management API authenticates via OAuth 2.0 with self-serve account-linked credentials",
+   "url": "https://neo4j.com/docs/aura/api/authentication/",
+   "quote": "The Aura API uses OAuth 2.0 for API authentication. API credentials are linked to the user account, inheriting its capabilities and roles."
+  },
+  {
+   "claim": "Database connections support basic username/password auth via official drivers",
+   "url": "https://neo4j.com/docs/api/python-driver/current/api.html",
+   "quote": "For basic authentication, `auth` can be a simple tuple, for example:"
+  },
+  {
+   "claim": "Auth tokens are supported for driver authentication beyond basic auth",
+   "url": "https://neo4j.com/docs/api/python-driver/current/api.html",
+   "quote": "To authenticate with Neo4j the authentication details are supplied at driver creation. The auth token is an object of the class neo4j.Auth containing static"
+  },
+  {
+   "claim": "Public REST-style HTTP and Query APIs are documented alongside many client drivers and a GraphQL library",
+   "url": "https://neo4j.com/docs/java-reference/current/",
+   "quote": "[HTTP API](https://neo4j.com/docs/http-api/current/)\n*   [Neo4j Query API](https://neo4j.com/docs/query-api/current/)"
+  },
+  {
+   "claim": "Neo4j officially ships and documents an MCP server on its own docs site",
+   "url": "https://neo4j.com/docs/mcp/current/",
+   "quote": "Neo4j MCP implements the Model Context Protocol (MCP), an open standard that lets applications connect to external data sources and tools."
+  }
+ ],
+ "notes": "Legacy REST API (rest-docs v3.5) is deprecated and removed in Neo4j 4.0: 'The API described in this manual been deprecated and will be removed in Neo4j 4.0.' Use the Query API / HTTP API or Bolt drivers instead. Official MCP server is downloadable as a binary and works with Aura and self-hosted deployments. Token-based (bearer) auth with the Query API is documented via community/OIDC guides. Pricing page shows paid Aura tiers, but local self-hosted usage (localhost:7474 examples) and account-linked Aura credentials are self-serve.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:25:13+00:00"
+}

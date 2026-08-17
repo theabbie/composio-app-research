@@ -1,0 +1,49 @@
+{
+ "app_id": 99,
+ "app": "YouTube Transcript",
+ "category": "AI, Research and Media-native",
+ "one_liner": "Managed API for YouTube transcripts, search, channels, and playlists",
+ "auth_methods": [
+  "api_key",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "narrow",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "API key sent as Bearer token in Authorization header",
+   "url": "https://transcriptapi.com/",
+   "quote": "-H \"Authorization: Bearer API_KEY\""
+  },
+  {
+   "claim": "Self-serve signup issues an API key immediately with free credits",
+   "url": "https://transcriptapi.com/",
+   "quote": "Your agent creates a TranscriptAPI account and gets an API key on first use — no manual setup needed. You get 100 free credits to start."
+  },
+  {
+   "claim": "REST API surface covers transcripts plus several YouTube data endpoints",
+   "url": "https://transcriptapi.com/blog/best-youtube-transcript-apis-compared",
+   "quote": "transcripts, YouTube search, channel listing, channel search, playlist extraction, channel resolve, and latest uploads"
+  },
+  {
+   "claim": "Vendor ships/documents its own MCP server for agent clients",
+   "url": "https://transcriptapi.com/blog/best-youtube-transcript-apis-compared",
+   "quote": "native YouTube MCP server for Claude, ChatGPT, Cursor, and other agent clients"
+  },
+  {
+   "claim": "Free tier then low-cost paid plans; no sales gate",
+   "url": "https://transcriptapi.com/blog/best-youtube-transcript-apis-compared",
+   "quote": "100 free credits, then plans starting at $5 per month"
+  }
+ ],
+ "notes": "Credit-based pricing (1 credit per transcript/search call). Vendor docs include MCP integration guides for ChatGPT and Claude (transcriptapi.com/docs/mcp). GitHub repo ZeroPointRepo/youtube-mcp describes a 'TranscriptAPI MCP' toolkit but the org's vendor affiliation is unverified; official MCP status rests on the vendor's own docs. Homepage claims 49ms median latency and 15M+ transcripts/month.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:37:52+00:00"
+}

@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import re
 import unicodedata
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from agent.config import RESEARCH_DIR, VERIFICATION_DIR, get_settings
@@ -15,7 +15,7 @@ from agent.schemas import (
     Verdict,
     VerificationFlag,
 )
-from agent.websearch import JinaClient
+from agent.websearch import FetchedPage, JinaClient
 
 
 def normalize(text: str) -> str:
@@ -86,12 +86,21 @@ def check_consistency(research: AppResearch) -> list[VerificationFlag]:
     return flags
 
 
+MAX_PAGE_CHARS = 400_000
+
+
 def verify_one(research: AppResearch, web: JinaClient) -> AutoVerification:
     flags = check_consistency(research)
     urls_ok = 0
     quotes_found = 0
     for item in research.evidence:
-        page = web.fetch(item.url)
+        fetched = web.fetch(item.url)
+        page = FetchedPage(
+            url=fetched.url,
+            content=fetched.content[:MAX_PAGE_CHARS],
+            ok=fetched.ok,
+            error=fetched.error,
+        )
         if not page.ok or len(page.content) < 100:
             flags.append(
                 VerificationFlag(
@@ -145,9 +154,25 @@ def run_verify(directory: Path = RESEARCH_DIR, pass_number: int = 1) -> int:
     VERIFICATION_DIR.mkdir(parents=True, exist_ok=True)
     out_path = VERIFICATION_DIR / f"auto-pass{pass_number}.json"
     verifications: list[AutoVerification] = []
-    with ThreadPoolExecutor(max_workers=6) as pool:
-        for verification in pool.map(lambda r: verify_one(r, web), results):
-            verifications.append(verification)
+    done_ids: set[int] = set()
+    partial_path = VERIFICATION_DIR / f"auto-pass{pass_number}.partial.json"
+    if partial_path.exists():
+        for row in json.loads(partial_path.read_text()):
+            saved = AutoVerification.model_validate(row)
+            verifications.append(saved)
+            done_ids.add(saved.app_id)
+        print(f"resuming: {len(done_ids)} apps already verified")
+    pending = [r for r in results if r.app_id not in done_ids]
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        futures = {pool.submit(verify_one, r, web): r for r in pending}
+        for index, future in enumerate(as_completed(futures), start=1):
+            verifications.append(future.result())
+            if index % 10 == 0 or index == len(pending):
+                partial_path.write_text(
+                    json.dumps([v.model_dump() for v in verifications], indent=1)
+                )
+                print(f"  verified {len(verifications)}/{len(results)}")
+    partial_path.unlink(missing_ok=True)
     verifications.sort(key=lambda v: v.app_id)
     out_path.write_text(
         json.dumps([v.model_dump() for v in verifications], indent=1) + "\n"

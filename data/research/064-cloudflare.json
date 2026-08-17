@@ -1,0 +1,51 @@
+{
+ "app_id": 64,
+ "app": "Cloudflare",
+ "category": "Developer, Infra and Data platforms",
+ "one_liner": "Cloudflare provides CDN, DNS, security, and edge compute infrastructure APIs.",
+ "auth_methods": [
+  "bearer_token",
+  "api_key",
+  "oauth2"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest",
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.97,
+ "evidence": [
+  {
+   "claim": "API tokens are created self-serve from the Cloudflare dashboard (My Profile > API Tokens or Manage Account > API Tokens).",
+   "url": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+   "quote": "From the [Cloudflare dashboard ↗](https://dash.cloudflare.com/profile/api-tokens/), go to **My Profile**>**API Tokens** for user tokens. For Account Tokens, go to **Manage Account**>**API Tokens**."
+  },
+  {
+   "claim": "Authentication uses Bearer tokens sent in the Authorization header against api.cloudflare.com.",
+   "url": "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+   "quote": "curl \"https://api.cloudflare.com/client/v4/user/tokens/verify\" \\\n--header \"Authorization: Bearer <API_TOKEN>\""
+  },
+  {
+   "claim": "Cloudflare ships an official MCP server covering the entire Cloudflare API (over 2,500 endpoints).",
+   "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare/",
+   "quote": "The Cloudflare API MCP server ↗ provides access to the entire Cloudflare API — over 2,500 endpoints across DNS, Workers, R2, Zero Trust, and"
+  },
+  {
+   "claim": "An official MCP server also exists in Cloudflare's own GitHub organization.",
+   "url": "https://github.com/cloudflare/mcp",
+   "quote": "A token-efficient MCP server for the entire Cloudflare API. 2500 endpoints in 1k tokens, powered by Code Mode."
+  },
+  {
+   "claim": "Cloudflare offers OAuth 2.0 for third-party integrations in addition to API tokens.",
+   "url": "https://blog.cloudflare.com/oauth-for-all/",
+   "quote": "Cloudflare provides a rich API for our platform that enables developers to create automations, CI/CD, and integrations that glue together"
+  }
+ ],
+ "notes": "Legacy Global API key auth still exists (labeled legacy) alongside modern scoped API tokens. GraphQL Analytics API is separate from the REST v4 API; a GraphQL MCP server is documented in the changelog. R2 S3-compatible access requires purchasing R2 first ('You must purchase R2 before you can generate an API token'), but the core API is free-tier accessible. New tokens use the cfut_ scannable prefix format.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:22:49+00:00"
+}

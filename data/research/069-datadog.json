@@ -1,0 +1,49 @@
+{
+ "app_id": 69,
+ "app": "Datadog",
+ "category": "Developer, Infra and Data platforms",
+ "one_liner": "Cloud observability platform for monitoring infrastructure, applications, and logs.",
+ "auth_methods": [
+  "api_key",
+  "oauth2"
+ ],
+ "access": "unknown",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.88,
+ "evidence": [
+  {
+   "claim": "API requests are authenticated with API keys (plus application keys for many endpoints).",
+   "url": "https://docs.datadoghq.com/api/latest/authentication/",
+   "quote": "All requests to Datadog's API must be authenticated. Requests that write data require reporting access and require an API key ."
+  },
+  {
+   "claim": "Credentials are created self-serve from Organization Settings once a user has the right permission.",
+   "url": "https://docs.datadoghq.com/account_management/api-app-keys/",
+   "quote": "To add a Datadog application key, navigate to Organization Settings > Application Keys. If you have the permission to create application keys, click New Key."
+  },
+  {
+   "claim": "OAuth 2.0 is supported for API-based integrations.",
+   "url": "https://docs.datadoghq.com/extend/integrations/api_integration/",
+   "quote": "OAuth 2.0 is an industry-standard authorization framework that enables secure access to Datadog APIs without exposing user credentials."
+  },
+  {
+   "claim": "The public API is a resource-oriented HTTP REST API.",
+   "url": "https://docs.datadoghq.com/api/latest/",
+   "quote": "The Datadog API is an HTTP REST API. The API uses resource-oriented URLs to call the API, uses status codes to indicate the success or failure of requests,"
+  },
+  {
+   "claim": "Datadog's own docs site ships an official MCP server bridging Datadog data to AI agents.",
+   "url": "https://docs.datadoghq.com/mcp_server/",
+   "quote": "The Datadog MCP Server acts as a bridge between your observability data in Datadog and any AI agents that support the Model Context Protocol (MCP)."
+  }
+ ],
+ "notes": "Datadog is transitioning auth from application keys to scoped, identity-aware PATs/SATs per its blog ('replaces application keys with scoped, identity-aware access using PATs, SATs'), so toolkit auth should anticipate scoped tokens. Official MCP server exists at docs.datadoghq.com/mcp_server (vendor-hosted). The supplied material does not state whether a free tier or trial grants API credentials, so access cost is unknown; key creation itself is documented as self-serve within an account. The API reference spans many resource areas (metrics, synthetics, logs, dashboards, monitors, etc.), indicating broad surface area.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:25:47+00:00"
+}

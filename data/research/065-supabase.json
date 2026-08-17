@@ -1,0 +1,50 @@
+{
+ "app_id": 65,
+ "app": "Supabase",
+ "category": "Developer, Infra and Data platforms",
+ "one_liner": "Backend platform with auto-generated REST APIs, auth, storage, realtime.",
+ "auth_methods": [
+  "api_key",
+  "bearer_token",
+  "oauth2"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Data API access is authenticated via API keys issued per project",
+   "url": "https://supabase.com/docs/guides/getting-started/api-keys",
+   "quote": "API keys provide the first layer of authentication for data access."
+  },
+  {
+   "claim": "Auto-generated RESTful API (PostgREST) exposes full CRUD over the database schema",
+   "url": "https://supabase.com/docs/guides/api",
+   "quote": "Supabase provides a RESTful API using [PostgREST](https://postgrest.org/), a thin API layer on top of Postgres."
+  },
+  {
+   "claim": "Management API requires a bearer access token, with OAuth2 to generate tokens on behalf of users",
+   "url": "https://supabase.com/docs/reference/api/introduction",
+   "quote": "All API requests require an access token to be included in the Authorization. OAuth2 allows your application to generate tokens on behalf of a Supabase user"
+  },
+  {
+   "claim": "Supabase officially documents its own MCP server in its docs",
+   "url": "https://supabase.com/docs/guides/ai-tools/mcp",
+   "quote": "The Model Context Protocol (MCP) is a standard for connecting Large Language Models (LLMs) to platforms like Supabase."
+  },
+  {
+   "claim": "Self-serve onboarding: docs link directly to dashboard sign-up and quickstarts",
+   "url": "https://supabase.com/docs",
+   "quote": "[Sign up](https://supabase.com/dashboard)"
+  }
+ ],
+ "notes": "Official MCP server also announced on vendor blog (supabase.com/blog/mcp-server) for managing databases/tables/config via AI tools. Data API is auto-generated per project, so concrete endpoints depend on the user's own schema (PostgREST). Supabase Auth can also act as an OAuth 2.1/OIDC identity provider. Supplied material doesn't explicitly state a free tier, but self-serve sign-up plus getting-started/API-key docs indicate credentials are available without sales or approval gates.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:23:44+00:00"
+}

@@ -1,0 +1,48 @@
+{
+ "app_id": 49,
+ "app": "Amazon Selling Partner",
+ "category": "Ecommerce",
+ "one_liner": "Amazon's official REST API for sellers and vendors to programmatically manage orders, inventory, payments, and catalog data.",
+ "auth_methods": [
+  "oauth2"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_with_work",
+ "blocker": "Multi-step onboarding: developer account registration, SP-API role qualification requests, application registration, and OAuth/self-authorization setup before production credentials work.",
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "SP-API is a REST-based API covering orders, shipments, payments, and more (broad surface).",
+   "url": "https://developer.amazonservices.com/",
+   "quote": "The Selling Partner API (SP-API) is a REST-based API that helps Amazon selling partners programmatically access their data on orders, shipments, payments"
+  },
+  {
+   "claim": "Authorization is OAuth 2.0 via Login with Amazon; private apps can self-authorize.",
+   "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-gen-ai-selling-partner-api/integrating-sp-api.html",
+   "quote": "The authorization model for the Selling Partner API is based on [Login with Amazon](https://developer.amazon.com/docs/login-with-amazon/documentation-overview.html), an Amazon implementation of OAuth 2.0."
+  },
+  {
+   "claim": "Developers can self-serve credentials by registering a developer account and application, but must also request and qualify for SP-API roles to access operations.",
+   "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-gen-ai-selling-partner-api/integrating-sp-api.html",
+   "quote": "you must request and qualify for a particular role, or you will not be able to access the operations and resources grouped under that role."
+  },
+  {
+   "claim": "Self-serve developer account creation is publicly offered.",
+   "url": "https://developer.amazonservices.com/",
+   "quote": "Automate orders, inventory & pricing with real-time data. Create your developer account today."
+  },
+  {
+   "claim": "Amazon ships an official MCP server for SP-API via its own GitHub org (amzn/selling-partner-api-samples).",
+   "url": "https://github.com/amzn/selling-partner-api-samples/discussions/131",
+   "quote": "The Model Context Protocol (MCP) is an open protocol that allows AI assistants to access external tools and data sources."
+  }
+ ],
+ "notes": "Amazon published an official Data Kiosk MCP server in its amzn/selling-partner-api-samples GitHub org (announced 2025/2026). Onboarding is lengthy (10-step flow including sandbox registration and production app listing); role approval can involve identity/business verification. The docs site itself offers an llms.txt index and OpenAPI endpoint definitions for AI agents. SP-API replaced the older MWS API, which is deprecated.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:17:10+00:00"
+}

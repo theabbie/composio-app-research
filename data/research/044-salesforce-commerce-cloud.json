@@ -1,0 +1,48 @@
+{
+ "app_id": 44,
+ "app": "Salesforce Commerce Cloud",
+ "category": "Ecommerce",
+ "one_liner": "Salesforce's cloud platform for building ecommerce storefronts and apps",
+ "auth_methods": [
+  "oauth2"
+ ],
+ "access": "paid_plan_required",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_with_work",
+ "blocker": "No free self-serve developer account evident: API credentials require a paid Commerce Cloud instance, and the older OCAPI path is deprecated",
+ "confidence": 0.62,
+ "evidence": [
+  {
+   "claim": "B2C Commerce API (SCAPI) has public REST API reference documentation on Salesforce's official developer site",
+   "url": "https://developer.salesforce.com/docs/commerce/commerce-api/references",
+   "quote": "You are viewing SCAPI documentation. To view the full SCAPI reference specifications in the left navigation, select the **Reference** tab (if you are currently in the **Guides** tab)."
+  },
+  {
+   "claim": "OAuth 2.0 is used to authenticate Commerce API requests",
+   "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi/oauth.html",
+   "quote": "OAuth is used to authenticate requests in the context of a client ID"
+  },
+  {
+   "claim": "Salesforce supports the OAuth 2.0 web server flow (authorization code grant) for external web app integration",
+   "url": "https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.remoteaccess_oauth_web_server_flow.htm&type=5",
+   "quote": "use the OAuth 2.0 web server flow, which implements the OAuth 2.0 authorization code grant type"
+  },
+  {
+   "claim": "Commerce Cloud is a commercial product sold via editions, implying paid access",
+   "url": "https://www.salesforce.com/commerce/pricing/",
+   "quote": "Get Salesforce Commerce Cloud pricing information and explore editions."
+  },
+  {
+   "claim": "Salesforce officially documents a PWA Kit MCP server in its own developer docs",
+   "url": "https://developer.salesforce.com/docs/commerce/sfra/guide/mcp-server-intro.html",
+   "quote": "The PWA Kit MCP Server provides AI-assisted code generation and assistance for creating your PWA Kit project"
+  }
+ ],
+ "notes": "Legacy Open Commerce API (OCAPI) is marked deprecated in Salesforce's own docs; SCAPI is the modern REST surface alongside Composable Storefront, Script, and Einstein APIs. The vendor-documented PWA Kit MCP server targets AI-assisted storefront code generation, not direct agentic access to commerce data. No free developer tier for Commerce Cloud appears in the supplied material.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:16:32+00:00"
+}

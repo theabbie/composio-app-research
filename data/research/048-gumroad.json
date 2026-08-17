@@ -1,0 +1,49 @@
+{
+ "app_id": 48,
+ "app": "Gumroad",
+ "category": "Ecommerce",
+ "one_liner": "Marketplace for creators to sell digital products, memberships, and physical goods.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "official_mcp": false,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.85,
+ "evidence": [
+  {
+   "claim": "Any signed-in Gumroad user can self-serve API credentials by creating an application in advanced settings and clicking 'Generate access token'.",
+   "url": "https://gumroad.com/help/article/280-create-application-api",
+   "quote": "First, sign in to your Gumroad account. Then, go to advanced settings. Here, you'll see a form to create a new application."
+  },
+  {
+   "claim": "Personal access tokens can be generated manually without a full OAuth flow.",
+   "url": "https://gumroad.com/help/article/280-create-application-api",
+   "quote": "if you only want to use the API on your own Gumroad account, you can manually generate an access token, which is a simpler process"
+  },
+  {
+   "claim": "Full OAuth2 authorization-code flow is supported for third-party apps acting on any Gumroad account.",
+   "url": "https://gumroad.com/help/article/280-create-application-api",
+   "quote": "send the user to Gumroad for authorization using a URL like this: https://gumroad.com/oauth/authorize?client_id=CLIENT_ID&redirect_uri=REDIRECT_URI&scope=SCOPE"
+  },
+  {
+   "claim": "The API is a versioned REST API (v2) over https://api.gumroad.com with token passed per request.",
+   "url": "https://gumroad.com/help/article/280-create-application-api",
+   "quote": "curl https://api.gumroad.com/v2/products -d \"access_token=ACCESS_TOKEN\" -X GET"
+  },
+  {
+   "claim": "API surface covers products, sales, subscribers, and license verify/enable/disable operations.",
+   "url": "https://nocodeapi.com/docs/gumroad-api/",
+   "quote": "Connect with Gumroad API and get get products, sales, subscribers, verify licence with simple HTTP REST API."
+  }
+ ],
+ "notes": "Access tokens never expire until manually revoked ('we do not expire the access_token until it is revoked manually'). OAuth scopes like 'edit_products' imply write endpoints beyond reads. Multiple community MCP servers exist (keithah/gumroad-mcp, rmarescu/gumroad-mcp) but none are shipped by Gumroad/antiwork itself, so official_mcp=false.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:17:14+00:00"
+}

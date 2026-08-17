@@ -1,0 +1,49 @@
+{
+ "app_id": 88,
+ "app": "Brex",
+ "category": "Finance and Fintech",
+ "one_liner": "Corporate spend platform exposing REST APIs for expenses, cards, banking.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.85,
+ "evidence": [
+  {
+   "claim": "Brex offers a documented public REST API defined with OpenAPI",
+   "url": "https://developer.brex.com/",
+   "quote": "Brex APIs use the REST architecture, are defined using the OpenAPI specification and use standard HTTP response codes and verbs."
+  },
+  {
+   "claim": "Users self-serve API credentials by generating a user token in the Brex dashboard (requires account admin or card admin role)",
+   "url": "https://developer.brex.com/guides/authentication",
+   "quote": "Sign in to dashboard.brex.com as an account admin or card admin"
+  },
+  {
+   "claim": "User tokens are passed as Bearer tokens in the Authorization header",
+   "url": "https://developer.brex.com/guides/authentication",
+   "quote": "To start making calls to Brex APIs, generate a user token from your Brex dashboard and pass it along in your API call headers."
+  },
+  {
+   "claim": "Partner OAuth2 (client ID/secret) requires contacting Brex developer support, gating third-party OAuth apps",
+   "url": "https://developer.brex.com/guides/partner_authentication",
+   "quote": "Please contact our developer support team to be issued a client ID and client secret for partner authentication."
+  },
+  {
+   "claim": "Brex officially ships an MCP server documented on its own developer site",
+   "url": "https://developer.brex.com/docs/mcp",
+   "quote": "The server is hosted at https://api.brex.com/mcp and supports any MCP-compatible client."
+  }
+ ],
+ "notes": "Official MCP server (Beta) supports OAuth with Dynamic Client Registration, so agent clients can connect without partner pre-registration; API key (user token) auth also works for MCP. Caveats: token creation requires an active Brex business account with account/card admin role; user tokens expire after 90 days of inactivity; base URLs transitioned to api.brex.com as of Jan 1, 2026 (old platform.brexapis.com still available); no public sandbox for regular customers (staging is partner-only); MCP lacks approval and card-management actions. Partner OAuth path (needed for multi-customer OAuth apps without BYO token) is gated behind contacting developer support.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:34:16+00:00"
+}

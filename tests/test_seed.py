@@ -117,6 +117,10 @@ def test_parse_full_assignment() -> None:
     assert fathom.domain == "fathom.video"
     consensus = next(s for s in seeds if s.app == "Consensus")
     assert "OAuth requested" in consensus.hint
+    for seed in seeds:
+        assert "[" not in seed.app and "http" not in seed.app, seed
+    assert next(s for s in seeds if s.id == 76).app == "Monday.com"
+    assert next(s for s in seeds if s.id == 37).app == "systeme.io"
 
 
 def test_categories_cover_all_ten() -> None:

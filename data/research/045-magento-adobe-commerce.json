@@ -1,0 +1,52 @@
+{
+ "app_id": 45,
+ "app": "Magento (Adobe Commerce)",
+ "category": "Ecommerce",
+ "one_liner": "Adobe's ecommerce platform (Magento) for building and running online stores",
+ "auth_methods": [
+  "bearer_token",
+  "session_cookie",
+  "other"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest",
+  "graphql",
+  "soap"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": false,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.82,
+ "evidence": [
+  {
+   "claim": "Official docs list token-based, OAuth-based, and session-based authentication for the web APIs",
+   "url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/",
+   "quote": "Token-based authentication"
+  },
+  {
+   "claim": "Session-based authentication is also a documented auth option",
+   "url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/",
+   "quote": "Session-based authentication"
+  },
+  {
+   "claim": "Integration OAuth credentials are created by the store admin; the integration OAuth flow is OAuth 1.0a-style",
+   "url": "https://stackoverflow.com/questions/79474317/how-to-authenticate-to-adobe-commerce-rest-apis-with-oauth-1-0a-using-integratio",
+   "quote": "I've created an integration on adobe admin. I have taken these secrets to postman and would like to now auth with OAuth 1.0"
+  },
+  {
+   "claim": "Documented REST APIs cover both Adobe Commerce PaaS and the SaaS cloud service, with separate PaaS and SaaS references",
+   "url": "https://developer.adobe.com/commerce/webapi/rest/",
+   "quote": "The REST API documentation describes the REST APIs that are available in Adobe Commerce (PaaS) and Adobe Commerce as a Cloud Service (SaaS)."
+  },
+  {
+   "claim": "A full GraphQL API is offered alongside REST, plus legacy SOAP services",
+   "url": "https://developer.adobe.com/commerce/webapi/graphql/reference/",
+   "quote": "The API is organized around a single GraphQL endpoint that provides access to the full range of Adobe Commerce and Magento Open Source features."
+  }
+ ],
+ "notes": "Credentials are per-store: a merchant admin creates an integration in the Magento Admin (or uses admin/customer token auth); there is no central Adobe-issued API key for storefront data. Integration OAuth is OAuth 1.0a (per community report), not OAuth 2.0. SOAP is legacy ('Use SOAP services' still documented). A community MCP server exists (github.com/rafaelstz/adobe-commerce-dev-mcp, listed on mcp.so) but is NOT vendor-official. Docs split into PaaS vs SaaS (Commerce as a Cloud Service) references, so endpoint surface differs by deployment.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:16:14+00:00"
+}

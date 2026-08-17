@@ -1,0 +1,49 @@
+{
+ "app_id": 36,
+ "app": "Klaviyo",
+ "category": "Marketing, Ads, Email and Social",
+ "one_liner": "Email and SMS marketing platform with rich customer data APIs",
+ "auth_methods": [
+  "oauth2",
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "Klaviyo supports private API key auth, OAuth, and a public key for client-side endpoints",
+   "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+   "quote": "Klaviyo provides 3 methods of authentication including private key authentication and OAuth (used to call server-side APIs) and public key authentication (used to call client-side APIs)."
+  },
+  {
+   "claim": "Private API keys are self-serve, created in account Settings with a custom Authorization header",
+   "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+   "quote": "Authorization: Klaviyo-API-Key your-private-api-key"
+  },
+  {
+   "claim": "A free Klaviyo account can be created and used to obtain API credentials",
+   "url": "https://endgrate.com/blog/using-the-klaviyo-api-to-create-or-update-profiles-(with-php-examples)",
+   "quote": "If you don't already have a Klaviyo account, you can sign up for a free account on the Klaviyo website."
+  },
+  {
+   "claim": "Klaviyo's own developer docs document an official MCP server",
+   "url": "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server",
+   "quote": "The Klaviyo Model Context Protocol (MCP) server seamlessly integrates with Klaviyo's APIs, enabling AI clients to interact with your Klaviyo data."
+  },
+  {
+   "claim": "The API surface is large, spanning profiles, lists, campaigns, events and more",
+   "url": "https://www.magnetmonster.com/blog/klaviyo-mcp-server-a-comprehensive-guide-for-marketers",
+   "quote": "The Klaviyo MCP Server provides over 34 tools for interacting with Klaviyo's API endpoints."
+  }
+ ],
+ "notes": "Vendor ships an official MCP server (developers.klaviyo.com). OAuth is required only for App Marketplace listing; private keys work immediately for server-side /api endpoints. API calls require a dated 'revision' header (e.g., revision: 2024-10-15), a versioning gotcha. Client-side /client endpoints use the public 6-character company ID only. Managing API keys requires Owner, Admin, or Manager role within the account.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:12:50+00:00"
+}

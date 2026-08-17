@@ -1,0 +1,50 @@
+{
+ "app_id": 81,
+ "app": "Stripe",
+ "category": "Finance and Fintech",
+ "one_liner": "Payments, billing, and financial infrastructure APIs for internet businesses.",
+ "auth_methods": [
+  "api_key",
+  "basic",
+  "oauth2"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.98,
+ "evidence": [
+  {
+   "claim": "The API is REST with resource-oriented URLs, form-encoded bodies, and JSON responses.",
+   "url": "https://docs.stripe.com/api",
+   "quote": "The Stripe API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses"
+  },
+  {
+   "claim": "Primary authentication is API keys managed in the Stripe Dashboard.",
+   "url": "https://docs.stripe.com/api/authentication",
+   "quote": "The Stripe API uses API keys to authenticate requests. You can view and manage your API keys in the Stripe Dashboard."
+  },
+  {
+   "claim": "Free self-serve test credentials: test-mode secret keys work in sandboxes immediately after account creation.",
+   "url": "https://docs.stripe.com/api",
+   "quote": "Test mode secret keys start with `sk_test_` and have unrestricted access to their sandboxes."
+  },
+  {
+   "claim": "OAuth 2.0 is also supported for apps acting on behalf of users.",
+   "url": "https://docs.stripe.com/stripe-apps/api-authentication",
+   "quote": "Your app can use one of three methods to authenticate requests to the Stripe API on behalf of your users."
+  },
+  {
+   "claim": "Stripe itself documents an official MCP server for AI agents.",
+   "url": "https://docs.stripe.com/mcp",
+   "quote": "The Stripe Model Context Protocol (MCP) server provides a set of tools that AI agents can use to interact with the Stripe API and search our knowledge base"
+  }
+ ],
+ "notes": "Official MCP server documented at docs.stripe.com/mcp. Keys are sent as HTTP Basic username (curl -u sk_test_...:). Live mode offers restricted keys (rk_live_) with scoped permissions. Two API namespaces (v1 and v2); no bulk updates (one object per request). Live keys require account activation but no paid plan; Stripe charges per-transaction fees.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:29:43+00:00"
+}

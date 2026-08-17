@@ -1,0 +1,49 @@
+{
+ "app_id": 72,
+ "app": "Airtable",
+ "category": "Productivity and Project Management",
+ "one_liner": "Low-code platform for building collaborative apps, databases, and workflows",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Personal access tokens are the primary auth credential and are self-serve on all plans",
+   "url": "https://support.airtable.com/articles/9934989703-creating-personal-access-tokens",
+   "quote": "Personal Access Tokens (PATs) allow users to create multiple access tokens that allow for a wide range of access to the information held in Airtable bases"
+  },
+  {
+   "claim": "PATs are available on the free tier; legacy API keys were fully deprecated Feb 1, 2024 in favor of PATs and OAuth",
+   "url": "https://support.airtable.com/articles/9934989703-creating-personal-access-tokens",
+   "quote": "All users should migrate to Personal Access Tokens for individual use and OAuth for third-party integrations."
+  },
+  {
+   "claim": "The API uses token-based bearer authentication via the Authorization header",
+   "url": "https://support.airtable.com/articles/2022585894-airtable-enterprise-api",
+   "quote": "The Airtable Enterprise API uses token-based authentication like [Airtable's Web API](https://airtable.com/developers/web/api/introduction). All requests should send the access token in the Authorization header."
+  },
+  {
+   "claim": "Free sign-up gives access to the documented Web API",
+   "url": "https://www.airtable.com/developers/web/api/introduction",
+   "quote": "Airtable is a low-code platform for building collaborative apps. Customize your workflow, collaborate, and achieve ambitious outcomes. Get started for free."
+  },
+  {
+   "claim": "Airtable officially ships and documents its own MCP server for AI-tool integration",
+   "url": "https://support.airtable.com/articles/9897799762-using-the-airtable-mcp-server",
+   "quote": "Airtable's MCP server lets you connect AI tools directly to your Airtable bases. This integration allows you to ask questions about your data, create and update records, and analyze information"
+  }
+ ],
+ "notes": "Legacy user API keys fully deprecated Feb 1, 2024; use PATs (individual) or OAuth (third-party). Enterprise/admin API endpoints (audit logs, user management) require Enterprise Scale plans. Official MCP server documented at airtable.com/developers/agents/mcp with OAuth and PAT setup paths; some enterprise orgs require admin allow-listing of third-party integrations. Record creation limited to 10 records per request; standard rate limits apply.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:25:51+00:00"
+}

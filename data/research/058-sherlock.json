@@ -1,0 +1,48 @@
+{
+ "app_id": 58,
+ "app": "Sherlock",
+ "category": "Data, SEO and Scraping",
+ "one_liner": "Open-source CLI that finds usernames across 400+ social networks",
+ "auth_methods": [
+  "none_public"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "none"
+ ],
+ "api_breadth": "none",
+ "official_mcp": false,
+ "verdict": "buildable_with_work",
+ "blocker": "No HTTP API or developer credentials exist; it is an open-source CLI/Python package that must be wrapped (subprocess or module import) to expose as agent tools",
+ "confidence": 0.85,
+ "evidence": [
+  {
+   "claim": "Sherlock is a CLI tool for finding usernames across social networks, not a hosted API service",
+   "url": "https://github.com/sherlock-project/sherlock",
+   "quote": "Hunt down social media accounts by username across"
+  },
+  {
+   "claim": "No authentication or credentials of any kind are required to use it",
+   "url": "https://github.com/bellingcat/toolkit/blob/main/gitbook/tools/sherlock/README.md",
+   "quote": "it does not require API keys or login credentials for the sites it checks; instead, it simply constructs the expected profile URL for each site"
+  },
+  {
+   "claim": "Free self-serve install via pip/pipx with no account creation",
+   "url": "https://github.com/bellingcat/toolkit/blob/main/gitbook/tools/sherlock/README.md",
+   "quote": "No account/API keys needed – Sherlock uses direct web requests and does not require creating any account or API key to use"
+  },
+  {
+   "claim": "Usage is command-line invocation with flags, confirming no REST/GraphQL API surface",
+   "url": "https://github.com/sherlock-project/sherlock",
+   "quote": "usage: sherlock [-h] [--version] [--verbose] [--folderoutput FOLDEROUTPUT] [--output OUTPUT] [--csv]"
+  },
+  {
+   "claim": "A third party has already wrapped Sherlock as a serverless cloud actor, showing it is wrappable for programmatic/agent use",
+   "url": "https://apify.com/misceres/sherlock",
+   "quote": "This Actor wraps the Sherlock Project to provide serverless username reconnaissance across social networks in the cloud"
+  }
+ ],
+ "notes": "Open-source (MIT) OSINT CLI, installable via pipx/pip/Docker; importable as Python module 'sherlock_project' (e.g. python -m sherlock_project user123), which is the natural integration path. No official MCP server appears in the supplied material; the Apify actor is third-party. Supports proxy/Tor, site filtering, CSV/XLSX/JSON output.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:20:47+00:00"
+}

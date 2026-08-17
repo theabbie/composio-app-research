@@ -1,0 +1,49 @@
+{
+ "app_id": 93,
+ "app": "Fathom",
+ "category": "AI, Research and Media-native",
+ "one_liner": "AI meeting assistant that records, transcribes, and summarizes video calls",
+ "auth_methods": [
+  "api_key",
+  "oauth2"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "narrow",
+ "official_mcp": false,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.85,
+ "evidence": [
+  {
+   "claim": "Fathom ships a documented public REST API",
+   "url": "https://developers.fathom.ai/api-overview",
+   "quote": "This documentation describes Fathom’s REST API."
+  },
+  {
+   "claim": "REST API resources are authenticated with user-generated API keys",
+   "url": "https://developers.fathom.ai/api-overview",
+   "quote": "All REST API resources are authenticated with API keys generated via the Fathom website’s settings area."
+  },
+  {
+   "claim": "API access is included on all plans including the free tier, with no approval needed",
+   "url": "https://pipeline.zoominfo.com/sales/fathom-api-review",
+   "quote": "API access starts immediately on any Fathom plan, including the free tier. There is no developer approval"
+  },
+  {
+   "claim": "Anyone can browse docs and start building; OAuth is for partner/marketplace integrations",
+   "url": "https://help.fathom.video/en/articles/8368641",
+   "quote": "Anyone can browse the API docs and start building!"
+  },
+  {
+   "claim": "OAuth apps can be registered by partners and are reviewed for marketplace listing",
+   "url": "https://help.fathom.video/en/articles/8368641",
+   "quote": "Partners can register an OAuth app to be eligible for a future marketplace listing as a Fathom‑approved integration."
+  }
+ ],
+ "notes": "Rate limit is 60 calls/min globally (30/min for heavy transcript/summary requests; 30/min for recording downloads) with no option for higher limits. API keys are user-scoped: they access only your meetings or ones shared to your Team; no admin key access to unshared meetings. OAuth apps are subject to review for marketplace featuring. MCP servers exist (github.com/trevorwelch/fathom-video-mcp; agencyenterprise/fathom-mcp-server on mcpservers.org) but are third-party/community, not shipped by Fathom. API surface appears small (meetings, recordings, transcripts/summaries, downloads, token endpoint) based on material reviewed.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:35:03+00:00"
+}

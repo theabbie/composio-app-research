@@ -1,0 +1,48 @@
+{
+ "app_id": 94,
+ "app": "Consensus",
+ "category": "AI, Research and Media-native",
+ "one_liner": "AI search engine that answers questions with peer-reviewed research papers.",
+ "auth_methods": [
+  "unknown"
+ ],
+ "access": "contact_sales",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "narrow",
+ "official_mcp": true,
+ "verdict": "gated",
+ "blocker": "API access is application-only with custom sales pricing ($0.10/call plus platform fee); no self-serve credentials",
+ "confidence": 0.72,
+ "evidence": [
+  {
+   "claim": "API access is gated behind an application and paid custom pricing",
+   "url": "https://consensus.app/home/api/",
+   "quote": "The Consensus API is available by application only. Our baseline pricing starts at $0.10 per call, plus a platform fee."
+  },
+  {
+   "claim": "API lets developers embed Consensus Search into tools and workflows",
+   "url": "https://consensus.app/home/api/",
+   "quote": "Our API lets you embed the intelligence of a Consensus Search into your internal tools, workflows, or apps."
+  },
+  {
+   "claim": "Official developer docs exist with OpenAPI-described endpoints",
+   "url": "https://docs.consensus.app/",
+   "quote": "visit https://docs.consensus.app/llms.txt for an index of all pages formatted in Markdown and endpoints in OpenAPI"
+  },
+  {
+   "claim": "API surface centers on a quick search endpoint returning ranked papers",
+   "url": "https://consensus.app/home/api/",
+   "quote": "Each query to the Consensus quick search API returns the top 20 most relevant search results"
+  },
+  {
+   "claim": "Vendor ships an official MCP server on its own site",
+   "url": "https://consensus.app/home/mcp/",
+   "quote": "The Consensus MCP server enables AI assistants."
+  }
+ ],
+ "notes": "Assignment hinted OAuth requested, but no auth mechanism is documented in the supplied material. Docs page title 'Query for relevant papers (legacy)' suggests versioning churn; docs page also flagged a CAPTCHA. Note: support.goconsensus.com result refers to a different company (demo automation), not consensus.app. MCP page confirms official MCP support alongside the API.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:35:53+00:00"
+}

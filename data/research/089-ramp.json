@@ -1,0 +1,50 @@
+{
+ "app_id": 89,
+ "app": "Ramp",
+ "category": "Finance and Fintech",
+ "one_liner": "Corporate spend management platform with cards, bills, and procurement APIs.",
+ "auth_methods": [
+  "oauth2",
+  "basic",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.85,
+ "evidence": [
+  {
+   "claim": "OAuth 2.0 with client credentials; client ID/secret sent via HTTP Basic Auth to the token endpoint",
+   "url": "https://docs.ramp.com/developer-api/v1/authorization",
+   "quote": "Ramp uses OAuth 2.0 for secure API access, providing granular permission control through scopes and supporting multiple authorization flows for different use cases."
+  },
+  {
+   "claim": "Issued access tokens are used as Bearer tokens on API requests",
+   "url": "https://docs.ramp.com/developer-api/v1/getting-started",
+   "quote": "Add the header `Authorization: Bearer <YOUR_TOKEN_HERE>` and make a GET request to `{environment-url}/developer/v1/transactions`."
+  },
+  {
+   "claim": "Credentials are self-serve from the Ramp dashboard but require admin access; sandbox available for non-customers",
+   "url": "https://docs.ramp.com/developer-api/v1/getting-started",
+   "quote": "In your Ramp account, go to **Company → Developer** (you'll need admin access)."
+  },
+  {
+   "claim": "Broad REST API surface across many products, with a canonical OpenAPI schema",
+   "url": "https://docs.ramp.com/",
+   "quote": "Canonical OpenAPI schema for the Developer API: [/openapi/developer-api.json](https://docs.ramp.com/openapi/developer-api.json)."
+  },
+  {
+   "claim": "Ramp ships an official MCP server documented on its own docs site",
+   "url": "https://docs.ramp.com/developer-api/v1/developer-mcp",
+   "quote": "Developer MCP is Ramp's unauthenticated Model Context Protocol server for developers building with Ramp's API."
+  }
+ ],
+ "notes": "Official 'Developer MCP' server is unauthenticated and serves API reference/OpenAPI schemas rather than live account data; ramp.com/developer-tools separately touts 'Ramp's MCP server and APIs' for agents. Access tokens are opaque (not JWT), last 10 days for client-credentials grants, and are environment-isolated (demo-api.ramp.com sandbox vs api.ramp.com production). Authorization Code flow exists for third-party/partner apps; sensitive scopes like cards:read_vault need extra security review. Partner program exists for building integrations for other businesses.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:33:31+00:00"
+}

@@ -1,0 +1,50 @@
+{
+ "app_id": 71,
+ "app": "Notion",
+ "category": "Productivity and Project Management",
+ "one_liner": "Connected workspace for docs, wikis, and project management",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token",
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "API requests authenticate with bearer tokens in the HTTP Authorization header",
+   "url": "https://developers.notion.com/reference/authentication",
+   "quote": "The Notion API accepts bearer tokens in this header."
+  },
+  {
+   "claim": "Public connections use OAuth 2.0; internal connections and PATs use static API tokens",
+   "url": "https://developers.notion.com/guides/get-started/authorization",
+   "quote": "public connections instead follow the [OAuth 2.0 protocol](https://oauth.net/2/) to authorize a connection to interact with a workspace"
+  },
+  {
+   "claim": "Credentials are self-serve via the Developer portal",
+   "url": "https://developers.notion.com/guides/get-started/quick-start",
+   "quote": "Open Personal access tokens in the Developer portal. ; 2. Select New token. ; 3. Enter a name, select the Notion API capability, and then select Create token."
+  },
+  {
+   "claim": "API access is available on the free personal plan",
+   "url": "https://www.reddit.com/r/Notion/comments/kbkmvn/content_api_is_now_moved_to_personal_free_plan/",
+   "quote": "Content API is now moved to Personal Free Plan"
+  },
+  {
+   "claim": "Notion's own GitHub org (makenotion) ships an official MCP server with OAuth install",
+   "url": "https://github.com/makenotion/notion-mcp-server",
+   "quote": "Notion MCP Server · Easy installation via standard OAuth. No need to fiddle with JSON or API tokens anymore."
+  }
+ ],
+ "notes": "REST base at api.notion.com/v1 with broad surface: endpoint groups for Blocks, Pages, Databases, Data sources, Comments, Views, File Uploads, Search, Users, Custom emojis, plus webhooks and an Admin API. Gotchas: creating an internal connection requires being a workspace owner; pages must be manually shared with a connection before API calls succeed; a public connection's Authorization URL only populates after it is submitted for review; requests require a Notion-Version header. Notion also runs a hosted MCP server at mcp.notion.com alongside the open-source makenotion/notion-mcp-server.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:45:34+00:00"
+}

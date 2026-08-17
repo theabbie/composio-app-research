@@ -1,0 +1,51 @@
+{
+ "app_id": 70,
+ "app": "Sentry",
+ "category": "Developer, Infra and Data platforms",
+ "one_liner": "Error tracking and performance monitoring platform with programmatic data access.",
+ "auth_methods": [
+  "bearer_token",
+  "api_key",
+  "basic",
+  "oauth2"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.92,
+ "evidence": [
+  {
+   "claim": "Sentry offers a public REST-style web API (v0) for managing account resources and exporting data",
+   "url": "https://docs.sentry.io/api/",
+   "quote": "The Sentry web API is used to access the Sentry platform programmatically. You can use the APIs to manage account-level resources"
+  },
+  {
+   "claim": "Auth tokens are passed as Bearer tokens in the Authorization header; tokens can be created self-serve via internal integrations or user settings",
+   "url": "https://docs.sentry.io/api/auth/",
+   "quote": "Authentication tokens are passed using an auth header, and are used to authenticate as a user or organization account with the API."
+  },
+  {
+   "claim": "API keys are supported via HTTP Basic auth with the key as username",
+   "url": "https://docs.sentry.io/api/auth/",
+   "quote": "API keys are passed using HTTP Basic auth where the username is your api key, and the password is an empty value."
+  },
+  {
+   "claim": "Sentry supports OAuth2 authorization code grant with PKCE for third-party apps, plus device authorization grant",
+   "url": "https://docs.sentry.io/api/auth/",
+   "quote": "For third-party applications that need to access Sentry on behalf of users, Sentry supports OAuth2 with the authorization code grant type."
+  },
+  {
+   "claim": "Sentry ships an official MCP server from its own GitHub org (getsentry) and hosts it at mcp.sentry.dev",
+   "url": "https://github.com/getsentry/sentry-mcp",
+   "quote": "This remote MCP server acts as middleware to the upstream Sentry API, optimized for coding assistants like Cursor, Claude Code, and similar development tools."
+  }
+ ],
+ "notes": "API is versioned v0 with region-specific hosts (us.sentry.io, de.sentry.io). OAuth access tokens expire after 30 days with refresh token support. SCIM provisioning requires Business Plan with SAML2 enabled and uses bearer tokens (per openapi.json snippet). Docs mention tutorials for creating auth tokens and listing teams; official Postman collection exists.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:25:13+00:00"
+}

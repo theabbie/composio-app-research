@@ -1,0 +1,43 @@
+{
+ "app_id": 50,
+ "app": "fanbasis",
+ "category": "Ecommerce",
+ "one_liner": "Creator monetization platform for fan memberships, payments, and subscriptions",
+ "auth_methods": [
+  "api_key"
+ ],
+ "access": "unknown",
+ "api_styles": [
+  "unknown"
+ ],
+ "api_breadth": "unknown",
+ "official_mcp": false,
+ "verdict": "gated",
+ "blocker": "Official API docs are password-protected at dev-docs.fanbasis.com; no public documentation or developer signup flow visible in supplied material",
+ "confidence": 0.55,
+ "evidence": [
+  {
+   "claim": "FanBasis API docs exist but are behind a password login, blocking public access",
+   "url": "https://dev-docs.fanbasis.com/",
+   "quote": "Sign in to access API Docs. Invalid password. Please try again. Password. Login."
+  },
+  {
+   "claim": "FanBasis supports API keys created from the account settings",
+   "url": "https://www.tarvent.com/integrations/fanbasis",
+   "quote": "Create an API key. To do this, go to Account > API Keys. Make sure to give access to the correct audiences."
+  },
+  {
+   "claim": "Third-party integration tooling references FanBasis API credentials and webhook events",
+   "url": "https://emergent.sh/integrations/fanbasis",
+   "quote": "Provide your FanBasis API credentials or connect through Zapier triggers for webhook events."
+  },
+  {
+   "claim": "FanBasis is a creator monetization / fan experience platform",
+   "url": "https://www.youtube.com/watch?v=PoldnKFeX_s",
+   "quote": "navigate FanBasis to create and manage personalized fan experiences, memberships, and community interactions"
+  }
+ ],
+ "notes": "The supplied 'Commas API Reference' (commasdocs.com) appears to be an unrelated Merchant-of-Record/payments API, not FanBasis, so it was excluded from evidence. FanBasis docs are versioned 'API Docsv3' but password-gated, so endpoint breadth, style, and credential self-service cannot be confirmed. No vendor-shipped MCP server found in supplied material.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:19:13+00:00"
+}

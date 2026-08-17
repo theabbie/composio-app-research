@@ -1,0 +1,48 @@
+{
+ "app_id": 37,
+ "app": "systeme.io",
+ "category": "Marketing, Ads, Email and Social",
+ "one_liner": "All-in-one marketing platform for funnels, email, and courses",
+ "auth_methods": [
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.85,
+ "evidence": [
+  {
+   "claim": "Public API authenticated with self-generated API keys from account Settings",
+   "url": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+   "quote": "API keys are unique identifiers that authenticate requests to our Public API."
+  },
+  {
+   "claim": "API keys available on all plans, including the free tier",
+   "url": "https://www.facebook.com/groups/251145835476950/posts/1868187563772761/",
+   "quote": "You can now have up to 3 API keys per account! account, regardless of your plan!"
+  },
+  {
+   "claim": "A free plan exists alongside paid plans",
+   "url": "https://systeme.io/pricing",
+   "quote": "Systeme.io Pricing — Free, Startup, Webinar, Unlimited Plans"
+  },
+  {
+   "claim": "Broad API surface spanning contacts, newsletters, funnels, courses, communities, automation, and webhooks, with official reference docs",
+   "url": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+   "quote": "Manage webhooks: Programmatically create new webhooks to receive real-time notifications, retrieve lists of your existing webhooks, and remove webhooks that are no longer needed."
+  },
+  {
+   "claim": "Vendor ships an official MCP server with its own documentation",
+   "url": "https://help.systeme.io/article/9489-how-to-use-systeme-ios-mcp",
+   "quote": "The new MCP server feature gives users, partners, and developers a powerful new way to interact with systeme.io using AI tools."
+  }
+ ],
+ "notes": "Official MCP server documented at developer.systeme.io/docs/mcp-server; MCP scope currently limited to contacts/tags/custom fields, newsletters, opt-in funnels, price plans, coupons, and automation rules (no funnel edit/delete or newsletter delete via MCP). Max 3 API keys per account; keys are copyable only at creation and can have optional expiration. API reference lives at developer.systeme.io/reference/api.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:44:10+00:00"
+}

@@ -1,0 +1,48 @@
+{
+ "app_id": 51,
+ "app": "DataForSEO",
+ "category": "Data, SEO and Scraping",
+ "one_liner": "API stack delivering SEO, SERP, keyword, and backlink data",
+ "auth_methods": [
+  "basic"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Only HTTP Basic authentication is supported, with API login/password credentials passed in the request header",
+   "url": "https://docs.dataforseo.com/v3/auth/",
+   "quote": "Basic authentication is the only way to access DataForSEO API; credentials should always be passed in the header of the request."
+  },
+  {
+   "claim": "The API is REST-based",
+   "url": "https://docs.dataforseo.com/v3/",
+   "quote": "DataForSEO API is using the REST technology for interchanging data between your application and our service."
+  },
+  {
+   "claim": "Self-serve registration yields dashboard API credentials immediately, plus a $1 trial credit for new accounts",
+   "url": "https://dataforseo.com/help-center/how-to-authenticate-with-dataforseo-google-search-serp-api-api-key-setup-and-code-examples",
+   "quote": "Get your API credentials from the dashboard. New accounts get a $1 trial credit, costs $0.002 per call"
+  },
+  {
+   "claim": "Very broad API surface spanning many modules (SERP, keywords, backlinks, reviews, app data, merchant, etc.)",
+   "url": "https://www.scalekit.com/blog/dataforseo-mcp-vs-api",
+   "quote": "The official DataForSEO MCP server registers roughly 90 tools across ten API modules, and every one of them calls a /live endpoint."
+  },
+  {
+   "claim": "Vendor ships and documents an official MCP server on its own site",
+   "url": "https://dataforseo.com/model-context-protocol",
+   "quote": "Learn how to connect DataForSEO APIs using our new MCP server and CLI connection method."
+  }
+ ],
+ "notes": "Pay-as-you-go pricing (per-call fees) rather than a flat free tier, but signup is free and credentials are issued instantly with a $1 trial credit. Docs show an async task_post/tasks_ready/task_get pattern alongside synchronous /live endpoints. Official MCP server and CLI connection method are documented on dataforseo.com; numerous first-party integrations exist (Zapier, Make, n8n, Google Sheets, Postman).",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:18:31+00:00"
+}

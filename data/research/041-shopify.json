@@ -1,0 +1,50 @@
+{
+ "app_id": 41,
+ "app": "Shopify",
+ "category": "Ecommerce",
+ "one_liner": "Commerce platform with APIs for apps, storefronts, and checkout.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token",
+  "session_cookie"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "mixed"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "OAuth 2.0 is the standard authorization protocol; token exchange, authorization code grant, and client credentials grant flows are supported",
+   "url": "https://shopify.dev/docs/apps/build/authentication-authorization",
+   "quote": "OAuth 2.0 is the industry-standard protocol for authorizing or giving permissions to apps."
+  },
+  {
+   "claim": "Self-serve credentials: admin-created custom apps generate API credentials/access tokens directly in the Shopify admin",
+   "url": "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens/generate-app-access-tokens-admin",
+   "quote": "you or the app user needs to install the app from the Shopify admin to generate API credentials and the necessary"
+  },
+  {
+   "claim": "Broad API surface: GraphQL Admin API, REST Admin API (legacy), Storefront API, webhooks, Partner API, and more",
+   "url": "https://shopify.dev/docs/api",
+   "quote": "Graph QL Admin API ... REST Admin API (legacy) ... Storefront API ... Partner API"
+  },
+  {
+   "claim": "Shopify officially documents a Storefront MCP server for AI agents on its own docs site",
+   "url": "https://shopify.dev/docs/apps/build/storefront-mcp/servers/storefront",
+   "quote": "The Storefront MCP server lets your AI agent handle shopping tasks for the selected store"
+  },
+  {
+   "claim": "Session tokens are used to authenticate incoming requests for apps rendered in the Shopify admin",
+   "url": "https://shopify.dev/docs/apps/build/authentication-authorization",
+   "quote": "Apps rendered in the Shopify admin need to authenticate their incoming requests with [session tokens]"
+  }
+ ],
+ "notes": "REST Admin API is marked legacy in favor of the GraphQL Admin API. Shopify also lists 'Web MCP Tools' and an 'Agents' docs section (UCP), signaling strong agent-facing investment. Admin-created custom apps yield tokens instantly; public app distribution requires App Store review.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:14:19+00:00"
+}

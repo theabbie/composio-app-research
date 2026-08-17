@@ -1,0 +1,49 @@
+{
+ "app_id": 39,
+ "app": "Threads (Meta)",
+ "category": "Marketing, Ads, Email and Social",
+ "one_liner": "Meta's text-first social network for sharing and discussing public posts",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "official_mcp": false,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "Authentication uses OAuth 2.0 user access tokens (short-lived exchangeable for 60-day long-lived tokens)",
+   "url": "https://developers.facebook.com/documentation/threads/get-started",
+   "quote": "API authentication is handled by Threads user access tokens that conform to the OAuth 2.0 protocol."
+  },
+  {
+   "claim": "API is publicly available to all developers via self-serve docs and a free Meta developer app with the Threads use case",
+   "url": "https://developers.facebook.com/blog/post/2024/06/18/the-threads-api-is-finally-here/",
+   "quote": "the Threads API is now available to all developers"
+  },
+  {
+   "claim": "Self-serve onboarding: create an app in the Meta App Dashboard and pick the Threads Use Case",
+   "url": "https://developers.facebook.com/documentation/threads/get-started",
+   "quote": "To access the Threads API, create an app and pick the"
+  },
+  {
+   "claim": "API surface covers publishing, media/profile retrieval, reply moderation, insights, keyword search, mentions, webhooks, oEmbed, locations",
+   "url": "https://developers.facebook.com/documentation/threads",
+   "quote": "Use the Threads API to create and publish posts, retrieve media and profiles, moderate replies, and access insights."
+  },
+  {
+   "claim": "Permissions beyond app testers require Meta App Review before general users can grant them",
+   "url": "https://developers.facebook.com/documentation/threads/get-started",
+   "quote": "each permission must first be approved through the"
+  }
+ ],
+ "notes": "No official Meta MCP server found; only third-party MCP servers (e.g., github.com/quinnjr/threads-mcp) exist. Friction points: App Review required for production permissions (threads_basic, threads_content_publish, etc.), permission grants from public profiles last 90 days and cannot be extended for private profiles, short-lived tokens last 1 hour. Media for publishing must be hosted on a publicly accessible URL. Third-party blog reports the API is free but rate-limited, with no published paid tier.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:13:46+00:00"
+}

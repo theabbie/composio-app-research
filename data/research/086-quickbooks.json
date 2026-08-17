@@ -1,0 +1,48 @@
+{
+ "app_id": 86,
+ "app": "QuickBooks",
+ "category": "Finance and Fintech",
+ "one_liner": "Cloud accounting software for small businesses with invoicing and payments",
+ "auth_methods": [
+  "oauth2"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "Authentication is OAuth 2.0 with Client ID/Client secret; tokens are required for both sandbox testing and production apps.",
+   "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0",
+   "quote": "to implement authentication and authorization. Authorization is essential for both testing via sandbox companies and production apps."
+  },
+  {
+   "claim": "Using the QuickBooks Online API is free; developer credentials are self-serve via the Intuit Developer Portal.",
+   "url": "https://help.developer.intuit.com/s/question/0D5G000004Dk6WlKAJ/is-there-a-cost-for-developers-to-use-the-quickbooks-online-api-or-to-get-listed-on-appscom",
+   "quote": "There is NO COST to connect to QuickBooks Online, or get listed on Apps.com."
+  },
+  {
+   "claim": "Signing up for an Intuit Developer account is free, giving developers credentials without payment or sales contact.",
+   "url": "https://www.klavis.ai/docs/knowledge-base/oauth_app/quickbooks",
+   "quote": "Intuit Developer account (free to sign up)"
+  },
+  {
+   "claim": "QuickBooks Online exposes a RESTful accounting API covering company data with full CRUD operations across many objects.",
+   "url": "https://dlthub.com/context/source/quickbooks-financial",
+   "quote": "QuickBooks Online is a cloud accounting platform exposing a RESTful Accounting API for accessing company data programmatically."
+  },
+  {
+   "claim": "Intuit ships an official MCP server for QuickBooks Online in its own GitHub org (github.com/intuit).",
+   "url": "https://github.com/intuit/quickbooks-online-mcp-server",
+   "quote": "This MCP server provides complete QuickBooks Online API integration for Claude Code and other MCP-compatible clients."
+  }
+ ],
+ "notes": "Official MCP server lives in Intuit's own GitHub org (intuit/quickbooks-online-mcp-server). Gotcha: per an Intuit help thread, production keys now require completing a questionnaire, though development/sandbox keys remain free and self-serve. Official SDKs exist for .NET, Java, PHP, Node.js, Python, and Ruby; access tokens are tied to a company via realmID and use a refresh-token flow.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:32:18+00:00"
+}

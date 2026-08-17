@@ -1,0 +1,50 @@
+{
+ "app_id": 55,
+ "app": "Apify",
+ "category": "Data, SEO and Scraping",
+ "one_liner": "Cloud web scraping and automation platform built around serverless Actors.",
+ "auth_methods": [
+  "bearer_token",
+  "api_key",
+  "other"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "API token authentication via Authorization Bearer header (recommended) or URL token query parameter",
+   "url": "https://docs.apify.com/api/v2",
+   "quote": "Add the token to your request's `Authorization` header as `Bearer <token>`. E.g., `Authorization: Bearer xxxxxxx`."
+  },
+  {
+   "claim": "API token is self-serve, found in the Apify Console Integrations settings",
+   "url": "https://docs.apify.com/api/v2",
+   "quote": "You can find your API token on the [Integrations](https://console.apify.com/settings/integrations) page in the Apify Console."
+  },
+  {
+   "claim": "Free plan available without a credit card, covering most platform features",
+   "url": "https://apify.com/pricing",
+   "quote": "We offer a free plan that lets you use most of the features of the Apify platform, but with certain limits. No credit card is required."
+  },
+  {
+   "claim": "API is RESTful HTTP with JSON responses and a downloadable OpenAPI schema",
+   "url": "https://docs.apify.com/api",
+   "quote": "The Apify API is built around HTTP REST, uses predictable resource-oriented URLs, returns JSON-encoded responses, and uses standard HTTP response codes"
+  },
+  {
+   "claim": "Apify officially documents and ships its own MCP server for AI agents",
+   "url": "https://docs.apify.com/",
+   "quote": "MCP Discover and use Actors with AI agents and LLMs via Apify MCP server."
+  }
+ ],
+ "notes": "Official MCP server lives at mcp.apify.com with source in the apify GitHub org (apify/apify-mcp-server). Also supports 'agentic payments' (x402 protocol PAYMENT-SIGNATURE header and Skyfire skyfire-pay-id header) letting AI agents pay for Actor runs without an Apify account. Official API clients exist for JS, Python, Go, Java, Rust, .NET, PHP. Token-in-URL query param auth is supported but flagged as less secure.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:19:57+00:00"
+}

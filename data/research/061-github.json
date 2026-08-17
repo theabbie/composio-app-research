@@ -1,0 +1,51 @@
+{
+ "app_id": 61,
+ "app": "GitHub",
+ "category": "Developer, Infra and Data platforms",
+ "one_liner": "Code hosting platform with APIs for repos, issues, PRs, Actions, and more.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token",
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest",
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.97,
+ "evidence": [
+  {
+   "claim": "Authentication uses tokens (personal access token, GitHub App token, or GITHUB_TOKEN) sent in the Authorization header",
+   "url": "https://docs.github.com/rest/authentication/authenticating-to-the-rest-api",
+   "quote": "You can create a personal access token, generate a token with a GitHub App, or use the built-in `GITHUB_TOKEN` in a GitHub Actions workflow."
+  },
+  {
+   "claim": "OAuth2 is supported via OAuth apps, though GitHub Apps are recommended",
+   "url": "https://docs.github.com/rest/authentication/authenticating-to-the-rest-api",
+   "quote": "You can also create an OAuth token with an OAuth app to access the REST API. However, GitHub recommends that you use a GitHub App instead."
+  },
+  {
+   "claim": "Tokens are passed as Bearer tokens in the Authorization header",
+   "url": "https://docs.github.com/rest/authentication/authenticating-to-the-rest-api",
+   "quote": "In most cases, you can use `Authorization: Bearer` or `Authorization: token` to pass a token."
+  },
+  {
+   "claim": "GitHub also offers a GraphQL API alongside REST",
+   "url": "https://docs.github.com/en/graphql",
+   "quote": "The GitHub GraphQL API offers more precise and flexible queries than the GitHub REST API."
+  },
+  {
+   "claim": "GitHub ships an official MCP server from its own GitHub org",
+   "url": "https://github.com/github/github-mcp-server",
+   "quote": "The GitHub MCP Server connects AI tools directly to GitHub's platform. This gives AI agents, assistants, and chatbots the ability to read repositories and code"
+  }
+ ],
+ "notes": "Free tier exists (docs header: 'Version: Free, Pro, & Team'); PATs and OAuth app registration are self-serve from any free account. REST API is fully OpenAPI-described and spans dozens of resource groups (Actions, Activity, Pulls, Issues, etc.) — well over 50 endpoints. Org resources may require SAML SSO token authorization or admin-granted GitHub App installation, but core developer access is ungated. Official MCP server lives in the github/github-mcp-server repo.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:21:25+00:00"
+}

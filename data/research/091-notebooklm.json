@@ -1,0 +1,50 @@
+{
+ "app_id": 91,
+ "app": "NotebookLM",
+ "category": "AI, Research and Media-native",
+ "one_liner": "Google's AI notebook for querying and summarizing your documents",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token",
+  "other"
+ ],
+ "access": "paid_plan_required",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "narrow",
+ "official_mcp": false,
+ "verdict": "buildable_with_work",
+ "blocker": "API requires paid Gemini Notebook Enterprise licenses plus org admin setup (IdP, IAM roles); no free/self-serve consumer API",
+ "confidence": 0.85,
+ "evidence": [
+  {
+   "claim": "API calls authenticate with Google Cloud OAuth2 access tokens sent as Bearer headers",
+   "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+   "quote": "Authorization:Bearer $(gcloud auth print-access-token)"
+  },
+  {
+   "claim": "Official REST API exists but is limited to notebook management tasks",
+   "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+   "quote": "This page describes the APIs that let you perform the following notebook management tasks programmatically"
+  },
+  {
+   "claim": "Licenses are a paid per-user subscription",
+   "url": "https://cloud.google.com/resources/notebooklm-enterprise",
+   "quote": "$9 USD per license per month with discounted option for yearly subscriptions"
+  },
+  {
+   "claim": "The API is gated behind the Enterprise product with identity setup and a subscription",
+   "url": "https://discuss.ai.google.dev/t/how-to-access-notebooklm-via-api/5084/42",
+   "quote": "The NotebookLM API requires Google Cloud's NotebookLM Enterprise product which requires identity/auth setup and buying a subscription."
+  },
+  {
+   "claim": "The consumer NotebookLM product has no self-serve API key",
+   "url": "https://autocontentapi.com/blog/does-notebooklm-have-an-api",
+   "quote": "The consumer NotebookLM product does not offer a self-serve public API key."
+  }
+ ],
+ "notes": "API is v1alpha preview hosted on discoveryengine.googleapis.com; documented surface is notebook create/get/list/delete/share plus a podcast-generation method. Setup demands a Cloud org admin (Cloud NotebookLM Admin role) and IdP config (Cloud Identity or Workforce Identity Federation), though licenses are purchasable self-serve in the console. No official MCP server from Google; community servers (e.g., PleasePrompto/notebooklm-mcp) automate a real Chrome session against the consumer UI instead.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:34:24+00:00"
+}

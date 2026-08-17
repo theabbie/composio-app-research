@@ -1,0 +1,48 @@
+{
+ "app_id": 54,
+ "app": "MrScraper",
+ "category": "Data, SEO and Scraping",
+ "one_liner": "AI-powered web scraping API with proxies and headless browsers",
+ "auth_methods": [
+  "api_key"
+ ],
+ "access": "unknown",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.62,
+ "evidence": [
+  {
+   "claim": "API uses API token (API key style) authentication on all endpoints",
+   "url": "https://docs.mrscraper.com/docs/api/authentication",
+   "quote": "The MrScraper API uses API token authentication to secure all endpoints. Every API request must include a valid API token in the request headers to access the API."
+  },
+  {
+   "claim": "Token passed via custom x-api-token header",
+   "url": "https://docs.mrscraper.com/docs/api/authentication",
+   "quote": "x-api-token: MRSCRAPER_API_TOKEN"
+  },
+  {
+   "claim": "API is REST with JSON request/response bodies",
+   "url": "https://docs.mrscraper.com/docs/api/overview",
+   "quote": "Built on REST principles, our API offers predictable resource-oriented URLs, accepts JSON-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes."
+  },
+  {
+   "claim": "API tokens are self-serve via a documented token generation guide",
+   "url": "https://docs.mrscraper.com/docs/getting-started/overview",
+   "quote": "Token Plan Learn how tokens work and create an API token for authentication."
+  },
+  {
+   "claim": "Vendor documents an official MCP Server in its own docs",
+   "url": "https://docs.mrscraper.com/docs/getting-started/overview",
+   "quote": "[MCP Server](https://docs.mrscraper.com/docs/getting-started/mcp-server)"
+  }
+ ],
+ "notes": "Official docs list an MCP Server page, making it agent-ready out of the box. Auth quirk: analytics endpoints (/analytic/statuses, /analytic/timeline) require the token as an apiTokenName query parameter instead of the header. MrScraper uses a token-based system for usage/billing, but the material does not state whether a free tier or trial tokens exist, so the cost of obtaining credentials is unclear. API spans V3 platform endpoints, sync endpoints (sync.scraper.mrscraper.com), and analytics; endpoints on other hosts require contacting support.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:19:29+00:00"
+}

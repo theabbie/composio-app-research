@@ -1,0 +1,49 @@
+{
+ "app_id": 38,
+ "app": "Pinterest",
+ "category": "Marketing, Ads, Email and Social",
+ "one_liner": "Pinterest API for managing Pins, boards, ads, catalogs, and analytics.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": false,
+ "verdict": "buildable_with_work",
+ "blocker": "App approval is required even for free Trial access, and upgrading to Standard access requires a reviewed video demo of the OAuth flow; Trial-created Pins/Boards are sandbox-only.",
+ "confidence": 0.85,
+ "evidence": [
+  {
+   "claim": "Authentication is OAuth 2.0 with access tokens and scopes",
+   "url": "https://github.com/pinterest/api-quickstart/blob/main/README.md",
+   "quote": "Access to Pinterest APIs via User Authorization requires following a flow based on OAuth 2.0."
+  },
+  {
+   "claim": "All API requests must be authenticated with a current access token",
+   "url": "https://developers.pinterest.com/docs/getting-started/set-up-authentication-and-authorization/",
+   "quote": "Pinterest API services are only available to authenticated and authorized users."
+  },
+  {
+   "claim": "API access starts with a free Trial tier, but only after approval",
+   "url": "https://developers.pinterest.com/docs/key-concepts/access-tiers/",
+   "quote": "If approved for API use, your app receives Trial access, which is best for exploring our API features."
+  },
+  {
+   "claim": "Upgrading to Standard access requires a reviewed video demo",
+   "url": "https://developers.pinterest.com/docs/key-concepts/access-tiers/",
+   "quote": "Prepare a video recording of your app completing an action using the Pinterest API."
+  },
+  {
+   "claim": "API surface spans content, ads, and product feeds; trial-created objects are sandbox-only",
+   "url": "https://developers.pinterest.com/docs/key-concepts/access-tiers/",
+   "quote": "all Pins and Boards created with Trial access are only visible to their creator as Sandbox entities."
+  }
+ ],
+ "notes": "Official Postman collection is labeled 'Pinterest REST API (latest)'; v5 covers pins, boards, ads, audiences, catalogs, and analytics, suggesting a broad surface. No official GraphQL API (a community schema states 'Pinterest does not publish an official GraphQL API'). A Pinterest Engineering Medium article describes an internal MCP ecosystem (e.g., a Spark debugging MCP server), but Pinterest does not ship a public MCP server for its API; third-party MCP servers (e.g., Apify scraper) do not count. Trial access can be denied for vague app descriptions or bad privacy-policy links.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:15:16+00:00"
+}

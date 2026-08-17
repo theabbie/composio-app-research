@@ -173,9 +173,9 @@ def research_app(
             + feedback
         )
     last_error = ""
-    for _attempt in range(2):
+    for _attempt in range(3):
         response = llm.chat(
-            SYSTEM_PROMPT, user, max_tokens=4096, purpose=f"research-p{pass_number}"
+            SYSTEM_PROMPT, user, max_tokens=8192, purpose=f"research-p{pass_number}"
         )
         try:
             payload = extract_json_object(response.content)

@@ -1,0 +1,49 @@
+{
+ "app_id": 35,
+ "app": "Mailchimp",
+ "category": "Marketing, Ads, Email and Social",
+ "one_liner": "Email marketing platform with APIs for campaigns, audiences, and transactional messaging.",
+ "auth_methods": [
+  "api_key",
+  "oauth2"
+ ],
+ "access": "self_serve_trial",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "Mailchimp Marketing API supports authentication via API key or OAuth 2 access token",
+   "url": "https://mailchimp.com/developer/marketing/docs/fundamentals/",
+   "quote": "You can authenticate requests using either your API key or an OAuth access token, depending on your use case."
+  },
+  {
+   "claim": "Developers can self-serve generate API keys from their account",
+   "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+   "quote": "Use this guide to start using the Mailchimp Marketing API. Learn how to generate your API key, install the client library, and make your first API call."
+  },
+  {
+   "claim": "The Marketing API exposes a broad REST surface covering campaigns, lists, automations, reports, e-commerce, and more",
+   "url": "https://mailchimp.com/developer/marketing/api/",
+   "quote": "Use the API to manage workflows, emails, and queues for Classic Automations. See Merge Field documentation for more."
+  },
+  {
+   "claim": "Mailchimp ships an official MCP server for its Transactional Messaging API",
+   "url": "https://mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp/",
+   "quote": "Our MCP specifically allows you to interact with the Transactional Messaging API, give onboarding help regarding Transactional Messaging, and submit feedback."
+  },
+  {
+   "claim": "Mailchimp offers a risk-free 14-day trial signup without a credit card, indicating self-serve account access",
+   "url": "https://mailchimp.com/help/about-api-keys/",
+   "quote": "Join Mailchimp with a risk-free 14-day trial. [Start Today — no credit card required.](https://mailchimp.com/signup/)"
+  }
+ ],
+ "notes": "Official MCP is Transactional (Mandrill) only; no official Marketing API MCP per Scalekit. API reference lists ~25+ resource groups (Campaigns, Lists, Reports, E-commerce, SMS, etc.), so breadth is broad. Open Commerce product uses GraphQL but is separate from the core Marketing/Transactional REST APIs. Audiences endpoints are in BETA with separate terms.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:12:57+00:00"
+}

@@ -1,0 +1,49 @@
+{
+ "app_id": 92,
+ "app": "Otter AI",
+ "category": "AI, Research and Media-native",
+ "one_liner": "AI meeting assistant for transcription, summaries, and conversation insights",
+ "auth_methods": [
+  "api_key",
+  "bearer_token"
+ ],
+ "access": "contact_sales",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "official_mcp": true,
+ "verdict": "gated",
+ "blocker": "Public API is restricted to Enterprise workspaces and must be enabled by an Otter account manager",
+ "confidence": 0.85,
+ "evidence": [
+  {
+   "claim": "API access is Enterprise-only and enabled via account manager (gated)",
+   "url": "https://help.otter.ai/hc/en-us/articles/4412365535895-Does-Otter-offer-an-open-API",
+   "quote": "Yes, Otter offers a public API for Enterprise customers. To get started, contact your Otter account manager to enable access."
+  },
+  {
+   "claim": "Authentication uses an API key sent as a Bearer token",
+   "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "quote": "All API requests require authentication using Bearer token authentication. Follow the steps below to create your **API key.**"
+  },
+  {
+   "claim": "REST API covers channels, conversations, transcripts, audio, action items, insights, outlines, and workspace details",
+   "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "quote": "Otter.ai's Public API provides programmatic access to retrieve channels, conversations, transcripts, audio, action items, insights, outlines, and workspace details from your Otter account."
+  },
+  {
+   "claim": "API requires the Otter Enterprise plan and possibly admin permissions",
+   "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "quote": "This content is available for the **Otter Enterprise** plan and may require admin permissions."
+  },
+  {
+   "claim": "Vendor documents an official Otter MCP Server, but setup requires contacting Otter Support",
+   "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+   "quote": "We currently do not have a public API key at this time. Contact our Otter Support Team for help setting up Otter MCP with your AI application."
+  }
+ ],
+ "notes": "Official MCP server article exists on help.otter.ai, but onboarding is manual via Otter Support (no public API key for MCP). API keys are self-serve once Enterprise is enabled (Account Settings > Developer, limit of 2 keys per user, key shown once). Rate limit is 10 requests/second; webhooks are supported and recommended over polling. Beware name collision: helpdesk.tryotter.com 'API Documentation' result is a different company (restaurant ordering platform), not Otter.ai. Zapier integration also uses the same Developer API key.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:36:30+00:00"
+}

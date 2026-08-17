@@ -1,0 +1,50 @@
+{
+ "app_id": 67,
+ "app": "Snowflake",
+ "category": "Developer, Infra and Data platforms",
+ "one_liner": "Cloud data platform for warehousing, analytics, data sharing, and AI workloads.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token",
+  "other"
+ ],
+ "access": "unknown",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.85,
+ "evidence": [
+  {
+   "claim": "Snowflake REST APIs support OAuth, key-pair JWT, programmatic access tokens, and workload identity federation for authentication.",
+   "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+   "quote": "Using key pair authentication\n*   [Using OAuth](https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication#label-sfrest-authenticating-oauth)\n*   [Using a programmatic access token (PAT)]"
+  },
+  {
+   "claim": "OAuth tokens are sent as bearer tokens in the Authorization header.",
+   "url": "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+   "quote": "`Authorization: Bearer oauth_token`\nwhere `oauth_token` is the generated OAuth token."
+  },
+  {
+   "claim": "Snowflake provides a public REST API (SQL API) that can run queries and manage deployment resources like users, roles, and tables.",
+   "url": "https://docs.snowflake.com/en/developer-guide/sql-api/index",
+   "quote": "The Snowflake SQL API is a REST API that you can use to access and update data in a Snowflake database. You can use this API to develop custom applications and integrations that:\n*   Perform queries\n*   Manage your deployment (e.g. provision users and roles, create tables, etc.)"
+  },
+  {
+   "claim": "Snowflake itself ships and documents a managed MCP server for AI agents.",
+   "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+   "quote": "The Snowflake-managed MCP server lets AI agents securely retrieve data from Snowflake accounts without needing to deploy separate infrastructure."
+  },
+  {
+   "claim": "API access is tied to a standard Snowflake user account via documented setup steps, with no partner program requirement mentioned.",
+   "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+   "quote": "Assign the public key to your Snowflake user. After you assign the key to the user, run the [DESCRIBE USER](https://docs.snowflake.com/sql-reference/sql/desc-user) command."
+  }
+ ],
+ "notes": "Vendor-managed MCP server is documented on docs.snowflake.com and requires OAuth; the older Snowflake-Labs/mcp community server on GitHub is explicitly 'no longer supported'. JWTs from key-pair auth are valid for at most one hour. Additional auth options include programmatic access tokens (PAT) and workload identity federation. The supplied material does not state trial/signup terms, so the access tier (free trial vs paid) is marked unknown, though API docs are fully public and self-serve for any account holder. SQL API effectively exposes unlimited breadth since any SQL statement (DDL/DML/admin) can be executed.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:24:28+00:00"
+}

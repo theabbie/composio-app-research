@@ -1,0 +1,49 @@
+{
+ "app_id": 73,
+ "app": "Linear",
+ "category": "Productivity and Project Management",
+ "one_liner": "Issue tracking and project management platform for software teams",
+ "auth_methods": [
+  "oauth2",
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "graphql"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Linear API supports both personal API keys and OAuth2 authentication",
+   "url": "https://linear.app/developers/graphql",
+   "quote": "The Linear API supports personal API keys and OAuth2 authentication."
+  },
+  {
+   "claim": "OAuth2 is documented with self-serve app creation in workspace settings",
+   "url": "https://linear.app/developers/oauth-2-0-authentication",
+   "quote": "Linear supports OAuth2 authentication, which is recommended if you’re building applications to integrate with Linear."
+  },
+  {
+   "claim": "Public API is GraphQL and covers the full product",
+   "url": "https://linear.app/docs/api-and-webhooks",
+   "quote": "Linear’s public API is built using GraphQL. It’s the same API we use internally for developing our applications."
+  },
+  {
+   "claim": "API/webhooks cover many entity types, indicating broad surface",
+   "url": "https://linear.app/docs/api-and-webhooks",
+   "quote": "Our webhooks support data change events for Issues, Comments, Issue attachments, Documents, Emoji reactions, Projects, Project updates, Cycles, Labels, Users and Issue SLAs."
+  },
+  {
+   "claim": "Linear ships an official MCP server documented on its own docs site",
+   "url": "https://linear.app/docs/mcp",
+   "quote": "Our MCP server uses Streamable HTTP as the primary transport, accessible at the following address."
+  }
+ ],
+ "notes": "Official MCP server uses Streamable HTTP with OAuth 2.1 and dynamic client registration. All OAuth2 apps were migrated to a new refresh token system on April 1, 2026. Agent integrations use OAuth2 with actor=app and agent-specific scopes like app:assignable and app:mentionable. Admins can disable member API key creation (Settings > Administration > API), but admins always can create keys; webhook and OAuth app management requires admin permissions.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T10:26:41+00:00"
+}

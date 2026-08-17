@@ -1,0 +1,41 @@
+[project]
+name = "composio-app-research"
+version = "0.1.0"
+description = "Agent pipeline that researches 100 apps (auth, access model, API surface, MCP, buildability) with evidence and verification loops"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+    "mypy>=1.11",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["agent"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+mypy_path = "."
+
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+disable_error_code = ["import"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,49 @@
+{
+ "app_id": 3,
+ "app": "Pipedrive",
+ "category": "CRM and Sales",
+ "one_liner": "Sales CRM for managing deals, pipelines, contacts and activities",
+ "auth_methods": [
+  "oauth2",
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "OAuth 2.0 is documented and required for Marketplace apps, with authorize/token endpoints",
+   "url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+   "quote": "Using OAuth 2.0 is necessary for developing apps that are available in the Pipedrive Marketplace."
+  },
+  {
+   "claim": "API token auth via x-api-token header is supported for direct integrations",
+   "url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+   "quote": "The API token must be provided in the `x-api-token` header for all requests"
+  },
+  {
+   "claim": "Free self-serve developer sandbox account provides API credentials",
+   "url": "https://developers.pipedrive.com/",
+   "quote": "Sign up for a Sandbox Account today to begin experimenting and developing in a risk free environment"
+  },
+  {
+   "claim": "RESTful JSON API with OpenAPI 3 specs for v1 and v2, covering most product functionality",
+   "url": "https://developers.pipedrive.com/docs/api/v1",
+   "quote": "Pipedrive's API and extension points cover the majority of our core product's functionality."
+  },
+  {
+   "claim": "Pipedrive offers an official vendor-maintained MCP server for AI assistants",
+   "url": "https://www.pipedrive.com/en/features/mcp-server",
+   "quote": "With Pipedrive MCP, your AI assistant can securely access and act on your CRM data using natural language."
+  }
+ ],
+ "notes": "Official MCP server maintained by Pipedrive connects via OAuth login (no coding needed). Two API versions (v1, v2) with OpenAPI 3 specs; official Node.js and PHP client libraries. Caveat: API token is tied to one user/company and only one active token allowed at a time. OAuth apps register via Developer Hub on the free sandbox account.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:38:14+00:00"
+}

@@ -1,0 +1,51 @@
+{
+ "app_id": 10,
+ "app": "DealCloud",
+ "category": "CRM and Sales",
+ "one_liner": "CRM for deal, pipeline, and relationship intelligence management.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token",
+  "api_key"
+ ],
+ "access": "admin_approval",
+ "api_styles": [
+  "rest",
+  "graphql"
+ ],
+ "api_breadth": "moderate",
+ "official_mcp": true,
+ "verdict": "gated",
+ "blocker": "API credentials require an existing DealCloud customer site where an org admin enables the 'API' capability for the user's group; no self-serve developer signup or free tier is documented.",
+ "confidence": 0.8,
+ "evidence": [
+  {
+   "claim": "Authentication uses OAuth2 client credentials to obtain a bearer token",
+   "url": "https://api.docs.dealcloud.com/docs/token",
+   "quote": "DealCloud uses the OAuth2 Client Credentials flow to generate a bearer token, which is then used in the HTTP Authentication header for API requests."
+  },
+  {
+   "claim": "API access must be enabled by a workspace admin via user-group permissions",
+   "url": "https://api.docs.dealcloud.com/docs/apikeys",
+   "quote": "To enable API access, ensure the intended user is assigned to a user group with the appropriate permissions. Navigate to Admin > User Management"
+  },
+  {
+   "claim": "Once permitted, users self-serve an API key from their profile",
+   "url": "https://api.docs.dealcloud.com/docs/apikeys",
+   "quote": "Scroll down to the API Key section and click Enable. Then click Copy API Key to Clipboard to copy your API key for use in integrations or API requests."
+  },
+  {
+   "claim": "The public API surface is REST with multiple functional areas and endpoints",
+   "url": "https://api.docs.dealcloud.com/docs",
+   "quote": "Our APIs are organized into functional areas. Each area includes multiple endpoints designed to help you perform specific tasks related to that category."
+  },
+  {
+   "claim": "An official vendor MCP server exists with read-only tools",
+   "url": "https://api.docs.dealcloud.com/mcp/tools",
+   "quote": "All DealCloud MCP tools are currently read-only and do not create, update, or delete data."
+  }
+ ],
+ "notes": "Official DealCloud MCP Server documented, in client preview starting July 2026; MCP auth is a per-user OAuth sign-in flow and tools include GraphQL execute_query/introspect/search_schema. Python SDK (dealcloud_sdk) supports env, JSON, and YAML credential loading. Bearer tokens expire after 900 seconds and must be re-requested. Scopes gate API areas (data, user_management, publish, ri_import, backup). Schema APIs limited to 5 calls/second. Docs assume an existing enterprise DealCloud site; no public signup or free developer tier is mentioned.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:38:49+00:00"
+}

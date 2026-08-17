@@ -1,0 +1,29 @@
+# Markdown files other than the root README are working notes, not source
+*.md
+!/README.md
+
+# Local secrets
+.env
+.env.local
+*.key
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Node / frontend
+node_modules/
+site/dist/
+
+# Web research cache (large, regenerable)
+data/cache/
+
+# Deployment
+.vercel/
+
+# OS
+.DS_Store

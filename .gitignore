@@ -27,3 +27,6 @@ data/cache/
 
 # OS
 .DS_Store
+
+# Python packaging artifacts
+*.egg-info/

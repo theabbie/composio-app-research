@@ -1,0 +1,51 @@
+{
+ "app_id": 27,
+ "app": "Telegram",
+ "category": "Communications and Messaging",
+ "one_liner": "Cloud messaging platform with bot, client, and verification APIs.",
+ "auth_methods": [
+  "api_key",
+  "bearer_token",
+  "other"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest",
+  "mixed"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": false,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.92,
+ "evidence": [
+  {
+   "claim": "Telegram documents multiple public developer APIs, including Bot API, Telegram API/TDLib, and Gateway API.",
+   "url": "https://core.telegram.org/api/",
+   "quote": "We offer three kinds of APIs for developers."
+  },
+  {
+   "claim": "The Bot API and Telegram API/TDLib are offered without charge.",
+   "url": "https://core.telegram.org/api/",
+   "quote": "You are welcome to use both APIs free of charge."
+  },
+  {
+   "claim": "Developers self-serve app credentials by registering at my.telegram.org to receive api_id and api_hash.",
+   "url": "https://core.telegram.org/api/obtaining_api_id",
+   "quote": "You will get basic addresses as well as the api_id and api_hash parameters required for user authorization."
+  },
+  {
+   "claim": "Gateway API supports bearer-token authentication via the Authorization header.",
+   "url": "https://core.telegram.org/gateway/api",
+   "quote": "in the HTTP header:`Authorization: Bearer `"
+  },
+  {
+   "claim": "Telegram client API authorization is session/key based rather than a simple static API key.",
+   "url": "https://core.telegram.org/api/auth",
+   "quote": "Authorization is associated with a client's encryption key identifier: auth_key_id."
+  }
+ ],
+ "notes": "Bot API and Gateway API are HTTP/JSON; full client API uses MTProto/TDLib with phone-code, 2FA, QR, passkey, and auth_key flows. Client API requires a Telegram phone account and warns that unofficial API clients are monitored. Gateway is free to test but charges apply for successful verification-message delivery. Only a third-party MCP repo appears in the material; no official Telegram MCP server is documented.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:48:48+00:00"
+}

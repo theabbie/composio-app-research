@@ -1,0 +1,49 @@
+{
+ "app_id": 33,
+ "app": "LinkedIn Ads",
+ "category": "Marketing, Ads, Email and Social",
+ "one_liner": "APIs to manage LinkedIn ad campaigns, creatives, targeting, and analytics.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "partner_gated",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": false,
+ "verdict": "gated",
+ "blocker": "Advertising API is a vetted product: developers must apply via the Developer Portal and be approved by LinkedIn before scopes like r_ads/rw_ads are usable.",
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "LinkedIn APIs authenticate with OAuth 2.0 (3-legged member flow; access tokens used as bearer credentials).",
+   "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+   "quote": "The LinkedIn API uses [OAuth 2.0](http://oauth.net/2/) for user authorization and API authentication."
+  },
+  {
+   "claim": "Advertising API access requires explicit approval from LinkedIn via the Developer Portal Products tab.",
+   "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+   "quote": "Developers seeking to build a marketing related integration using Advertising API permissions must be approved. You can apply for access through the [Developer Portal]"
+  },
+  {
+   "claim": "Access is tiered: all apps start at Development tier and must apply separately for Standard tier.",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/tips-to-get-started?view=li-lms-2026-05",
+   "quote": "All applications start with Development tier. You have to apply separately for Standard tier."
+  },
+  {
+   "claim": "The Advertising API broadly covers accounts, campaign groups, campaigns, creatives, ad types, and analytics.",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview?view=li-lms-2026-03",
+   "quote": "These APIs provide all features available in LinkedIn Campaign Manager, including creation and management of ad accounts, campaign groups, campaigns, creatives, ad types, and analytics."
+  },
+  {
+   "claim": "No official LinkedIn MCP server exists; only community-built MCP wrappers.",
+   "url": "https://github.com/Nuraveda-Labs/linkedin-ads-mcp",
+   "quote": "There's no official LinkedIn MCP. This fills the gap with a thin, correctness-first wrapper that handles LinkedIn's quirky restli encoding rules"
+  }
+ ],
+ "notes": "Development tier allows read-only on unlimited ad accounts but edits on only 5 ad accounts; full production use needs Standard tier approval. Access tokens last 60 days (refresh flow needed); 2-legged client credentials is not supported for advertising scopes. Older Marketing versions are being sunset (e.g., 202507) in favor of monthly versioned REST APIs with LinkedIn-Version headers. Rest.li encoding quirks (URN escaping, X-RestLi-Method: PARTIAL_UPDATE) add implementation friction. Community MCP servers exist but none official.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:49:44+00:00"
+}

@@ -1,0 +1,49 @@
+{
+ "app_id": 31,
+ "app": "Google Ads",
+ "category": "Marketing, Ads, Email and Social",
+ "one_liner": "API for programmatically managing Google Ads campaigns and reporting",
+ "auth_methods": [
+  "oauth2",
+  "other"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "mixed"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_with_work",
+ "blocker": "Developer token requires application and review for production access levels; OAuth apps may need Google verification",
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Authentication is OAuth 2.0 (user flows and service accounts) plus a developer token header",
+   "url": "https://developers.google.com/google-ads/api/rest/auth",
+   "quote": "The Google Ads API uses OAuth 2.0 for authorizing API requests. Both OAuth 2.0 user authentication flow and service account flow are supported."
+  },
+  {
+   "claim": "A developer token is mandatory and obtained self-serve from a Google Ads manager account API Center",
+   "url": "https://developers.google.com/google-ads/api/docs/get-started/dev-token",
+   "quote": "The developer token is a 22-character long alphanumeric string that lets your app connect to the Google Ads API. You can obtain one by signing up for one on the API Center page of your Google Ads manager account."
+  },
+  {
+   "claim": "New tokens start restricted; full production access requires a reviewed application",
+   "url": "https://developers.google.com/google-ads/api/docs/get-started/dev-token",
+   "quote": "you must request Basic Access level or Standard Access level for your developer token. Once your developer token application is reviewed and approved, your developer token will be granted the appropriate access level."
+  },
+  {
+   "claim": "API supports both gRPC and REST with resource-oriented design",
+   "url": "https://developers.google.com/google-ads/api/rest/overview",
+   "quote": "The Google Ads API can be called either using gRPC or REST. Both interfaces expose a resource-oriented design shared with other Google Cloud APIs."
+  },
+  {
+   "claim": "Official Google Ads MCP server exists, currently read-only",
+   "url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+   "quote": "The Google Ads MCP server provides a standardized bridge to the Google Ads API, which lets AI agents analyze and retrieve campaign data using natural language."
+  }
+ ],
+ "notes": "Official MCP server (github.com/googleads/google-ads-mcp) is read-only in current release, exposing search (GAQL), list_accessible_customers, and metadata tools. Dual-credential model: OAuth 2.0 credentials plus developer-token header on every call. New tokens get Test or Explorer access with restrictions; Basic/Standard access requires approval. OAuth consent screen apps may need Google app verification. Manager-account calls require login-customer-id header.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:49:04+00:00"
+}

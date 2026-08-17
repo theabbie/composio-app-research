@@ -35,7 +35,7 @@ class Settings:
     llm_base_url: str
     llm_api_key: str
     llm_model: str
-    exa_bin: str
+    jina_api_key: str
 
 
 def resolve_api_key() -> str:
@@ -59,9 +59,14 @@ def resolve_api_key() -> str:
 
 def get_settings() -> Settings:
     load_dotenv()
+    jina_key = os.environ.get("JINA_API_KEY", "").strip()
+    if not jina_key:
+        raise RuntimeError(
+            "JINA_API_KEY is not set. Add it to .env (see .env.example) or the environment."
+        )
     return Settings(
         llm_base_url=os.environ.get("LLM_BASE_URL", DEFAULT_BASE_URL).rstrip("/"),
         llm_api_key=resolve_api_key(),
         llm_model=os.environ.get("LLM_MODEL", DEFAULT_MODEL),
-        exa_bin=os.environ.get("EXA_BIN", "exa"),
+        jina_api_key=jina_key,
     )

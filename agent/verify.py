@@ -15,7 +15,7 @@ from agent.schemas import (
     Verdict,
     VerificationFlag,
 )
-from agent.websearch import ExaClient
+from agent.websearch import JinaClient
 
 
 def normalize(text: str) -> str:
@@ -74,15 +74,24 @@ def check_consistency(research: AppResearch) -> list[VerificationFlag]:
         for value in [research.access.value, research.api_breadth.value]
     ):
         flag("confidence", "high confidence with unknown fields", FlagSeverity.WARNING)
+    if research.official_mcp:
+        mcp_evidence = [
+            item for item in research.evidence if "mcp" in (item.quote + item.claim).lower()
+        ]
+        if not mcp_evidence:
+            flag(
+                "official_mcp",
+                "official_mcp=true but no evidence quote or claim mentions MCP",
+            )
     return flags
 
 
-def verify_one(research: AppResearch, exa: ExaClient) -> AutoVerification:
+def verify_one(research: AppResearch, web: JinaClient) -> AutoVerification:
     flags = check_consistency(research)
     urls_ok = 0
     quotes_found = 0
     for item in research.evidence:
-        page = exa.fetch(item.url)
+        page = web.fetch(item.url)
         if not page.ok or len(page.content) < 100:
             flags.append(
                 VerificationFlag(
@@ -128,7 +137,7 @@ def load_research(directory: Path = RESEARCH_DIR, pass_number: int = 1) -> list[
 
 def run_verify(directory: Path = RESEARCH_DIR, pass_number: int = 1) -> int:
     settings = get_settings()
-    exa = ExaClient(exa_bin=settings.exa_bin)
+    web = JinaClient(api_key=settings.jina_api_key)
     results = load_research(directory, pass_number)
     if not results:
         print("no research results found")
@@ -137,7 +146,7 @@ def run_verify(directory: Path = RESEARCH_DIR, pass_number: int = 1) -> int:
     out_path = VERIFICATION_DIR / f"auto-pass{pass_number}.json"
     verifications: list[AutoVerification] = []
     with ThreadPoolExecutor(max_workers=6) as pool:
-        for verification in pool.map(lambda r: verify_one(r, exa), results):
+        for verification in pool.map(lambda r: verify_one(r, web), results):
             verifications.append(verification)
     verifications.sort(key=lambda v: v.app_id)
     out_path.write_text(

@@ -1,0 +1,49 @@
+{
+ "app_id": 28,
+ "app": "WhatsApp Business",
+ "category": "Communications and Messaging",
+ "one_liner": "Meta's enterprise-grade APIs for WhatsApp business messaging and calling.",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": false,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "API requests authenticate with a Bearer access token in the Authorization header",
+   "url": "https://developers.facebook.com/docs/whatsapp/business-management-api/reference/",
+   "quote": "Bearer token for API authentication. This should be a valid access token obtained through the appropriate OAuth flow or system user token."
+  },
+  {
+   "claim": "Platform docs state authentication uses OAuth-style access tokens with permissions scoping",
+   "url": "https://developers.facebook.com/docs/whatsapp/overview/",
+   "quote": "Authentication uses OAuth (not 2.0) access tokens, while permissions restrict access to specific resources."
+  },
+  {
+   "claim": "Self-serve onboarding: free Meta developer registration and app creation yields credentials",
+   "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started/",
+   "quote": "registering as a developer, creating a Meta app, sending your first message, and setting up a test webhook endpoint"
+  },
+  {
+   "claim": "Developers can immediately generate a test access token and send messages without payment",
+   "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started/",
+   "quote": "Click Generate access token to generate a temporary access token to send a test message."
+  },
+  {
+   "claim": "REST-style API built on Meta's Graph API over HTTP, spanning multiple sub-APIs",
+   "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/",
+   "quote": "The WhatsApp Business Platform is built on Graph API and uses HTTP protocol."
+  }
+ ],
+ "notes": "Platform comprises multiple APIs: Cloud API (messages, calls, groups), Business Management API (WABA assets), Marketing Messages API, plus webhooks and an official OpenAPI spec and Postman collection—broad surface. Gotchas: the generated token is temporary (permanent tokens require creating a system user); going live at scale requires a real phone number, business verification, and App Review for permissions; per-message pricing applies to template/marketing messages though customer-service-window messages are free; conversation-based pricing was deprecated July 1, 2025. Docs oddly state 'OAuth (not 2.0)'. No official MCP server is mentioned in the supplied material.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:47:17+00:00"
+}

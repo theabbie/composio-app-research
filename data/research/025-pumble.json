@@ -1,0 +1,49 @@
+{
+ "app_id": 25,
+ "app": "Pumble",
+ "category": "Communications and Messaging",
+ "one_liner": "Team messaging and collaboration app with public REST API and MCP server",
+ "auth_methods": [
+  "oauth2",
+  "api_key"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "moderate",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "Pumble apps authenticate via OAuth2 with consent screen, scopes, and access tokens",
+   "url": "https://cake-com.github.io/pumble-node-sdk/authorization.html",
+   "quote": "Pumble uses OAuth2 in order to allow your app to access the API."
+  },
+  {
+   "claim": "Workspace users can self-serve generate API keys via the API addon for simple HTTP requests",
+   "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+   "quote": "This addon lets you generate an API key that allows you to send messages, reactions, and more via simple HTTP requests."
+  },
+  {
+   "claim": "API key addon is available to all roles on all plans, including free",
+   "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+   "quote": "Who can use this feature?\n\nOwner, Admin, Member\n\nAvailable on all plans"
+  },
+  {
+   "claim": "Public REST API covering users, channels, and messages, authenticated via token and x-app-token headers",
+   "url": "https://docs.pumble.com/#description/api-endpoints-usage",
+   "quote": "Built on REST principles, this API allows you to integrate Pumble into your own app, by using the endpoints below."
+  },
+  {
+   "claim": "Pumble provides an official MCP server for connecting third-party AI agents",
+   "url": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server/",
+   "quote": "With the Pumble Model Context Protocol (MCP) server, you can connect third-party AI agents (e.g., Claude, Gemini, Codex) to Pumble"
+  }
+ ],
+ "notes": "Official MCP server at https://mcp.pumble.com/mcp (HTTP transport, authenticated with token + x-app-token headers); MCP tool set is dynamic based on app scopes. Unusual dual-header auth: every API request needs both 'token' (user/bot access token) and 'x-app-token' (app key prefixed 'xpat-'). Rate limits: 100 req/min per user token, 500 req/min per app on main API; API addon allows up to 1000 req/min per user. Official Node SDK (pumble-sdk) and CLI (npx pumble-cli login) exist; apps are created from workspace settings (Create app) or via manifest API. API addon key flow is narrower (messages, reactions, channel listing) than full OAuth2 app flow.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:47:19+00:00"
+}

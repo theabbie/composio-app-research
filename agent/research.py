@@ -12,7 +12,7 @@ from pydantic import ValidationError
 from agent.config import APPS_JSON, RESEARCH_DIR, get_settings
 from agent.llm import ChatClient, LLMError, extract_json_object
 from agent.schemas import AppResearch, AppSeed
-from agent.websearch import ExaClient, SearchResult
+from agent.websearch import JinaClient, SearchResult
 
 PAGE_EXCERPT_CHARS = 6000
 HIGHLIGHT_CHARS = 2500
@@ -33,87 +33,41 @@ Rules:
 
 Output schema:
 {
-  "one_liner": string,                    // what the app does, <= 12 words
-  "auth_methods": string[],               // subset of: oauth2, api_key, basic,
-                                          // bearer_token, session_cookie, none_public,
-                                          // other, unknown
-  "access": string,                       // exactly one of:
-                                          // self_serv
-                                          // e_free
-                                          // (free dev
-                                          // account /
-                                          // free tier
-                                          // gives cre
-                                          // dentials)
-                                          // self_serv
-                                          // e_trial
-                                          // (time-
-                                          // limited
-                                          // trial
-                                          // gives cre
-                                          // dentials)
-                                          //   paid_plan_required (API/credentials need a paid plan)
-                                          // admin_app
-                                          // roval    
-                                          // (workspac
-                                          // e admin
-                                          // must appr
-                                          // ove/insta
-                                          // ll)
-                                          // partner_g
-                                          // ated     
-                                          // (partners
-                                          // hip or
-                                          // approval
-                                          // program
-                                          // required)
-                                          //   contact_sales     (credentials only via sales)
-                                          // no_public
-                                          // _program
-                                          // (no
-                                          // public
-                                          // developer
-                                          // program
-                                          // at all)
-                                          //   unknown
-  "api_styles": string[],                 // subset of: rest, graphql, soap, mixed, none, unknown
-  "api_breadth": string,                  // broad (>50 endpoints/objects), moderate (10-50),
-                                          // narrow (<10), none, unknown
-  "official_mcp": boolean,
-  // true only if an OFFICIAL MCP server from the vendor is documented
-  "verdict": string,
-  // buildable_now | buildable_with_work | gated | no_api | unknown
-                                          // buildable
-                                          // _now: doc
-                                          // umented
-                                          // public
-                                          // API +
-                                          // self-
-                                          // serve cre
-                                          // dentials
-                                          // buildable
-                                          // _with_wor
-                                          // k: public
-                                          // API but
-                                          // friction
-                                          // (paid
-                                          // plan,
-                                          //     approval, weird auth, thin docs)
-                                          // gated: pa
-                                          // rtnership
-                                          // /sales/ad
-                                          // min gate
-                                          // blocks a
-                                          // developer
-                                          // today
-                                          //   no_api: no meaningful public API
-  "blocker": string | null,               // main blocker when not buildable_now, else null
-  "confidence": number,                   // 0..1
-  "evidence": [                           // 2-5 items covering auth, access, API surface at minimum
+  "one_liner": string,      // what the app does, <= 12 words
+  "auth_methods": string[], // subset of: oauth2, api_key, basic, bearer_token,
+                            //   session_cookie, none_public, other, unknown
+  "access": string,         // exactly one of:
+                            //   self_serve_free  (free dev account/tier gives credentials)
+                            //   self_serve_trial (time-limited trial gives credentials)
+                            //   paid_plan_required (API or credentials need a paid plan)
+                            //   admin_approval   (workspace admin must approve/install)
+                            //   partner_gated    (partnership/approval program required)
+                            //   contact_sales    (credentials only via sales)
+                            //   no_public_program (no public developer program at all)
+                            //   unknown
+  "api_styles": string[],   // subset of: rest, graphql, soap, mixed, none, unknown
+  "api_breadth": string,    // broad (>50 endpoints/objects), moderate (10-50),
+                            //   narrow (<10), none, unknown
+  "official_mcp": boolean,  // true ONLY if the vendor itself (its own docs site or
+                            //   its own GitHub org) ships or documents an MCP server.
+                            //   Third-party/community MCP servers and MCP directories
+                            //   (mcp.so, smithery, glama, pulsemcp) do NOT count.
+                            //   When true, one evidence quote MUST mention MCP.
+  "verdict": string,        // buildable_now | buildable_with_work | gated | no_api
+                            //   | unknown
+                            //   buildable_now: documented public API + self-serve
+                            //     credentials
+                            //   buildable_with_work: public API but friction (paid
+                            //     plan, approval, weird auth, thin docs)
+                            //   gated: partnership/sales/admin gate blocks a developer
+                            //     today
+                            //   no_api: no meaningful public API
+  "blocker": string | null, // main blocker when not buildable_now, else null
+  "confidence": number,     // 0..1
+  "evidence": [             // 2-5 items covering auth, access, API surface at minimum
     {"claim": string, "url": string, "quote": string}
   ],
-  "notes": string
-  // anything unusual: MCP hints, deprecations, gotchas (may be "")
+  "notes": string           // unusual findings: MCP hints, deprecations, gotchas ("")
 }
 """
 
@@ -167,7 +121,7 @@ def rank_results(results: list[SearchResult], domain: str) -> list[SearchResult]
     return sorted(results, key=score, reverse=True)
 
 
-def build_materials(app: AppSeed, exa: ExaClient) -> tuple[str, list[str]]:
+def build_materials(app: AppSeed, web: JinaClient) -> tuple[str, list[str]]:
     queries = [
         f"{app.app} API authentication documentation for developers ({app.domain})",
         f"{app.app} developer platform get API key or OAuth app credentials pricing access",
@@ -177,7 +131,7 @@ def build_materials(app: AppSeed, exa: ExaClient) -> tuple[str, list[str]]:
     source_urls: list[str] = []
     candidates: dict[str, SearchResult] = {}
     for query in queries:
-        for result in exa.search(query, num_results=5):
+        for result in web.search(query, num_results=5):
             candidates.setdefault(result.url, result)
             snippet = result.highlights[:HIGHLIGHT_CHARS]
             chunks.append(f"### Search result: {result.title}\nURL: {result.url}\n{snippet}")
@@ -186,7 +140,7 @@ def build_materials(app: AppSeed, exa: ExaClient) -> tuple[str, list[str]]:
     for result in ranked:
         if fetched >= MAX_PAGES_PER_APP:
             break
-        page = exa.fetch(result.url)
+        page = web.fetch(result.url)
         if not page.ok or len(page.content) < 200:
             continue
         fetched += 1
@@ -198,12 +152,12 @@ def build_materials(app: AppSeed, exa: ExaClient) -> tuple[str, list[str]]:
 
 def research_app(
     app: AppSeed,
-    exa: ExaClient,
+    web: JinaClient,
     llm: ChatClient,
     pass_number: int = 1,
     feedback: str = "",
 ) -> AppResearch:
-    materials, _ = build_materials(app, exa)
+    materials, _ = build_materials(app, web)
     hint_suffix = f" ({app.hint})" if app.hint else ""
     user = USER_TEMPLATE.format(
         app=app.app,
@@ -257,7 +211,7 @@ def run_research(
     feedback_by_id: dict[int, str] | None = None,
 ) -> int:
     settings = get_settings()
-    exa = ExaClient(exa_bin=settings.exa_bin)
+    web = JinaClient(api_key=settings.jina_api_key)
     llm = ChatClient(settings)
     seeds = load_seeds()
     if only:
@@ -281,7 +235,7 @@ def run_research(
             pool.submit(
                 research_app,
                 seed,
-                exa,
+                web,
                 llm,
                 pass_number,
                 (feedback_by_id or {}).get(seed.id, ""),

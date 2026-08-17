@@ -1,0 +1,49 @@
+{
+ "app_id": 26,
+ "app": "Discord",
+ "category": "Communications and Messaging",
+ "one_liner": "Community chat platform with bots, messaging, voice, and app integrations",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": false,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Two authentication methods: bot tokens and OAuth2 bearer tokens, sent in the Authorization header",
+   "url": "https://docs.discord.com/developers/reference",
+   "quote": "For all authentication types, authentication is performed with the `Authorization` HTTP header in the format `Authorization: TOKEN_TYPE TOKEN`."
+  },
+  {
+   "claim": "Self-serve OAuth2 credentials via the public Developer Portal",
+   "url": "https://docs.discord.com/developers/topics/oauth2",
+   "quote": "The first step in implementing OAuth2 is [registering a developer application](https://discord.com/developers/applications) and retrieving your client ID and client secret."
+  },
+  {
+   "claim": "Bot tokens are generated self-serve from the app's Bot settings page",
+   "url": "https://docs.discord.com/developers/quick-start/getting-started",
+   "quote": "On the [**Bot** page](https://discord.com/developers/applications/select/bot) under **Token**, click \"Reset Token\" to generate a new bot token."
+  },
+  {
+   "claim": "The primary API is REST",
+   "url": "https://docs.discord.com/developers/reference",
+   "quote": "The Discord API is a REST API that allows you to interact with Discord data from your own applications."
+  },
+  {
+   "claim": "Broad API surface covering channels, guilds, users, and messages",
+   "url": "https://docs.discord.com/developers/quick-start/overview-of-apps",
+   "quote": "interact and modify core Discord resources like [channels](/developers/resources/channel), [servers (or guilds)](/developers/resources/guild)"
+  }
+ ],
+ "notes": "No official Discord MCP server; mcp.dis.gg is a third-party hosted MCP wrapping bot tokens. A bidirectional WebSocket Gateway API complements REST for real-time events. Some OAuth2 scopes (e.g., identify.premium) are partner-only, and privileged Gateway intents require approval after app verification, but core API access is fully self-serve. Token endpoints accept only application/x-www-form-urlencoded, not JSON. An official OpenAPI 3.1 spec is published at github.com/discord/discord-api-spec. Bot tokens use the 'Bot' prefix rather than 'Bearer'.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:48:22+00:00"
+}

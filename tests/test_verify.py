@@ -64,3 +64,16 @@ def test_consistency_clean_record_has_no_errors() -> None:
     research = make_research()
     flags = check_consistency(research)
     assert not [f for f in flags if f.severity == FlagSeverity.ERROR]
+
+
+def test_official_mcp_requires_mcp_evidence() -> None:
+    research = make_research(official_mcp=True)
+    flags = check_consistency(research)
+    assert any(f.field == "official_mcp" for f in flags)
+
+    ok = make_research(
+        official_mcp=True,
+        evidence=[Evidence(claim="Vendor ships MCP", url="https://x.com", quote="our MCP server")],
+    )
+    flags = check_consistency(ok)
+    assert not [f for f in flags if f.field == "official_mcp"]

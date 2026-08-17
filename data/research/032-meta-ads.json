@@ -1,0 +1,49 @@
+{
+ "app_id": 32,
+ "app": "Meta Ads",
+ "category": "Marketing, Ads, Email and Social",
+ "one_liner": "Create, manage, and measure ad campaigns across Meta platforms programmatically",
+ "auth_methods": [
+  "oauth2",
+  "bearer_token"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_with_work",
+ "blocker": "App Review approval required for advanced access (managing other people's ad accounts) and Full tier; default Limited tier is dev-only and heavily rate-limited",
+ "confidence": 0.9,
+ "evidence": [
+  {
+   "claim": "Every Marketing API call is authenticated with an access token (OAuth2 user tokens or system user tokens).",
+   "url": "https://developers.facebook.com/docs/marketing-api/get-started/authentication/",
+   "quote": "Every Marketing API call requires an access token as a parameter."
+  },
+  {
+   "claim": "Free self-serve developer access: Limited tier is granted automatically on adding the Marketing API product to an app.",
+   "url": "https://developers.facebook.com/docs/marketing-api/get-started/authorization/",
+   "quote": "Automatically granted when you add the Marketing API product to your app."
+  },
+  {
+   "claim": "Managing other people's ad accounts requires Meta App Review for advanced access to ads_read/ads_management.",
+   "url": "https://developers.facebook.com/docs/marketing-api/get-started/authorization/",
+   "quote": "If your app is managing other people’s ad accounts, you need advanced access to the`ads_read` and/or`ads_management` permissions."
+  },
+  {
+   "claim": "The Marketing API is a REST-style Graph API surface covering campaigns, ad sets, ads, creatives, audiences, insights, and more.",
+   "url": "https://developers.facebook.com/docs/marketing-api",
+   "quote": "The Marketing API is a collection of Graph API endpoints and other features that can be used to help you advertise across Meta technologies."
+  },
+  {
+   "claim": "Meta launched an official hosted MCP server for ads (mcp.facebook.com/ads) on 29 April 2026, per third-party coverage of Meta's announcement.",
+   "url": "https://adadvisor.ai/blog/mcp-facebook-com-ads-official-meta-setup",
+   "quote": "is Meta's official Ads AI Connectors MCP endpoint, launched 29 April 2026"
+  }
+ ],
+ "notes": "Official MCP/CLI evidence comes from third-party blogs citing Meta's April 29, 2026 'AI Connectors' launch, not Meta docs supplied here. Access tiers were relabeled: Standard->Limited, Advanced->Full; Full tier needs 500+ Marketing API calls in past 15 days and <15% error rate. System user tokens do not expire, suiting server-to-server use. Running live campaigns requires an active ad account with billing. Standard access suffices for an app managing only its own ad account.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:50:52+00:00"
+}

@@ -22,8 +22,8 @@ site/         case-study page (Vite + React + TypeScript + Tailwind)
 
 - Python 3.11+ and [uv](https://docs.astral.sh/uv/)
 - Node.js 20+ and npm
-- The [`exa`](https://exa.ai) CLI on PATH for web search/fetch
-  (`exa search "<query>"`, `exa fetch <url>`)
+- A [Jina AI](https://jina.ai) API key for web search (`s.jina.ai`) and page
+  reading (`r.jina.ai`)
 - An OpenAI-compatible LLM endpoint for structured extraction
 
 ## Setup
@@ -38,9 +38,10 @@ cd site && npm install
 ## Environment variables
 
 See `.env.example`. The pipeline needs an OpenAI-compatible chat-completions
-endpoint (`LLM_BASE_URL`, `LLM_API_KEY`, `LLM_MODEL`). On this machine the key
-is read from the macOS keychain when `LLM_API_KEY` is unset; everywhere else,
-set the env vars. No secrets are ever committed.
+endpoint (`LLM_BASE_URL`, `LLM_API_KEY`, `LLM_MODEL`) and a Jina API key
+(`JINA_API_KEY`). On the author's machine the LLM key is read from the macOS
+keychain when `LLM_API_KEY` is unset; everywhere else, set the env vars.
+No secrets are ever committed.
 
 ## Running the research agent
 

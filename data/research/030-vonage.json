@@ -1,0 +1,51 @@
+{
+ "app_id": 30,
+ "app": "Vonage",
+ "category": "Communications and Messaging",
+ "one_liner": "Cloud communications APIs for SMS, voice, video, and verification.",
+ "auth_methods": [
+  "api_key",
+  "basic",
+  "bearer_token",
+  "other"
+ ],
+ "access": "self_serve_free",
+ "api_styles": [
+  "rest"
+ ],
+ "api_breadth": "broad",
+ "official_mcp": true,
+ "verdict": "buildable_now",
+ "blocker": null,
+ "confidence": 0.95,
+ "evidence": [
+  {
+   "claim": "Signing up for a Vonage account immediately provisions API key and secret credentials",
+   "url": "https://developer.vonage.com/en/getting-started/overview",
+   "quote": "To work with our APIs, you will need to sign up for an account. This will give you an API key and secret that you can use to access our APIs."
+  },
+  {
+   "claim": "New accounts get free credit on a pay-per-request model, so credentials work without a paid plan",
+   "url": "https://developer.vonage.com/en/getting-started/overview",
+   "quote": "Access to our APIs is charged on a per-request basis. We’ll give you some free credit when you first open your account and you can top up when you run low."
+  },
+  {
+   "claim": "APIs authenticate with API key/secret via Basic auth, with JWT and Digest also used per product",
+   "url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+   "quote": "A number of newer Vonage APIs require authentication to be done using an API key and secret sent Base64 encoded in the`Authorization` header."
+  },
+  {
+   "claim": "Voice, Messages, Conversation and similar APIs use JWTs signed with an application private key",
+   "url": "https://developer.vonage.com/en/dashboard/build/applications",
+   "quote": "Vonage APIs (Voice, Messages, Conversation, etc) use JSON Web Tokens (JWTs) for authentication. JWTs must be signed with the private key of your application."
+  },
+  {
+   "claim": "Vonage publishes official MCP servers for its documentation and API tooling",
+   "url": "https://developer.vonage.com/en/mcp-server/overview",
+   "quote": "The Vonage MCP Server enables AI agents and developer tools to discover, describe, and use Vonage capabilities via the Model Context Protocol."
+  }
+ ],
+ "notes": "Auth varies by product: JWT (recommended, required for webhooks/ACLs and Silent Auth) vs Basic API key/secret; SIP Trunking uses Digest auth. JWTs require creating a Vonage Application with a public/private key pair. Two official MCP servers exist: a hosted Documentation server (https://documentation-mcp.vonage.dev/mcp) and an npm Tooling/API-bindings server (@vonage/vonage-mcp-server-api-bindings). Breadth spans Messages, Verify, Voice, Video, Conversation, Numbers, Applications, Network APIs and more, all with OpenAPI descriptions. Legacy Nexmo base URLs (rest.nexmo.com, api.nexmo.com) still in use. Trial accounts can explore most features; a payment method is required for production use and certain features.",
+ "pass_number": 1,
+ "researched_at": "2026-08-17T09:48:29+00:00"
+}
